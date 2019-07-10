@@ -1,9 +1,12 @@
-import './App.css';
-import Loginscreen from './Loginscreen'
 import React, { Component } from 'react';
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
+
+
+import './App.css';
+import LoginScreen from './Loginscreen';
 
 class App extends Component {
   constructor(props){
@@ -15,7 +18,7 @@ class App extends Component {
   }
   componentWillMount(){
     var loginPage =[];
-    loginPage.push(<Loginscreen parentContext={this}/>);
+    loginPage.push(<LoginScreen appContext={this} key={"login-screen"}/>);
     this.setState({
       loginPage:loginPage
     })
@@ -29,7 +32,5 @@ class App extends Component {
     );
   }
 }
-const style = {
-  margin: 15,
-};
+
 export default App;
