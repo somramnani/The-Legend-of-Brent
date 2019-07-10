@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
+import BattlePanel from '../Components/BattlePanel'
 
 
 class SignIn extends Component {
