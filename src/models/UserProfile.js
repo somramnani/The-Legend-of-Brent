@@ -1,4 +1,4 @@
-// This will be the user profile model for our Mongo DB
+// This will be the user profile model
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/rpg', { useNewUrlParser: true } )
 const db = mongoose.connection;
@@ -16,12 +16,12 @@ const userProfileSchema = new mongoose.Schema({
     password: {
         type: String,
         trim: true,
-        required: "Password is Required",
+        required: "A password is required!",
             validate: [
                 function(input) {
                 return input.length >= 6;
                 },
-                "Password should be longer." 
+                "Please provide a password that is longer than 6 characters!" 
                 ]
     },
     email: {
@@ -35,6 +35,6 @@ const userProfileSchema = new mongoose.Schema({
       },
 })
 
-const userProfile = mongoose.model("User", userProfileSchema)
+const userProfile = mongoose.model("userProfile", userProfileSchema)
 
 module.exports = userProfile;
