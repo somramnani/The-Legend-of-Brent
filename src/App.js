@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import LoginScreen from './Loginscreen';
+import LogIn from './Screens/LogIn'
 import BattlePanel from './Components/BattlePanel';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
   }
   componentWillMount(){
     var loginPage =[];
-    loginPage.push(<LoginScreen appContext={this} key={"login-screen"}/>);
+    loginPage.push(<LogIn appContext={this} key={"login-screen"}/>);
     this.setState({
       loginPage:loginPage
     })
@@ -25,8 +25,6 @@ class App extends Component {
         {this.state.loginPage}
         {this.state.uploadScreen}
       </div>
-    
-    <BattlePanel />
       </>
     );
   }
