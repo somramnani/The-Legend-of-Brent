@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
+
+
 import './App.css';
 import LoginScreen from './Loginscreen';
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -13,8 +20,8 @@ class App extends Component {
     var loginPage =[];
     loginPage.push(<LoginScreen appContext={this} key={"login-screen"}/>);
     this.setState({
-                  loginPage:loginPage
-                    })
+      loginPage:loginPage
+    })
   }
   render() {
     return (
