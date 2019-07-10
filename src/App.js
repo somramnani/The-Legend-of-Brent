@@ -1,10 +1,4 @@
 import React, { Component } from 'react';
-
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-injectTapEventPlugin();
-
-
 import './App.css';
 import LoginScreen from './Loginscreen';
 
