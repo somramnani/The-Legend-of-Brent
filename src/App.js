@@ -2,6 +2,7 @@ import './App.css';
 import Loginscreen from './Loginscreen'
 import React, { Component } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
 injectTapEventPlugin();
 
 class App extends Component {
@@ -16,8 +17,8 @@ class App extends Component {
     var loginPage =[];
     loginPage.push(<Loginscreen parentContext={this}/>);
     this.setState({
-                  loginPage:loginPage
-                    })
+      loginPage:loginPage
+    })
   }
   render() {
     return (
