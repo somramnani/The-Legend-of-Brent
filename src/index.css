@@ -17,11 +17,11 @@ code {
   height: 100vh;
   background-image: url('images/neonbrand-Gk578U8c2W8-unsplash.jpg');
   background-repeat: no-repeat;
-  background-size: 50% 100%;
+  background-size: 40% 100%;
 }
 
 .background-image{
-  transform: translate(23em,10em);
+  transform: translate(16em,10em);
 }
 
 .MuiToolbar-root{
