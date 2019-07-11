@@ -31,7 +31,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Our RPG Game With No Name
+            THE CURSE OF BRENT
           </Typography>
         </Toolbar>
       </AppBar>
