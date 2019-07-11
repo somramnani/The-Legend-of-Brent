@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  
+
 }
 
 .App-logo {
@@ -31,3 +32,28 @@
     transform: rotate(360deg);
   }
 }
+
+.login{
+  transform: translate(55em,12em);
+ 
+}
+
+.register{
+  transform: translate(55em,-20em);
+
+}
+
+
+.login-div{
+  background-image: url("images/photo-1509558273944-9ea880029528.jpg");
+  
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  background-color: #f5f5f5;;
+  background-size: 50% 100%;
+}
+
+
+

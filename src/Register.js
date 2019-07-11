@@ -71,7 +71,7 @@ class Register extends Component {
       userLabel="Teacher Id";
     }
     return (
-      <div>
+      <div >
         <MuiThemeProvider>
           <div>
           <AppBar

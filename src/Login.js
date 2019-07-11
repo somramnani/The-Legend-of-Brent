@@ -13,29 +13,39 @@ constructor(props){
  }
 render() {
     return (
-      <div>
-        <MuiThemeProvider>
-          <div>
-          <AppBar
-             title="Login"
-           />
-           <TextField
-             hintText ="Enter your Username"
-             floatingLabelText="Username"
-             onChange = {(event,newValue) => this.setState({username:newValue})}
-             />
-           <br/>
-             <TextField
-               type="password"
-               hintText="Enter your Password"
-               floatingLabelText="Password"
-               onChange = {(event,newValue) => this.setState({password:newValue})}
-               />
-             <br/>
-             <RaisedButton label="Login" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
-         </div>
-         </MuiThemeProvider>
+   
+        <div className>
+        
+          <div className = "login-div">
+            <div className = "login" >
+            
+              <MuiThemeProvider>
+                <div>
+                  {/* <AppBar
+                        title="Login"
+              /> */}
+                 <h3>Welcome</h3>
+                  <TextField
+                  
+                    hintText ="Enter your Username"
+                    floatingLabelText="Username"
+                    onChange = {(event,newValue) => this.setState({username:newValue})}
+                  />
+                  <br/>
+                  <TextField
+                    type="password"
+                    hintText="Enter your Password"
+                    floatingLabelText="Password"
+                    onChange = {(event,newValue) => this.setState({password:newValue})}
+                  />
+                  <br/>
+                <RaisedButton label="Login" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+              </div>
+            </MuiThemeProvider>
+          </div>
+        </div>
       </div>
+   
     );
   }
 }
