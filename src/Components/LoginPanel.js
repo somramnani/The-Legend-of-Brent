@@ -7,6 +7,8 @@ import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
+import { darkBlack } from 'material-ui/styles/colors';
+import { black } from 'material-ui/styles/colors';
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
@@ -37,7 +39,7 @@ export default function LoginPanel() {
 
   return(
   <>
-    <Container maxWidth="sm">
+    <Container className =  "background-image" maxWidth="sm">
       <Paper className={classes.panel}>
         <Box>
           <Typography variant="h6" component="h6">
@@ -66,8 +68,9 @@ export default function LoginPanel() {
         <Box component="span">
           <Button 
             variant="contained" 
-            color="primary" 
-            className={classes.button}>
+            color = ""
+            id = "loginButton"
+            className={classes.button}   >
             Login
           </Button>
 
