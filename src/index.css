@@ -20,8 +20,13 @@ code {
   background-size: 45% 100%;
 }
 
-.background-image{
-  transform: translate(16em,10em);
+.login-box{
+  transform: translate(18em, 0em);
+}
+#welcometext{
+  transform: translate(5em, 0em);
+  font-size: 4em;
+ 
 }
 
 .MuiToolbar-root{
