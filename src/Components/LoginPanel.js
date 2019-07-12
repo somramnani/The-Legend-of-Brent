@@ -40,6 +40,7 @@ export default function LoginPanel() {
   return(
   <>
     <Container className =  "background-image" maxWidth="sm">
+    <h1>Welcome To The Curse of Brent</h1>
       <Paper className={classes.panel}>
         <Box>
           <Typography variant="h6" component="h6">
