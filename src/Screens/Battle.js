@@ -1,5 +1,6 @@
-import React from 'react';
-import BattlePanel from '../Components/BattlePanel'
+import React, { Component } from 'react';
+import BattlePanel from "../Components/BattlePanel";
+
 
 class Battle extends Component {
   render() {
