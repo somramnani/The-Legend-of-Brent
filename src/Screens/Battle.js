@@ -1,9 +1,10 @@
 import React from 'react';
+import BattlePanel from '../Components/BattlePanel'
 
 class Battle extends Component {
   render() {
     return (
-      <BattlePanel /> 
+      <BattlePanel />
     )
   }
 }

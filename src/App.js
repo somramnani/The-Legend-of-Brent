@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LogIn from './Screens/LogIn'
-import BattlePanel from './Components/BattlePanel';
 
 class App extends Component {
   constructor(props){
