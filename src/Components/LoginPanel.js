@@ -71,7 +71,7 @@ export default function LoginPanel() {
         <Box component="span">
           <Button 
             variant="contained" 
-            color = ""
+            color = "primary"
             id = "loginButton"
             className={classes.button}   >
             Login
