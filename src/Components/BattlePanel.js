@@ -10,7 +10,7 @@ class BattlePanel extends React.Component {
     return(
       <>
         <CssBaseline />
-        <Container maxWidth="sm">
+        <Container maxWidth="lg">
           <Box boxShadow={3}>
             <Typography component="div" style={{backgroundColor: '#333', height: '100vh', width: '100vw' }} />
           </Box>
