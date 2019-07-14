@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LogIn from './Screens/LogIn'
+import Characters from './Screens/Characters'
 
 class App extends Component {
   constructor(props){

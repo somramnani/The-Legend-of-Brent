@@ -1,11 +1,5 @@
 // This will be the user profile model
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/rpg', { useNewUrlParser: true } )
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-});
 
 const userProfileSchema = new mongoose.Schema({
     username: {
@@ -35,6 +29,6 @@ const userProfileSchema = new mongoose.Schema({
       },
 })
 
-const userProfile = mongoose.model("userProfile", userProfileSchema)
+const UserProfile = mongoose.model("userProfile", userProfileSchema)
 
-module.exports = userProfile;
+module.exports = UserProfile;

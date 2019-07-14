@@ -7,8 +7,6 @@ import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
-import { darkBlack } from 'material-ui/styles/colors';
-import { black } from 'material-ui/styles/colors';
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
@@ -24,6 +22,9 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3),
     padding: theme.spacing(1),
   },
+  container: {
+    background: "#777"
+  }
 }));
 
 export default function LoginPanel() {
@@ -70,7 +71,7 @@ export default function LoginPanel() {
         <Box component="span">
           <Button 
             variant="contained" 
-            color = ""
+            color = "primary"
             id = "loginButton"
             className={classes.button}   >
             Login
