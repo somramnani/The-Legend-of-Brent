@@ -61,7 +61,7 @@ router.post('/addUser', (req, res) => {
       success: false,
       error: 'Bad Input',
     });
-  }
+  } // this is where a new user profile will be created... see my slack comments about the values..
   user.id = id;
   user.username = username;
   user.password = password;
