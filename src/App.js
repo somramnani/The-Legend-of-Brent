@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LogIn from './Screens/LogIn'
-import Characters from './Screens/Characters'
+import LogIn from './Screens/LogIn';
+import Characters from './Screens/Characters';
 
 class App extends Component {
   constructor(props){
@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <>
       <div className="App">
-        {this.state.loginPage}
+          {this.state.loginPage}
       </div>
       </>
     );
