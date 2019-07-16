@@ -2,7 +2,7 @@ import Character from "../Screens/Characters";
 Character = {
 
     0: {
-        'name': "Fallen Angel",
+        'name': "Demon Lord",
         'attack power': 25,
         'attack speed': 10
     },
