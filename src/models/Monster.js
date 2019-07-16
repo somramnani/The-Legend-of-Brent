@@ -1,4 +1,7 @@
+import React, { Component } from 'react';
 import Character from "../Screens/Characters";
+
+
 Character = {
 
     0: {
