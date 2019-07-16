@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import LogIn from './Screens/LogIn';
-import Characters from './Screens/Characters';
+
+import LogIn from './Screens/LogIn'
+import Characters from './Screens/Characters'
+import axios from 'axios'
+
 
 class App extends Component {
   constructor(props){

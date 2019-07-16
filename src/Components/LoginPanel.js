@@ -8,6 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
 
+
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
 const useStyles = makeStyles(theme => ({
@@ -63,6 +64,15 @@ export default function LoginPanel() {
             className={classes.textField}
             type="password"
             autoComplete="current-password"
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-email-input"
+            label="E-mail"
+            className={classes.textField}
+            type="email"
+            autoComplete="current-email"
             margin="normal"
             variant="outlined"
           />
