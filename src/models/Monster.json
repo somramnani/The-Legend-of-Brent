@@ -1,0 +1,43 @@
+[{
+        "id": "1",
+        "name": "Demon Lord",
+        "attackPower": "25",
+        "attackSpeed": "10",
+        "img":"" 
+    },
+    {
+        "id": "2",
+        "name": "Demon Soldier",
+        "attackPower": "15",
+        "attackSpeed": "20",
+        "img":""
+    },
+    {
+        "id": "3",
+        "name": "Oni Lord",
+        "attackPower": "30",
+        "attackSpeed": "9",
+        "img":""
+    },
+    {
+        "id": "4",
+        "name": "Oni Soldier",
+        "attackPower": "12",
+        "attackSpeed": "30",
+        "img":""
+    },
+    {
+        "id": "5",
+        "name": "Fiend Lord",
+        "attackPower": "40",
+        "attackSpeed": "9",
+        "img":""
+    },
+    {
+        "id": "6",
+        "name": "Fiend Soldier",
+        "attackPower": "18",
+        "attackSpeed": "19",
+        "img":""
+    }
+]
