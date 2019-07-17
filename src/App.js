@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
-import LogIn from './Screens/LogIn'
-import Characters from './Screens/Characters'
-import axios from 'axios'
+// import LogIn from './Screens/LogIn'
+// import Characters from './Screens/Characters'
+// import axios from 'axios'
+import Battle from './Screens/Battle';
 
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
   }
   componentWillMount(){
     const loginPage =[];
-    loginPage.push(<LogIn appContext={this} key={"login-screen"}/>);
+    loginPage.push(<Battle appContext={this} key={"login-screen"}/>);
     this.setState({
       loginPage:loginPage
     })
