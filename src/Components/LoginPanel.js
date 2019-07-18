@@ -8,7 +8,6 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
 
-
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
 const useStyles = makeStyles(theme => ({
@@ -36,7 +35,9 @@ export default function LoginPanel() {
   })
 
   const changeHandler = (name, password) => event => {
-    setValues({...values, [name]: event.target.value, [password]: event.target.value });
+    setValues({...values, 
+      [name]: event.target.value, 
+      [password]: event.target.value });
   }
 
   return(
@@ -83,7 +84,7 @@ export default function LoginPanel() {
             variant="contained" 
             color = "primary"
             id = "loginButton"
-            className={classes.button}   >
+            className={classes.button}>
             Login
           </Button>
 

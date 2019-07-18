@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-
-// import LogIn from './Screens/LogIn'
-// import Characters from './Screens/Characters'
-// import axios from 'axios'
 import Battle from './Screens/Battle';
-
+import CharSelectScreen from './Screens/Characters';
 
 class App extends Component {
   constructor(props){
@@ -15,16 +11,16 @@ class App extends Component {
   }
   componentWillMount(){
     const loginPage =[];
-    loginPage.push(<Battle appContext={this} key={"login-screen"}/>);
+    loginPage.push(<CharSelectScreen appContext={this} key={"login-screen"}/>);
     this.setState({
-      loginPage:loginPage
+      loginPage: loginPage
     })
   }
   render() {
     return (
       <>
       <div className="App">
-          {this.state.loginPage}
+        {this.state.loginPage}
       </div>
       </>
     );

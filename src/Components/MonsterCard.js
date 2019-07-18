@@ -6,33 +6,37 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-
-
 const useStyles = makeStyles(
     createStyles({
         card: {
-            maxWidth: 345
+            maxWidth: 300,
+            margin: 30
         },
         media: {
-            height: 140
+            height: 300
         },
     })
 )
 
-
 export default function MonsterCard() {
     const classes = useStyles();
     const [values, setValues] = React.useState({
-        name: "Paladin",
+        name: "",
         img: "",
-        title: "Paladin",
-        attackSpeed: "20",
-        attackPower: "40"
+        title: "",
+        attackSpeed: "",
+        attackPower: ""
     })
 
-    const changeHandler = (name, img, title, attackSpeed, attackPower) => event => {
-        setValues({...values, [name]: event.target.value, [img]: event.target.value, [title]: event.target.value, [attackSpeed]: event.target.value,[attackPower]: event.target.value});
-      }
+    // const changeHandler = (name, img, title, attackSpeed, attackPower) => event => {
+    //     setValues({...values, 
+    //         [name]: event.target.value, 
+    //         [img]: event.target.value, 
+    //         [title]: event.target.value, 
+    //         [attackSpeed]: event.target.value,
+    //         [attackPower]: event.target.value});
+    //   }
+
     return (
         <Card className={classes.card}>
             <CardActionArea>

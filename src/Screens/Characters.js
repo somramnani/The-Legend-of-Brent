@@ -1,23 +1,33 @@
-// import React, { Component } from 'react';
-// // import FormControl from '@material-ui/core/FormControl';
-// // import FormGroup from '@material-ui/core/FormGroup';
-// // import FormLabel from '@material-ui/core/FormLabel';
+import React, { Component } from 'react';
+import { Grid, Container, Box }  from '@material-ui/core/'
+import MonsterCard from '../Components/MonsterCard'
+import players from '../data/Player.json'
 
-// class Character extends Component {
-//   render() {
-//     return (
-//         <FormGroup controlId="exampleForm.ControlSelect2">
-//         <FormLabel>Select Your Character</FormLabel>
-//         <FormControl as="select" multiple>
-//         <option>Paladin</option>
-//         <option>Knight</option>
-//         <option>Samurai</option>
-//         <option>Ninja</option>
-//         <option>Barbarian</option>
-//         <option>Viking</option>
-//         </FormControl>
-//       </FormGroup>
-//     )
-//   }
-// }
-// export default Character
+class CharSelectScreen extends Component {
+
+state = {
+  players
+}
+
+render() {
+
+  return (
+    <Container maxWidth="lg">
+      <Grid direction="row" alignItems="center" justify="flex-end">
+        {this.state.players.map(Player => (
+          <MonsterCard
+            key={Player.id}
+            id={Player.id}
+            name={Player.name}
+            img={Player.img}
+            attackSpeed={Player.attackSpeed}
+            attackPower={Player.attackPower}
+          />
+        ))}
+      </Grid>
+    </Container>
+    )
+  }
+}
+
+export default CharSelectScreen;
