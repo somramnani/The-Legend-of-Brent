@@ -1,6 +1,10 @@
 # RPG
 
-
+## Languages/Technology Used
+- HTML5/CSS3
+- JavaScript
+- React.js
+- MongoDb
 
 ## Available Scripts
 
