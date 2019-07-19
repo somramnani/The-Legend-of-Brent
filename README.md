@@ -1,4 +1,5 @@
 # RPG
+An RPG game powered by React
 
 ## Languages/Technology Used
 - HTML5/CSS3
