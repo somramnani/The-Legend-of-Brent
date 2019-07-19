@@ -19,7 +19,6 @@ const useStyles = makeStyles(
     })
 )
 
-
 export default function MonsterCard() {
     const classes = useStyles();
     const [values, setValues] = React.useState({
@@ -30,9 +29,6 @@ export default function MonsterCard() {
         attackPower: "40"
     })
 
-    const changeHandler = (name, img, title, attackSpeed, attackPower) => event => {
-        setValues({...values, [name]: event.target.value, [img]: event.target.value, [title]: event.target.value, [attackSpeed]: event.target.value,[attackPower]: event.target.value});
-      }
     return (
         <Card className={classes.card}>
             <CardActionArea>
