@@ -68,15 +68,6 @@ export default function LoginPanel() {
             margin="normal"
             variant="outlined"
           />
-          <TextField
-            id="outlined-email-input"
-            label="E-mail"
-            className={classes.textField}
-            type="email"
-            autoComplete="current-email"
-            margin="normal"
-            variant="outlined"
-          />
         </Box>
 
         <Box component="span">
