@@ -21,18 +21,41 @@ class BattleScreen extends Component {
 
         return (
             <>
-                <MonsterCard>
-            <button onClick={this.smallAttack}>
-                Small Attack
-    </button>
+                <Container>
+                    <Box>
+                        <MonsterCard>
+                            <Player>
+                                <Button onClick={this.smallAttack}>
+                                    Small Attack
+                                </Button>
         
-            <button onClick={this.bigAttack}>
-                Big Attack
-    </button>
-                </MonsterCard>
+                                <Button onClick={this.bigAttack}>
+                                    Big Attack
+                                </Button>
+
+                                <Button onClick={this.specialAttack}>
+                                    Special Attack
+                                </Button>
+                            </Player>
+                        {/* player is above, monster is below */}
+                            <Monster>
+                                <Button onClick={this.smallAttack}>
+                                    Small Attack
+                                </Button>
+        
+                                <Button onClick={this.bigAttack}>
+                                 Big Attack
+                                </Button>
+
+                                <Button onClick={this.specialAttack}>
+                                    Special Attack
+                                </Button>
+                            </Monster>
+                        </MonsterCard>
+                    </Box>
+                </Container>
         </>
     )
     }
-
 }
 export default BattleScreen;
