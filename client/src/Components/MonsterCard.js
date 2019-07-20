@@ -45,6 +45,7 @@ export default function MonsterCard() {
                 Attack Speed: {values.attackSpeed}
                 Attack Power: {values.attackPower}
             </Typography>
+            <Button onClick={something.smallAttack} />
           </CardContent>
         </CardActionArea>
       </Card>

@@ -7,6 +7,7 @@ import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
+import axios from 'axios';
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
@@ -31,13 +32,24 @@ export default function LoginPanel() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '',
-    password: ''
+    password: '',
+    email: ''
   })
 
-  const changeHandler = (name, password) => event => {
+  const changeHandler = (name, password, email) => event => {
     setValues({...values, 
       [name]: event.target.value, 
-      [password]: event.target.value });
+      [password]: event.target.value,
+      [email]: event.target.value
+      });
+  }
+
+  const signUp = event => {
+    axios.post('/addUser', {
+      username: values.name,
+      password: values.password,
+      email: values.email
+    })
   }
 
   return(
@@ -63,8 +75,9 @@ export default function LoginPanel() {
             id="outlined-password-input"
             label="Password"
             className={classes.textField}
+            onChange={changeHandler('password')}
             type="password"
-            autoComplete="current-password"
+            value={values.password}
             margin="normal"
             variant="outlined"
           />
@@ -72,8 +85,9 @@ export default function LoginPanel() {
             id="outlined-email-input"
             label="E-mail"
             className={classes.textField}
+            onChange={changeHandler('email')}
             type="email"
-            autoComplete="current-email"
+            value={values.email}
             margin="normal"
             variant="outlined"
           />
@@ -91,7 +105,8 @@ export default function LoginPanel() {
           <Button 
             variant="contained" 
             color="secondary" 
-            className={classes.button}>
+            className={classes.button}
+            onClick={signUp()}>
             Sign-Up
           </Button>
         </Box>
