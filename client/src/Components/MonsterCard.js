@@ -25,6 +25,7 @@ export default function MonsterCard(props) {
     img: props.img,
     smallAttack: props.smallAttack,
     bigAttack: props.bigAttack,
+    specialAttack: props.specialAttack,
     health: props.health
   });
 
@@ -46,6 +47,8 @@ export default function MonsterCard(props) {
               Small Attack: {values.smallAttack}
               <br />
               Big Attack: {values.bigAttack}
+              <br />
+              Special Attack: {values.specialAttack}
               <br />
             Health: {values.health}
           </Typography>
