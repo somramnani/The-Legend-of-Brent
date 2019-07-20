@@ -13,7 +13,10 @@ render() {
 
   return (
     <Container maxWidth="lg">
-      <Grid direction="row" alignItems="center" justify="flex-end">
+      <Grid container spacing={5} 
+            direction="row" 
+            alignItems="center" 
+            justify="flex-end">
         {this.state.players.map(Player => (
           <MonsterCard
             key={Player.id}
