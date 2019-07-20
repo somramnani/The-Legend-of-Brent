@@ -18,34 +18,40 @@ const useStyles = makeStyles(
   })
 );
 
-export default function MonsterCard() {
+export default function MonsterCard(props) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
-    name: "",
-    img: "",
-    title: "",
-    attackSpeed: "",
-    attackPower: ""
+    name: props.name,
+    img: props.img,
+    smallAttack: props.smallAttack,
+    bigAttack: props.bigAttack,
+    health: props.health
   });
 
   return (
+    <>
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={values.img}
-          title={values.title}
+          name={values.name}
+          health={values.health}
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="h4">
+            <Typography gutterBottom variant="h4" component="h4">
             {values.name}
           </Typography>
           <Typography variant="body2" component="p" color="textSecondary">
-            Stats: Attack Speed: {values.attackSpeed}
-            Attack Power: {values.attackPower}
+              Small Attack: {values.smallAttack}
+              <br />
+              Big Attack: {values.bigAttack}
+              <br />
+            Health: {values.health}
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
+    </>
   );
 }

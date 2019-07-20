@@ -45,7 +45,7 @@
     },
     {
         "id": "6",
-        "name": "Viking",
+        "name": "Mage",
         "health": "500",
         "smallAttack": "20",
         "bigAttack": "20",
@@ -54,7 +54,7 @@
     },
     {
         "id": "7",
-        "name": "Viking",
+        "name": "Sorcerer",
         "health": "500",
         "smallAttack": "20",
         "bigAttack": "20",
@@ -63,7 +63,7 @@
     },
     {
         "id": "8",
-        "name": "Viking",
+        "name": "Dan",
         "health": "500",
         "smallAttack": "20",
         "bigAttack": "20",

@@ -6,13 +6,33 @@ import Player from '../data/Player.json'
 
 class BattleScreen extends Component {
     smallAttack() {
-        //logic to pass to buttons here
+        console.log("small attack was clicked");
     }
 
     bigAttack() {
-        //logic to pass to buttons here
+        console.log("big attack was clicked");
+
+    }
+
+    specialAttack() {
+
+    };
+    render() {
+
+        return (
+            <>
+                <MonsterCard>
+            <button onClick={this.smallAttack}>
+                Small Attack
+    </button>
+        
+            <button onClick={this.bigAttack}>
+                Big Attack
+    </button>
+                </MonsterCard>
+        </>
+    )
     }
 
 }
-
 export default BattleScreen;
