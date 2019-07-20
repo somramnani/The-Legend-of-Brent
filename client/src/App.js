@@ -7,7 +7,7 @@ function App() {
   return (
     <>
     <TitleBar />
-    <CharSelect />
+    <LogIn />
     </>
   );
 }

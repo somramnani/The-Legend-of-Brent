@@ -28,24 +28,26 @@ export default function MonsterCard() {
     attackPower: ""
   });
 
-  return (
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={values.img}
-          title={values.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h4" component="h4">
-            {values.name}
-          </Typography>
-          <Typography variant="body2" component="p" color="textSecondary">
-            Stats: Attack Speed: {values.attackSpeed}
-            Attack Power: {values.attackPower}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  );
+    return (
+      <Card className={classes.card}>
+        <CardActionArea>
+          <CardMedia
+              className={classes.media}
+              image={values.img}
+              title={values.title}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h4" component="h4">
+                {values.name}
+            </Typography> 
+            <Typography variant="body2" component="p" color="textSecondary">
+                Stats:
+                Attack Speed: {values.attackSpeed}
+                Attack Power: {values.attackPower}
+            </Typography>
+            <Button onClick={something.smallAttack} />
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    )
 }
