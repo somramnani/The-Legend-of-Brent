@@ -3,7 +3,7 @@ import { Grid, Container, Box }  from '@material-ui/core/'
 import MonsterCard from '../Components/MonsterCard'
 import players from '../data/Player.json'
 
-class CharSelect extends Component {
+class CharSelectScreen extends Component {
 
 state = {
   players
@@ -13,10 +13,7 @@ render() {
 
   return (
     <Container maxWidth="lg">
-      <Grid container spacing={5} 
-            direction="row" 
-            alignItems="center" 
-            justify="flex-end">
+      <Grid direction="row" alignItems="center" justify="flex-end">
         {this.state.players.map(Player => (
           <MonsterCard
             key={Player.id}
@@ -33,4 +30,4 @@ render() {
   }
 }
 
-export default CharSelect;
+export default CharSelectScreen;

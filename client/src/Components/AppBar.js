@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -17,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 }));
 // I left out the navigation features below, but they're easy enough to pop in when we have a site..
 // ...structure laid out.
-export default function TitleBar() {
+export default function ButtonAppBar() {
   const classes = useStyles();
 
   return (

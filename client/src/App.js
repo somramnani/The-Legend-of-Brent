@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import LogIn from './Screens/LogIn'
-import TitleBar from './Components/TitleBar'
-import CharSelect from './Screens/CharSelect';
+import { async } from 'rxjs/internal/scheduler/async';
 
-function App() {
-  return (
-    <>
-    <TitleBar />
-    <CharSelect />
-    </>
-  );
+class App extends Component {
+
+  render() {
+    return(
+      <LogIn />
+    )
+  }
 }
 
 export default App;
