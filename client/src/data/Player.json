@@ -1,44 +1,49 @@
-[
-    {
+[{
         "id": "1",
         "name": "Paladin",
-        "attackPower": "30",
-        "attackSpeed": "11",
+        "smallAttack": "30",
+        "bigAttack": "11",
+        "specialAttack": "80",
         "img": "src/images/Paladin.jpg"
     },
     {
         "id": "2",
         "name": "Knight",
-        "attackPower": "17",
-        "attackSpeed": "23",
+        "smallAttack": "17",
+        "bigAttack": "23",
+        "specialAttack": "80",
         "img": "src/images/Knight.jpg"
     },
     {
         "id": "3",
         "name": "Samurai",
-        "attackPower": "34",
-        "attackSpeed": "10",
+        "smallAttack": "34",
+        "bigAttack": "10",
+        "specialAttack": "80",
         "img": "src/images/Samurai.jpg"
     },
     {
         "id": "4",
         "name": "Ninja",
-        "attackPower": "15",
-        "attackSpeed": "33",
+        "smallAttack": "15",
+        "bigAttack": "33",
+        "specialAttack": "80",
         "img": "src/images/Ninja.jpg"
     },
     {
         "id": "5",
         "name": "Barbarian",
-        "attackPower": "46",
-        "attackSpeed": "10",
+        "smallAttack": "46",
+        "bigAttack": "10",
+        "specialAttack": "80",
         "img": "src/images/Barbarian.jpg"
     },
     {
         "id": "6",
         "name": "Viking",
-        "attackPower": "20",
-        "attackSpeed": "20",
+        "smallAttack": "20",
+        "bigAttack": "20",
+        "specialAttack": "80",
         "img": "src/images/Viking.jpg"
     }
 ]
