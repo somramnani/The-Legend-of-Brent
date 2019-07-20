@@ -17,10 +17,19 @@ db.once('open', () => {
     console.log('The RPG User Profile DB is connected')
   });
 
-const user = new UserProfile({ 
-    username: 'DirkDiggler696969', 
-    password: 'fellatio', 
-    email: 'chickslayer69@420lol.com' 
+app.post('/addUser', (req, res) => {
+    
+    const user = new UserProfile({
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email
+    })
+
+    user.save((err, user) => {
+        if(err) return console.error(err);
+        console.log(`${user} was added to the DB`);
+    })
+
 })
 
 app.get('/', (req, res) => {
