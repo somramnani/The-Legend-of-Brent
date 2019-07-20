@@ -1,15 +1,19 @@
 import React from "react";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
+
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { getThemeProps } from "@material-ui/styles";
 
 const useStyles = makeStyles(
   createStyles({
     card: {
-      maxWidth: 250,
+      width: 250,
       margin: 30
     },
     media: {
@@ -18,14 +22,14 @@ const useStyles = makeStyles(
   })
 );
 
-export default function MonsterCard() {
+export default function MonsterCard(props) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
-    name: "",
-    img: "",
+    name: props.name,
+    img: props.img,
     title: "",
-    attackSpeed: "",
-    attackPower: ""
+    attackSpeed: props.attackSpeed,
+    attackPower: props.attackPower
   });
 
   return (
@@ -37,12 +41,14 @@ export default function MonsterCard() {
           title={values.title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="h4">
+          <Typography gutterBottom variant="h5" component="h5">
             {values.name}
           </Typography>
           <Typography variant="body2" component="p" color="textSecondary">
-            Stats: Attack Speed: {values.attackSpeed}
-            Attack Power: {values.attackPower}
+            <Grid direction="column">
+              <Typography> Attack Speed: {values.attackSpeed}</Typography>
+              <Typography> Attack Power: {values.attackPower}</Typography>
+            </Grid>
           </Typography>
         </CardContent>
       </CardActionArea>

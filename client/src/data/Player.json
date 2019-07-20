@@ -11,14 +11,14 @@
     "name": "Knight",
     "attackPower": "17",
     "attackSpeed": "23",
-    "img": "src/images/Knight.jpg"
+    "img": "/static/media/Knight.fdee044a.jpg"
   },
   {
     "id": "3",
     "name": "Samurai",
     "attackPower": "34",
     "attackSpeed": "10",
-    "img": "src/images/Samurai.jpg"
+    "img": "/static/media/samurai.2a2c0495.jpg"
   },
   {
     "id": "4",
@@ -42,7 +42,7 @@
     "img": "src/images/Viking.jpg"
   },
   {
-  	"id": "7",
+    "id": "7",
     "name": "Viking",
     "attackPower": "20",
     "attackSpeed": "20",
