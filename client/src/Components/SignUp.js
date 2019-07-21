@@ -8,7 +8,6 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
 import axios from 'axios';
-import ReactRouter from 'react-router-dom'
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
@@ -29,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function LoginPanel() {
+export default function signUpPanel() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '',
@@ -55,9 +54,10 @@ export default function LoginPanel() {
 
   return(
   <>
-    <Container  maxWidth="sm">
-    <h1 id = "welcometext">Welcome To The Curse of Brent</h1>
-    <div className =  "login-box">
+    <Container maxWidth="sm">
+    <Typography variant="h1" component="h1">
+    Welcome To The Curse of Brent
+    </Typography>
       <Paper className={classes.panel}>
         <Box >
           <Typography variant="h6" component="h6">
@@ -93,16 +93,7 @@ export default function LoginPanel() {
             variant="outlined"
           />
         </Box>
-
-        <Box component="span">
-          <Button 
-            variant="contained" 
-            color = "primary"
-            id = "loginButton"
-            className={classes.button}>
-            Login
-          </Button>
-
+        <Box>
           <Button 
             variant="contained" 
             color="secondary" 
@@ -112,7 +103,6 @@ export default function LoginPanel() {
           </Button>
         </Box>
       </Paper>
-      </div>
     </Container>
   </>
   )

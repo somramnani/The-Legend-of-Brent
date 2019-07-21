@@ -8,7 +8,6 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
 import axios from 'axios';
-import ReactRouter from 'react-router-dom'
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
@@ -33,8 +32,7 @@ export default function LoginPanel() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '',
-    password: '',
-    email: ''
+    password: ''
   })
 
   const changeHandler = (name, password, email) => event => {
@@ -45,23 +43,21 @@ export default function LoginPanel() {
       });
   }
 
-  const signUp = event => {
-    axios.post('/addUser', {
+  const logIn = event => {
+    axios.post('/login', {
       username: values.name,
-      password: values.password,
-      email: values.email
+      password: values.password
     })
   }
 
   return(
   <>
-    <Container  maxWidth="sm">
-    <h1 id = "welcometext">Welcome To The Curse of Brent</h1>
-    <div className =  "login-box">
+    <Container maxWidth="sm">
+    <Typography>Welcome To The Curse Of Brent</Typography>
       <Paper className={classes.panel}>
         <Box >
           <Typography variant="h6" component="h6">
-            Sign up or Log in
+            Log In Below
           </Typography>
           <TextField
             id="outlined-name"
@@ -82,18 +78,7 @@ export default function LoginPanel() {
             margin="normal"
             variant="outlined"
           />
-          <TextField
-            id="outlined-email-input"
-            label="E-mail"
-            className={classes.textField}
-            onChange={changeHandler('email')}
-            type="email"
-            value={values.email}
-            margin="normal"
-            variant="outlined"
-          />
         </Box>
-
         <Box component="span">
           <Button 
             variant="contained" 
@@ -102,17 +87,8 @@ export default function LoginPanel() {
             className={classes.button}>
             Login
           </Button>
-
-          <Button 
-            variant="contained" 
-            color="secondary" 
-            className={classes.button}
-            onClick={signUp()}>
-            Sign-Up
-          </Button>
         </Box>
       </Paper>
-      </div>
     </Container>
   </>
   )
