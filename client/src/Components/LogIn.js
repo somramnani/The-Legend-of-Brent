@@ -6,9 +6,8 @@ import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-// import { __values } from 'tslib';
+import { __values } from 'tslib';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
@@ -33,21 +32,8 @@ export default function LoginPanel() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '',
-    password: '',
-    email: ''
+    password: ''
   })
-
-const Battle = () => {
-  return <h2>Battle Screen</h2>
-}
-
-const Login = () => {
-  return <h2>Login Screen</h2>
-}
-
-const CharSelect = () => {
-  return <h2>Char Select Screen</h2>
-}
 
   const changeHandler = (name, password, email) => event => {
     setValues({...values, 
@@ -57,35 +43,21 @@ const CharSelect = () => {
       });
   }
 
-  const signUp = event => {
-    axios.post('/addUser', {
+  const logIn = event => {
+    axios.post('/login', {
       username: values.name,
-      password: values.password,
-      email: values.email
-    }).then(response => {
-      console.log(response)
-      if(response.data) {
-        console.log('sign in successful')
-        this.setState({
-          redirectTo: '/login'
-        })
-      } else {
-        console.log('there was an error during sign up')
-      }
-    }).catch(error => {
-      console.log('server sign-up error: ')
-      console.error(error)
+      password: values.password
     })
   }
 
   return(
   <>
     <Container maxWidth="sm">
-    <Typography variant="h1" component="h1">Welcome To The Curse of Brent</Typography>
+    <Typography>Welcome To The Curse Of Brent</Typography>
       <Paper className={classes.panel}>
-        <Box>
+        <Box >
           <Typography variant="h6" component="h6">
-            Sign up or Log in
+            Log In Below
           </Typography>
           <TextField
             id="outlined-name"
@@ -106,33 +78,14 @@ const CharSelect = () => {
             margin="normal"
             variant="outlined"
           />
-          <TextField
-            id="outlined-email-input"
-            label="E-mail"
-            className={classes.textField}
-            onChange={changeHandler('email')}
-            type="email"
-            value={values.email}
-            margin="normal"
-            variant="outlined"
-          />
         </Box>
-
         <Box component="span">
           <Button 
             variant="contained" 
-            color="primary"
-            id="loginButton"
+            color = "primary"
+            id = "loginButton"
             className={classes.button}>
             Login
-          </Button>
-
-          <Button 
-            variant="contained" 
-            color="secondary" 
-            className={classes.button}
-            onClick={signUp()}>
-            Sign-Up
           </Button>
         </Box>
       </Paper>
