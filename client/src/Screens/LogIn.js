@@ -8,7 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
 import axios from 'axios';
-import BrowserRouter from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
@@ -36,6 +36,18 @@ export default function LoginPanel() {
     password: '',
     email: ''
   })
+
+const Battle = () => {
+  return <h2>Battle Screen</h2>
+}
+
+const Login = () => {
+  return <h2>Login Screen</h2>
+}
+
+const CharSelect = () => {
+  return <h2>Char Select Screen</h2>
+}
 
   const changeHandler = (name, password, email) => event => {
     setValues({...values, 
