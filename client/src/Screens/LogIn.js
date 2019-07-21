@@ -62,16 +62,28 @@ const CharSelect = () => {
       username: values.name,
       password: values.password,
       email: values.email
+    }).then(response => {
+      console.log(response)
+      if(response.data) {
+        console.log('sign in successful')
+        this.setState({
+          redirectTo: '/login'
+        })
+      } else {
+        console.log('there was an error during sign up')
+      }
+    }).catch(error => {
+      console.log('server sign-up error: ')
+      console.error(error)
     })
   }
 
   return(
   <>
-    <Container  maxWidth="sm">
-    <h1 id = "welcometext">Welcome To The Curse of Brent</h1>
-    <div className =  "login-box">
+    <Container maxWidth="sm">
+    <Typography variant="h1" component="h1">Welcome To The Curse of Brent</Typography>
       <Paper className={classes.panel}>
-        <Box >
+        <Box>
           <Typography variant="h6" component="h6">
             Sign up or Log in
           </Typography>
@@ -109,8 +121,8 @@ const CharSelect = () => {
         <Box component="span">
           <Button 
             variant="contained" 
-            color = "primary"
-            id = "loginButton"
+            color="primary"
+            id="loginButton"
             className={classes.button}>
             Login
           </Button>
@@ -124,7 +136,6 @@ const CharSelect = () => {
           </Button>
         </Box>
       </Paper>
-      </div>
     </Container>
   </>
   )
