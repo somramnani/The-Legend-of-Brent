@@ -11,12 +11,12 @@ class BattleScreen extends Component {
 
     bigAttack() {
         console.log("big attack was clicked");
-
     }
 
     specialAttack() {
+        console.log('special attack was clicked');
+    }
 
-    };
     render() {
 
         return (
@@ -25,29 +25,29 @@ class BattleScreen extends Component {
                     <Box>
                         <MonsterCard>
                             <Player>
-                                <Button onClick={this.smallAttack}>
+                                <Button onClick={this.smallAttack()}>
                                     Small Attack
                                 </Button>
         
-                                <Button onClick={this.bigAttack}>
+                                <Button onClick={this.bigAttack()}>
                                     Big Attack
                                 </Button>
 
-                                <Button onClick={this.specialAttack}>
+                                <Button onClick={this.specialAttack()}>
                                     Special Attack
                                 </Button>
                             </Player>
                         {/* player is above, monster is below */}
                             <Monster>
-                                <Button onClick={this.smallAttack}>
+                                <Button onClick={this.smallAttack()}>
                                     Small Attack
                                 </Button>
         
-                                <Button onClick={this.bigAttack}>
+                                <Button onClick={this.bigAttack()}>
                                  Big Attack
                                 </Button>
 
-                                <Button onClick={this.specialAttack}>
+                                <Button onClick={this.specialAttack()}>
                                     Special Attack
                                 </Button>
                             </Monster>
