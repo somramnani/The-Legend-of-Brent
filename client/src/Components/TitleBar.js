@@ -13,7 +13,9 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+
   },
+
 }));
 // I left out the navigation features below, but they're easy enough to pop in when we have a site..
 // ...structure laid out.

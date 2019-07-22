@@ -33,36 +33,33 @@ export default function MonsterCard(props) {
     smallAttack: props.smallAttack,
     bigAttack: props.bigAttack,
     specialAttack: props.specialAttack
-
   });
 
   return (
     <>
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={values.img}
-          name={values.name}
-          health={values.health}
-        />
-        <CardContent>
-
-          <Typography gutterBottom variant="h5" component="h5">
-            {values.name}
-          </Typography>
-          <Typography variant="body2" component="p" color="textSecondary">
-            <Grid direction="column">
-              <Typography> Health: {values.health}</Typography>
-              <Typography>Small Attack: {values.smallAttack}</Typography>
-              <Typography>Big Attack: {values.bigAttack}</Typography>
-              <Typography> Special Attack: {values.specialAttack}</Typography>
-            </Grid>
-
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+      <Card className={classes.card}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={values.img}
+            name={values.name}
+            health={values.health}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h5">
+              {values.name}
+            </Typography>
+            <Typography variant="body2" component="p" color="textSecondary">
+              <Grid direction="column">
+                <Typography> Health: {values.health}</Typography>
+                <Typography>Small Attack: {values.smallAttack}</Typography>
+                <Typography>Big Attack: {values.bigAttack}</Typography>
+                <Typography> Special Attack: {values.specialAttack}</Typography>
+              </Grid>
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </>
   );
 }
