@@ -33,7 +33,7 @@ export default function signUpPanel() {
   const [values, setValues] = React.useState({
     name: '',
     password: '',
-    email: ''
+    email: '',
   })
 
   const changeHandler = (name, password, email) => event => {
@@ -49,6 +49,19 @@ export default function signUpPanel() {
       username: values.name,
       password: values.password,
       email: values.email
+    }).then(res => {
+      console.log(res)
+      if(res.data) {
+        console.log('signup was successful')
+          setValues({
+            redirectTo: '/login'
+          })
+      } else {
+        console.error('signup error')
+      }
+    }).catch(error => {
+      console.log('sign up server error: ')
+      console.error(error);
     })
   }
 

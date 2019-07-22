@@ -35,18 +35,21 @@ export default function LoginPanel() {
     password: ''
   })
 
-  const changeHandler = (name, password, email) => event => {
+  const changeHandler = (name, password) => event => {
     setValues({...values, 
       [name]: event.target.value, 
       [password]: event.target.value,
-      [email]: event.target.value
       });
   }
 
   const logIn = event => {
-    axios.post('/login', {
+    axios.post('/user/login', {
       username: values.name,
       password: values.password
+    }).then(response => {
+        console.log('login response: ')
+        console.log(response)
+        
     })
   }
 
