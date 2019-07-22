@@ -1,61 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from "react-router-dom";
 
-//Below are the classes I used in this form - you guys can adjust styling as necessary,
-//I just went with the stock material-ui component styling
-const useStyles = makeStyles(theme => ({
-  button: {
-    margin: theme.spacing(1),
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  panel: {
-    margin: theme.spacing(3),
-    padding: theme.spacing(1),
-  },
-  container: {
-    background: "#777"
-  }
-}));
+class SignUp extends Component {
 
-export default function signUpPanel() {
-  const classes = useStyles();
-  const [values, setValues] = React.useState({
+  state = {
     name: '',
     password: '',
     email: '',
-  })
+  }
 
-  const changeHandler = (name, password, email) => event => {
-    setValues({...values, 
-      [name]: event.target.value, 
-      [password]: event.target.value,
-      [email]: event.target.value
+  changeHandler = event => {
+    this.setState({
+      [event.target.name]: event.target.value, 
+      [event.target.password]: event.target.value,
+      [event.target.email]: event.target.value
       });
   }
 
-  const signUp = event => {
-    axios.post('/addUser', {
-      username: values.name,
-      password: values.password,
-      email: values.email
+  signUp = event => {
+    event.preventDefault();
+    axios.post('/user/signup', {
+      username: this.state.name,
+      password: this.state.password,
+      email: this.state.email
     }).then(res => {
       console.log(res)
       if(res.data) {
-        console.log('signup was successful')
-          setValues({
-            redirectTo: '/login'
-          })
+        alert(`Your account was created! ${res.data.username}`)
+        console.log(res.data)
+        // add a link/route back to the login page here
       } else {
         console.error('signup error')
       }
@@ -65,43 +46,41 @@ export default function signUpPanel() {
     })
   }
 
-  return(
-  <>
+render() {
+  return (
+    <>
     <Container maxWidth="sm">
     <Typography variant="h1" component="h1">
     Welcome To The Curse of Brent
     </Typography>
-      <Paper className={classes.panel}>
+      <Paper>
         <Box >
           <Typography variant="h6" component="h6">
             Sign up or Log in
           </Typography>
           <TextField
             id="outlined-name"
+            name="name"
             label="Name"
-            className={classes.textField}
-            value={values.name}
-            onChange={changeHandler('name')}
+            onChange={this.changeHandler}
             margin="normal"
             variant="outlined"
           />
           <TextField
             id="outlined-password-input"
             label="Password"
-            className={classes.textField}
-            onChange={changeHandler('password')}
+            name="password"
+            onChange={this.changeHandler}
             type="password"
-            value={values.password}
             margin="normal"
             variant="outlined"
           />
           <TextField
             id="outlined-email-input"
             label="E-mail"
-            className={classes.textField}
-            onChange={changeHandler('email')}
+            name="email"
+            onChange={this.changeHandler}
             type="email"
-            value={values.email}
             margin="normal"
             variant="outlined"
           />
@@ -110,8 +89,7 @@ export default function signUpPanel() {
           <Button 
             variant="contained" 
             color="secondary" 
-            className={classes.button}
-            onClick={signUp()}>
+            onClick={this.signUp}>
             Sign-Up
           </Button>
         </Box>
@@ -120,3 +98,6 @@ export default function signUpPanel() {
   </>
   )
 }
+}
+
+export default SignUp;

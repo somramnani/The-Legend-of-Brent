@@ -74,53 +74,47 @@ export default function LoginPanel() {
       });
   };
 
-  document.body.style.backgroundImage = "url('/images/skyrim.jpg')";
-  document.body.style.backgroundRepeat = "repeat-y";
-  document.body.style.backgroundSize = "45% 100%";
-  document.body.style.backgroundColor = "#f5f5f5";
 
-  return (
-    <>
-      <Container maxWidth="sm">
-        <Typography variant="h1" component="h1">
-          Welcome To The Curse of Brent
-        </Typography>
-        <Paper className={classes.panel}>
-          <Box>
-            <Typography variant="h6" component="h6">
-              Sign up or Log in
-            </Typography>
-            <TextField
-              id="outlined-name"
-              label="Name"
-              className={classes.textField}
-              value={values.name}
-              onChange={changeHandler("name")}
-              margin="normal"
-              variant="outlined"
-            />
-            <TextField
-              id="outlined-password-input"
-              label="Password"
-              className={classes.textField}
-              onChange={changeHandler("password")}
-              type="password"
-              value={values.password}
-              margin="normal"
-              variant="outlined"
-            />
-            <TextField
-              id="outlined-email-input"
-              label="E-mail"
-              className={classes.textField}
-              onChange={changeHandler("email")}
-              type="email"
-              value={values.email}
-              margin="normal"
-              variant="outlined"
-            />
-          </Box>
 
+  return(
+  <>
+    <Container maxWidth="sm">
+    <Typography variant="h4" component="h4">Welcome To The Curse of Brent</Typography>
+      <Paper className={classes.panel}>
+        <Box>
+          <Typography variant="h6" component="h6">
+            Sign up or Log in
+          </Typography>
+          <TextField
+            id="outlined-name"
+            label="Name"
+            className={classes.textField}
+            value={values.name}
+            onChange={changeHandler('name')}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-password-input"
+            label="Password"
+            className={classes.textField}
+            onChange={changeHandler('password')}
+            type="password"
+            value={values.password}
+            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            id="outlined-email-input"
+            label="E-mail"
+            className={classes.textField}
+            onChange={changeHandler('email')}
+            type="email"
+            value={values.email}
+            margin="normal"
+            variant="outlined"
+          />
+        </Box>
           <Box component="span">
             <Button
               variant="contained"
@@ -130,7 +124,6 @@ export default function LoginPanel() {
             >
               Login
             </Button>
-
             <Button
               variant="contained"
               color="secondary"

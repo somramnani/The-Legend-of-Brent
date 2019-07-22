@@ -1,17 +1,30 @@
 import React from 'react';
-import LogIn from './Screens/LogIn'
-import TitleBar from './Components/TitleBar'
+import LogIn from './Components/LogIn';
+import SignUp from './Components/SignUp';
+import TitleBar from './Components/TitleBar';
 import CharSelect from './Screens/CharSelect';
+import AuthHelperMethods from './Components/_AuthHelper';
+import withAuth from './Components/withAuth';
 
-function App() {
+class App extends React.Component {
 
-  return (
-    <>
-    <TitleBar />
-     
-      <LogIn />
-    </>
-  );
+  state = {
+    signedIn: false
+  }
+
+Auth = new AuthHelperMethods();
+  _handleLogout = () => {
+    this.props.history.replace('/user/login');
+  }
+
+  render() {
+    return (
+      <>
+      <TitleBar />
+        <SignUp />
+      </>
+    );
+  }
 }
 
 export default App;
