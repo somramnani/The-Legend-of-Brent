@@ -17,7 +17,7 @@ const useStyles = makeStyles(
       margin: 30
     },
     media: {
-      height: 200
+      height: 350
     }
   })
 );
@@ -43,7 +43,7 @@ export default function MonsterCard(props) {
             className={classes.media}
             image={values.img}
             name={values.name}
-            health={values.health}
+        
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h5">
