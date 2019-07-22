@@ -28,8 +28,9 @@ export default function MonsterCard(props) {
     name: props.name,
     img: props.img,
     title: "",
-    attackSpeed: props.attackSpeed,
-    attackPower: props.attackPower
+    health: props.health,
+    smallAttack: props.smallAttack,
+    specialAttack: props.specialAttack
   });
 
   return (
@@ -46,8 +47,9 @@ export default function MonsterCard(props) {
           </Typography>
           <Typography variant="body2" component="p" color="textSecondary">
             <Grid direction="column">
-              <Typography> Attack Speed: {values.attackSpeed}</Typography>
-              <Typography> Attack Power: {values.attackPower}</Typography>
+              <Typography> Health: {values.health}</Typography>
+              <Typography>Small Attack: {values.smallAttack}</Typography>
+              <Typography> Special Attack: {values.specialAttack}</Typography>
             </Grid>
           </Typography>
         </CardContent>
