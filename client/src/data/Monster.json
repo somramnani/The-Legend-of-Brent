@@ -1,52 +1,53 @@
-[{
-        "id": "1",
-        "name": "Demon Lord",
-        "health": "250",
-        "smallAttack": "10",
-        "bigAttack": "25",
-        "specialAttack": "80",
-        "img": "src/images/Demon_Lord.jpg"
-    },
-    {
-        "id": "2",
-        "name": "Demon Soldier",
-        "health": "250",
-        "smallAttack": "9",
-        "bigAttack": "19",
-        "specialAttack": "80",
-        "img": "src/images/Demon_Soldier.jpg"
-    },
-    {
-        "id": "3",
-        "name": "Oni Lord",
-        "health": "250",
-        "smallAttack": "9",
-        "bigAttack": "28",
-        "specialAttack": "80",
-        "img": "src/images/Oni_Lord.png"
-    },
-    {
-        "id": "4",
-        "name": "Oni Soldier",
-        "health": "250",
-        "smallAttack": "12",
-        "bigAttack": "30",
-        "img": "src/images/Oni_Soldier.jpg"
-    },
-    {
-        "id": "5",
-        "name": "Fiend Lord",
-        "health": "250",
-        "smallAttack": "9",
-        "bigAttack": "40",
-        "img": "src/images/Fiend_Lord.jpg"
-    },
-    {
-        "id": "6",
-        "name": "Fiend Soldier",
-        "health": "250",
-        "smallAttack": "18",
-        "bigAttack": "19",
-        "img": "src/images/Fiend_Soldier.jpg"
-    }
+[
+  {
+    "id": "1",
+    "name": "Demon Lord",
+    "health": "250",
+    "smallAttack": "10",
+    "bigAttack": "25",
+    "specialAttack": "80",
+    "img": "images/Demon_Lord.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Demon Soldier",
+    "health": "250",
+    "smallAttack": "9",
+    "bigAttack": "19",
+    "specialAttack": "80",
+    "img": "images/Demon_Soldier.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Oni Lord",
+    "health": "250",
+    "smallAttack": "9",
+    "bigAttack": "28",
+    "specialAttack": "80",
+    "img": "images/Oni_Lord.png"
+  },
+  {
+    "id": "4",
+    "name": "Oni Soldier",
+    "health": "250",
+    "smallAttack": "12",
+    "bigAttack": "30",
+    "img": "images/Oni_Soldier.jpg"
+  },
+  {
+    "id": "5",
+    "name": "Fiend Lord",
+    "health": "250",
+    "smallAttack": "9",
+    "bigAttack": "40",
+    "img": "images/Fiend_Lord.jpg"
+  },
+  {
+    "id": "6",
+    "name": "Fiend Soldier",
+    "health": "250",
+    "smallAttack": "18",
+    "bigAttack": "19",
+    "img": "images/Fiend_Soldier.jpg"
+  }
 ]
