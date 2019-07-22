@@ -6,9 +6,8 @@ import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-// import { __values } from 'tslib';
+import { __values } from 'tslib';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
@@ -29,12 +28,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function LoginPanel() {
+export default function signUpPanel() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '',
     password: '',
-    email: ''
+    email: '',
   })
 
   const changeHandler = (name, password, email) => event => {
@@ -50,26 +49,30 @@ export default function LoginPanel() {
       username: values.name,
       password: values.password,
       email: values.email
-    }).then(response => {
-      console.log(response)
-      if(response.data) {
-        console.log('sign in successful')
-        return <Redirect to="/" />
+    }).then(res => {
+      console.log(res)
+      if(res.data) {
+        console.log('signup was successful')
+          setValues({
+            redirectTo: '/login'
+          })
       } else {
-        console.log('there was an error during sign up')
+        console.error('signup error')
       }
     }).catch(error => {
-      console.log('server sign-up error: ')
-      console.error(error)
+      console.log('sign up server error: ')
+      console.error(error);
     })
   }
 
   return(
   <>
     <Container maxWidth="sm">
-    <Typography variant="h1" component="h1">Welcome To The Curse of Brent</Typography>
+    <Typography variant="h1" component="h1">
+    Welcome To The Curse of Brent
+    </Typography>
       <Paper className={classes.panel}>
-        <Box>
+        <Box >
           <Typography variant="h6" component="h6">
             Sign up or Log in
           </Typography>
@@ -103,16 +106,7 @@ export default function LoginPanel() {
             variant="outlined"
           />
         </Box>
-
-        <Box component="span">
-          <Button 
-            variant="contained" 
-            color="primary"
-            id="loginButton"
-            className={classes.button}>
-            Login
-          </Button>
-
+        <Box>
           <Button 
             variant="contained" 
             color="secondary" 

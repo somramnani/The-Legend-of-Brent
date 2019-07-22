@@ -27,22 +27,27 @@ export default function MonsterCard(props) {
   const [values, setValues] = React.useState({
     name: props.name,
     img: props.img,
+
     title: "",
     health: props.health,
     smallAttack: props.smallAttack,
     bigAttack: props.bigAttack,
     specialAttack: props.specialAttack
+
   });
 
   return (
+    <>
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={values.img}
-          title={values.title}
+          name={values.name}
+          health={values.health}
         />
         <CardContent>
+
           <Typography gutterBottom variant="h5" component="h5">
             {values.name}
           </Typography>
@@ -53,9 +58,11 @@ export default function MonsterCard(props) {
               <Typography>Big Attack: {values.bigAttack}</Typography>
               <Typography> Special Attack: {values.specialAttack}</Typography>
             </Grid>
+
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
+    </>
   );
 }
