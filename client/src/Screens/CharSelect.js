@@ -14,8 +14,12 @@ class CharSelect extends Component {
       paddingTop: "15px"
     };
 
+    document.body.style.backgroundColor = "#f5f5f5";
+
     return (
-      <Container maxWidth="lg">
+      <Container 
+        maxWidth="lg"
+      >
         <Grid
           style={style1}
           direction="row"
@@ -30,8 +34,12 @@ class CharSelect extends Component {
               id={Player.id}
               name={Player.name}
               img={Player.img}
-              bigAttack={Player.smallAttack}
-              smallAttack={Player.bigAttack}
+
+              health = {Player.health}
+              smallAttack={Player.smallAttack}
+              bigAttack = {Player.bigAttack}
+              specialAttack={Player.specialAttack}
+
             />
           ))}
         </Grid>
