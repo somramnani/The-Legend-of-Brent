@@ -1,49 +1,73 @@
 [{
         "id": "1",
-        "name": "Paladin",
-        "smallAttack": "30",
-        "bigAttack": "11",
-        "specialAttack": "80",
-        "img": "src/images/Paladin.jpg"
+        "name": "Veteran Paladin",
+        "health": "500",
+        "smallAttack": "11",
+        "bigAttack": "20",
+        "specialAttack": "170",
+        "img": "client/src/Images/Paladin.jpg"
     },
     {
         "id": "2",
         "name": "Knight",
+        "health": "500",
         "smallAttack": "17",
         "bigAttack": "23",
         "specialAttack": "80",
-        "img": "src/images/Knight.jpg"
+        "img": "client/src/Images/Knight.jpg"
     },
     {
         "id": "3",
-        "name": "Samurai",
-        "smallAttack": "34",
-        "bigAttack": "10",
+        "name": "Master Samurai",
+        "health": "500",
+        "smallAttack": "13",
+        "bigAttack": "34",
         "specialAttack": "80",
-        "img": "src/images/Samurai.jpg"
+        "img": "client/src/Images/Samurai.jpg"
     },
     {
         "id": "4",
         "name": "Ninja",
+        "health": "500",
         "smallAttack": "15",
         "bigAttack": "33",
         "specialAttack": "80",
-        "img": "src/images/Ninja.jpg"
+        "img": "client/src/Images/Ninja.jpg"
     },
     {
         "id": "5",
-        "name": "Barbarian",
-        "smallAttack": "46",
-        "bigAttack": "10",
+        "name": "Barbarian Berserker",
+        "health": "500",
+        "smallAttack": "14",
+        "bigAttack": "46",
         "specialAttack": "80",
-        "img": "src/images/Barbarian.jpg"
+        "img": "client/src/Images/Barbarian.jpg"
     },
     {
         "id": "6",
         "name": "Viking",
+        "health": "500",
         "smallAttack": "20",
         "bigAttack": "20",
         "specialAttack": "80",
-        "img": "src/images/Viking.jpg"
+        "img": "client/src/Images/Viking.jpg"
+    },
+    {
+        "id": "7",
+        "name": "Grand Sorcerer",
+        "health": "500",
+        "smallAttack": "20",
+        "bigAttack": "20",
+        "specialAttack": "80",
+        "img": "client/src/Images/Grand Sorcerer.jpg"
+    },
+    {
+        "id": "8",
+        "name": "Mage",
+        "health": "500",
+        "smallAttack": "20",
+        "bigAttack": "20",
+        "specialAttack": "80",
+        "img": "client/src/Images/Mage.jpg"
     }
 ]

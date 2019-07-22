@@ -4,10 +4,12 @@ import TitleBar from './Components/TitleBar'
 import CharSelect from './Screens/CharSelect';
 
 function App() {
+
   return (
     <>
     <TitleBar />
-    <LogIn />
+      <LogIn />
+      <CharSelect />
     </>
   );
 }
