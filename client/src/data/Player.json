@@ -23,7 +23,7 @@
         "smallAttack": "13",
         "bigAttack": "34",
         "specialAttack": "80",
-        "img": "client/src/Images/Samurai.jpg"
+        "img": "client/src/images/Samurai.jpg"
     },
     {
         "id": "4",
