@@ -33,6 +33,7 @@ class CharSelect extends Component {
 
               health = {Player.health}
               smallAttack={Player.smallAttack}
+              bigAttack = {Player.bigAttack}
               specialAttack={Player.specialAttack}
 
             />

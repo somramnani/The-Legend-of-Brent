@@ -31,6 +31,7 @@ export default function MonsterCard(props) {
     title: "",
     health: props.health,
     smallAttack: props.smallAttack,
+    bigAttack: props.bigAttack,
     specialAttack: props.specialAttack
 
   });
@@ -54,6 +55,7 @@ export default function MonsterCard(props) {
             <Grid direction="column">
               <Typography> Health: {values.health}</Typography>
               <Typography>Small Attack: {values.smallAttack}</Typography>
+              <Typography>Big Attack: {values.bigAttack}</Typography>
               <Typography> Special Attack: {values.specialAttack}</Typography>
             </Grid>
 
