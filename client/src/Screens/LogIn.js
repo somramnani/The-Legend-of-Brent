@@ -67,7 +67,7 @@ export default function LoginPanel() {
   return(
   <>
     <Container maxWidth="sm">
-    <Typography variant="h1" component="h1">Welcome To The Curse of Brent</Typography>
+    <Typography variant="h4" component="h4">Welcome To The Curse of Brent</Typography>
       <Paper className={classes.panel}>
         <Box>
           <Typography variant="h6" component="h6">
