@@ -30,9 +30,11 @@ class CharSelect extends Component {
               id={Player.id}
               name={Player.name}
               img={Player.img}
+
               health = {Player.health}
               smallAttack={Player.smallAttack}
               specialAttack={Player.specialAttack}
+
             />
           ))}
         </Grid>

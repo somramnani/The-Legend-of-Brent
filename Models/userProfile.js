@@ -1,4 +1,5 @@
 // This will be the user profile model
+const bcrypt = require('bcryptjs')
 const mongoose = require('mongoose');
 
 const userProfileSchema = new mongoose.Schema({
@@ -27,6 +28,24 @@ const userProfileSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    methods: {
+        checkPassword: function(inputPassword) { 
+          return bcrypt.compareSync(inputPassword, this.password)
+        },
+        hashPassword: plainTextPassword => {
+          return bcrypt.hashSync(plainTextPassword, 10)
+        },
+        pre: ('save', function(next) {
+          if(!this.password) {
+            console.log('Models/userProfile.js ===== NO PASSWORD PROVIDED ======')
+            next();
+          } else {
+            console.log('Models/userProfile.js hashPassword in pre-save')
+              this.password = this.hashPassword(this.password)
+            next();
+          }
+        })
+    }
 })
 
 const UserProfile = mongoose.model("userProfile", userProfileSchema)

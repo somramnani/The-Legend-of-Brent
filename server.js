@@ -3,30 +3,54 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3001;
 const mongoose = require('mongoose');
-const UserProfile = require('./client/src/Models/userProfile')
+const UserProfile = require('./Models/userProfile')
+const session = require('express-session')
+const passport = require('passport')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  session({
+  secret: 'som-is-a-vampire-haha-jk-but-not-really',
+  resave: false,
+  saveUninitialized: false
+  })
+)
 
-mongoose.connect('mongodb://localhost:27017/rpg', {useNewUrlParser: true});
+app.use(passport.initialize())
+app.use(passport.session())
+
+
+mongoose.connect('mongodb://localhost:27017/rpg', {
+  useNewUrlParser: true
+});
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', () => {
-    console.log('The RPG User Profile DB is connected')
-  });
+  console.log('The RPG User Profile DB is connected')
+});
 
-const user = new UserProfile({ 
-    username: 'DirkDiggler696969', 
-    password: 'fellatio', 
-    email: 'chickslayer69@420lol.com' 
+app.post('/addUser', (req, res) => {
+  const newUser = new UserProfile({
+    username: req.body.username,
+    password: req.body.password,
+    email: req.body.email
+  })
+
+  newUser.save((err, user) => {
+    if (err) return console.error(err);
+    console.log(`${user} was added to the DB`);
+  })
 })
 
 app.get('/', (req, res) => {
-    res.send({test: 'if you can see this, things are working.'})
+  res.send({
+    test: 'if you can see this, things are working.'
+  })
 })
 
 app.listen(port, () => {
-    console.log(`The app is now listening on port ${port}`)
+  console.log(`The app is now listening on port ${port}`)
 });
