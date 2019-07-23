@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-
 import { Grid, Container } from "@material-ui/core/";
-
+import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import players from "../data/Player.json";
 import { bindCallback } from "rxjs";
