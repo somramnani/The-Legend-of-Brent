@@ -32,6 +32,7 @@
     "health": "250",
     "smallAttack": "12",
     "bigAttack": "30",
+    "specialAttack": "80",
     "img": "images/OniSoldier.jpg"
   },
   {
@@ -40,6 +41,7 @@
     "health": "250",
     "smallAttack": "9",
     "bigAttack": "40",
+    "specialAttack": "80",
     "img": "images/FeindLord.jpg"
   },
   {
@@ -48,6 +50,7 @@
     "health": "250",
     "smallAttack": "18",
     "bigAttack": "19",
+    "specialAttack": "80",
     "img": "images/FiendSoldier.jpg"
   }
 ]
