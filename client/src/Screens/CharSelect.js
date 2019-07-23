@@ -14,7 +14,10 @@ class CharSelect extends Component {
       paddingTop: "15px"
     };
 
-    document.body.style.backgroundColor = "#f5f5f5";
+    document.body.style.backgroundImage = "url(images/bluesky.jpg)";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.height = "100%";
 
     return (
       <Container maxWidth="lg">
@@ -28,7 +31,6 @@ class CharSelect extends Component {
         >
           {this.state.players.map(Player => (
             <MonsterCard
-              
               key={Player.id}
               id={Player.id}
               name={Player.name}
