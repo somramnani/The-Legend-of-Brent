@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button'
 import LogIn from './Components/LogIn';
@@ -6,6 +7,7 @@ import TitleBar from './Components/TitleBar';
 import CharSelect from './Screens/CharSelect';
 import AuthHelperMethods from './Components/_AuthHelper';
 import withAuth from './Components/withAuth';
+
 
 class App extends Component {
 
@@ -20,6 +22,7 @@ class App extends Component {
   render(props) {
     return (
       <>
+
       <TitleBar />
         <LogIn />
         <Button
@@ -29,6 +32,10 @@ class App extends Component {
         > 
           Log Out 
         </Button>
+
+        <TitleBar />
+        <MonsterScreen />
+
       </>
     );
   }
