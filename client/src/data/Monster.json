@@ -6,7 +6,7 @@
     "smallAttack": "10",
     "bigAttack": "25",
     "specialAttack": "80",
-    "img": "images/Demon_Lord.jpg"
+    "img": "images/DemonLord.jpg"
   },
   {
     "id": "2",
@@ -15,7 +15,7 @@
     "smallAttack": "9",
     "bigAttack": "19",
     "specialAttack": "80",
-    "img": "images/Demon_Soldier.jpg"
+    "img": "images/DemonSoldier.jpg"
   },
   {
     "id": "3",
@@ -24,7 +24,7 @@
     "smallAttack": "9",
     "bigAttack": "28",
     "specialAttack": "80",
-    "img": "images/Oni_Lord.png"
+    "img": "images/OniLord.png"
   },
   {
     "id": "4",
@@ -32,7 +32,7 @@
     "health": "250",
     "smallAttack": "12",
     "bigAttack": "30",
-    "img": "images/Oni_Soldier.jpg"
+    "img": "images/OniSoldier.jpg"
   },
   {
     "id": "5",
@@ -40,7 +40,7 @@
     "health": "250",
     "smallAttack": "9",
     "bigAttack": "40",
-    "img": "images/Fiend_Lord.jpg"
+    "img": "images/FeindLord.jpg"
   },
   {
     "id": "6",
@@ -48,6 +48,6 @@
     "health": "250",
     "smallAttack": "18",
     "bigAttack": "19",
-    "img": "images/Fiend_Soldier.jpg"
+    "img": "images/FiendSoldier.jpg"
   }
 ]
