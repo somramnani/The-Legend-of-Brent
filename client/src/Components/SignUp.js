@@ -51,7 +51,7 @@ render() {
     <>
     <Container maxWidth="sm">
     <Typography variant="h3" component="h3" align="center" style={{ margin: 20 }}>
-    Welcome To The Curse of Brent
+    Welcome To The Curse of Som
     </Typography>
       <Paper style={{ padding: 3}}>
         <Box>

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Button from '@material-ui/core/Button'
 import LogIn from './Components/LogIn';
 import SignUp from './Components/SignUp';
 import TitleBar from './Components/TitleBar';
@@ -6,26 +7,32 @@ import CharSelect from './Screens/CharSelect';
 import AuthHelperMethods from './Components/_AuthHelper';
 import withAuth from './Components/withAuth';
 
-class App extends React.Component {
-  state = {
-    signedIn: false
-  }
+class App extends Component {
 
   Auth = new AuthHelperMethods();
 
   _handleLogout = () => {
     this.Auth.logout()
-    this.props.history.replace('/user/login');
+    alert('you have successfully logged out')
+    // this.props.history.replace('/user/login');
   }
 
-  render() {
+  render(props) {
     return (
       <>
       <TitleBar />
-        <SignUp />
+        <LogIn />
+        <Button
+        onClick={this._handleLogout} 
+        variant="contained"
+        color="primary"
+        > 
+          Log Out 
+        </Button>
       </>
     );
   }
 }
 
 export default App;
+

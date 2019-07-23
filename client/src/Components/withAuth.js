@@ -12,7 +12,7 @@ export default function withAuth(AuthComponent) {
 
     componentDidMount() {
       if (!Auth.loggedIn()) {
-        //this.props.history.replace("/user/login");
+        // this.props.history.replace("/user/login");
       } else {
         /* Try to get confirmation message from the Auth helper. */
         try {
@@ -25,15 +25,14 @@ export default function withAuth(AuthComponent) {
           } catch (err) {
             console.log(err);
             Auth.logout();
-            //this.props.history.replace("/user/login");
+            // this.props.history.replace("/user/login");
         }
       }
     }
-
-    render() {
+    render() {  
       if (this.state.loaded === true) {
         if (this.state.confirm) {
-          console.log("confirmed!");
+          alert("confirmed!");
           return (
             <AuthComponent
               history={this.props.history}
@@ -41,7 +40,7 @@ export default function withAuth(AuthComponent) {
             />
           );
         } else {
-          console.log("not confirmed!");
+          alert("not confirmed!");
           return null;
         }
       } else {

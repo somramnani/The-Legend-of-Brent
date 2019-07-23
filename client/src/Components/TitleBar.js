@@ -31,7 +31,7 @@ export default function TitleBar() {
             <MenuIcon />
           </IconButton> */}
           <Typography variant="h6" className={classes.title}>
-            THE CURSE OF BRENT
+            THE CURSE OF SOM
           </Typography>
         </Toolbar>
       </AppBar>
