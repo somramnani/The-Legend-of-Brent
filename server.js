@@ -18,7 +18,7 @@ const jwtMW = exjwt({
 });
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-type, Authorization');
   next();
 });
 
@@ -35,57 +35,41 @@ db.once('open', () => {
 });
 
 //our route for signing up
-app.post('/user/signup', (req, res) => {
-
-  const newUser = new UserProfile({
-    username: req.body.username,
-    password: req.body.password,
-    email: req.body.email
-  })
-
-  const saltRounds = 10;
-  bcrypt.hash(newUser.password, saltRounds, function (err, hash) {
-    newUser.save({
-      username: newUser.username,
-      password: hash,
-      email: newUser.email
-    }).then((result) => {
-      console.log("User created: ", result);
-      res.json("user created!");
-    })
-  });
+app.post('/user/signup', async (req, res) => {
+  try { 
+    req.body.password = bcrypt.hashSync(req.body.password, 10)
+      const newUser = new UserProfile({
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email
+      })
+        const result = await newUser.save();
+        res.send(result)
+} catch(error) {
+    res.status(500).send(error)
+  }
 })
 
 //our route for logging in
-app.post('/user/login', (req, res) => {
-  const { username, password } = req.body;
-
-  UserProfile.findOne({ username: username })
-    .then((user) => {
-      console.log("User Found: ", user);
-      if (user === null) {
-        res.json(false);
-      }
-      bcrypt.compare(password, user.password, function (err, result) {
-        if (result === true) {
-          console.log("Authenticated!");
-          let token = jwt.sign({ username: user.username }, 'som may be a vampire', { expiresIn: 129600 });
-          res.json({
-            sucess: true,
-            err: null,
-            token
-          });
-        }
-        else {
-          console.log("Password and Hash are a mismatch!");
-          res.status(401).json({
-            sucess: false,
-            token: null,
-            err: 'Password and Hash are a mismatch!'
-          });
-        }
+app.post('/user/login', async (req, res) => {
+try {
+ const user = await UserProfile.findOne({ username: req.body.username }).exec()
+    if(!user) {
+      return res.status(400).send({ message: 'That username does not exist.'})
+    }
+    if(!bcrypt.compareSync(req.body.password, user.password)) {
+      return res.status(400).send({ message: 'That password is incorrect.'})
+    }
+    let token = jwt.sign({ username: user.username }, 'som may be a vampire', { expiresIn: 129600 }); // Signing the token
+      res.json({
+        success: true,
+        err: null,
+        token
       });
-    })
+    alert('You are now logged in as username: ' + user.username + '.')
+ } catch (error) {
+    res.status(500).send(error);
+ }
 });
 
 app.get('/', jwtMW, (req, res) => {

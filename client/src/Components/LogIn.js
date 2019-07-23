@@ -9,28 +9,28 @@ import AuthHelperMethods from '../Components/_AuthHelper'
 
 class LogIn extends Component {
 
+  Auth = new AuthHelperMethods();
+
   state = {
-    name: '',
+    username: '',
     password: ''
   }
 
-  Auth = new AuthHelperMethods();
-
   changeHandler = event => {
     this.setState({
-      [event.target.name]: event.target.value, 
-      [event.target.password]: event.target.value,
+      [event.target.name]: event.target.value,
+      [event.target.password]: event.target.value
       });
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
     this.Auth.login(this.state.username, this.state.password)
-      .then(res => {
-        if (res === false) {
+      .then(response => {
+        if (response === false) {
           return alert("Sorry those credentials don't exist!");
         }
-        this.props.history.replace("/");
+        alert('log in worked')
       })
       .catch(err => {
         alert(err);
@@ -41,7 +41,7 @@ render() {
   return(
   <>
     <Container maxWidth="sm">
-    <Typography>Welcome To The Curse Of Brent</Typography>
+    <Typography>Welcome To The Curse Of Som</Typography>
       <Paper>
         <Box >
           <Typography variant="h6" component="h6">

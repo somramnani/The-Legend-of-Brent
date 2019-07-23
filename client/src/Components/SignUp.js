@@ -34,7 +34,7 @@ class SignUp extends Component {
     }).then(res => {
       console.log(res)
       if(res.data) {
-        alert(`Your account was created! ${res.data.username}`)
+        alert(`Your account was created!`)
         console.log(res.data)
         // add a link/route back to the login page here
       } else {
@@ -50,11 +50,11 @@ render() {
   return (
     <>
     <Container maxWidth="sm">
-    <Typography variant="h1" component="h1">
-    Welcome To The Curse of Brent
+    <Typography variant="h3" component="h3" align="center" style={{ margin: 20 }}>
+    Welcome To The Curse of Som
     </Typography>
-      <Paper>
-        <Box >
+      <Paper style={{ padding: 3}}>
+        <Box>
           <Typography variant="h6" component="h6">
             Sign up or Log in
           </Typography>
