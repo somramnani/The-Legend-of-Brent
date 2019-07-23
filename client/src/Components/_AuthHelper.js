@@ -75,7 +75,7 @@ _checkStatus = (response) => {
         error.response = response
         throw error
     }
-}
+  }
 
 }
 
