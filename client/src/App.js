@@ -6,6 +6,7 @@ import CharSelect from "./Screens/CharSelect";
 import LoginScreen from "./Screens/LogIn";
 import AuthHelperMethods from "./Components/_AuthHelper";
 import withAuth from "./Components/withAuth";
+import Battle from "./Components/Battle";
 
 class App extends React.Component {
   state = {
@@ -21,7 +22,7 @@ class App extends React.Component {
     return (
       <>
         <TitleBar />
-        <LoginScreen />
+        <Battle />
       </>
     );
   }
