@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Container, Box } from "@material-ui/core/";
+import { Grid, Container, Box, Typography } from "@material-ui/core/";
 import MonsterCard from "../Components/MonsterCard";
 import players from "../data/Player.json";
 import { bindCallback } from "rxjs";
@@ -17,10 +17,22 @@ class CharSelect extends Component {
     document.body.style.backgroundImage = "url(images/bluesky.jpg)";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
-    document.body.style.height = "100%";
+    document.body.style.height = "120%";
 
     return (
       <Container maxWidth="lg">
+        <Typography
+          variant="h2"
+          component="h2"
+          style={{
+            fontFamily: "Merienda, cursive",
+            color: "white",
+            textAlign: "center",
+            padding: "20px"
+          }}
+        >
+          Pick Your Character
+        </Typography>
         <Grid
           style={style1}
           direction="row"
