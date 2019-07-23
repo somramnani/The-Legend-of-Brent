@@ -1,28 +1,34 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import { Typography } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
-import TextField from '@material-ui/core/TextField';
+import React from "react";
+import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import { Grid, Typography } from "@material-ui/core";
+
+import Paper from "@material-ui/core/Paper";
+import TextField from "@material-ui/core/TextField";
 // import { __values } from 'tslib';
-import axios from 'axios';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
+import axios from "axios";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 //Below are the classes I used in this form - you guys can adjust styling as necessary,
 //I just went with the stock material-ui component styling
 const useStyles = makeStyles(theme => ({
   button: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(1)
   },
   textField: {
     marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(1)
   },
   panel: {
     margin: theme.spacing(3),
-    padding: theme.spacing(1),
+    padding: theme.spacing(1)
   },
   container: {
     background: "#777"
@@ -32,37 +38,43 @@ const useStyles = makeStyles(theme => ({
 export default function LoginPanel() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
-    name: '',
-    password: '',
-    email: ''
-  })
+    name: "",
+    password: "",
+    email: ""
+  });
 
   const changeHandler = (name, password, email) => event => {
-    setValues({...values, 
-      [name]: event.target.value, 
+    setValues({
+      ...values,
+      [name]: event.target.value,
       [password]: event.target.value,
       [email]: event.target.value
-      });
-  }
+    });
+  };
 
   const signUp = event => {
-    axios.post('/addUser', {
-      username: values.name,
-      password: values.password,
-      email: values.email
-    }).then(response => {
-      console.log(response)
-      if(response.data) {
-        console.log('sign in successful')
-        return <Redirect to="/" />
-      } else {
-        console.log('there was an error during sign up')
-      }
-    }).catch(error => {
-      console.log('server sign-up error: ')
-      console.error(error)
-    })
-  }
+    axios
+      .post("/addUser", {
+        username: values.name,
+        password: values.password,
+        email: values.email
+      })
+      .then(response => {
+        console.log(response);
+        if (response.data) {
+          console.log("sign in successful");
+          return <Redirect to="/" />;
+        } else {
+          console.log("there was an error during sign up");
+        }
+      })
+      .catch(error => {
+        console.log("server sign-up error: ");
+        console.error(error);
+      });
+  };
+
+
 
   return(
   <>
@@ -103,26 +115,26 @@ export default function LoginPanel() {
             variant="outlined"
           />
         </Box>
-
-        <Box component="span">
-          <Button 
-            variant="contained" 
-            color="primary"
-            id="loginButton"
-            className={classes.button}>
-            Login
-          </Button>
-
-          <Button 
-            variant="contained" 
-            color="secondary" 
-            className={classes.button}
-            onClick={signUp()}>
-            Sign-Up
-          </Button>
-        </Box>
-      </Paper>
-    </Container>
-  </>
-  )
+          <Box component="span">
+            <Button
+              variant="contained"
+              color="primary"
+              id="loginButton"
+              className={classes.button}
+            >
+              Login
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+              onClick={signUp()}
+            >
+              Sign-Up
+            </Button>
+          </Box>
+        </Paper>
+      </Container>
+    </>
+  );
 }

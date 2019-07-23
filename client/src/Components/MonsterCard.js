@@ -1,19 +1,23 @@
 import React from "react";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
+
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { getThemeProps } from "@material-ui/styles";
 
 const useStyles = makeStyles(
   createStyles({
     card: {
-      maxWidth: 250,
+      width: 250,
       margin: 30
     },
     media: {
-      height: 200
+      height: 350
     }
   })
 );
@@ -23,38 +27,39 @@ export default function MonsterCard(props) {
   const [values, setValues] = React.useState({
     name: props.name,
     img: props.img,
+
+    title: "",
+    health: props.health,
     smallAttack: props.smallAttack,
     bigAttack: props.bigAttack,
-    specialAttack: props.specialAttack,
-    health: props.health
+    specialAttack: props.specialAttack
   });
 
   return (
     <>
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={values.img}
-          name={values.name}
-          health={values.health}
-        />
-        <CardContent>
-            <Typography gutterBottom variant="h4" component="h4">
-            {values.name}
-          </Typography>
-          <Typography variant="body2" component="p" color="textSecondary">
-              Small Attack: {values.smallAttack}
-              <br />
-              Big Attack: {values.bigAttack}
-              <br />
-              Special Attack: {values.specialAttack}
-              <br />
-            Health: {values.health}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+      <Card className={classes.card}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={values.img}
+            name={values.name}
+        
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h5">
+              {values.name}
+            </Typography>
+            <Typography variant="body2" component="p" color="textSecondary">
+              <Grid direction="column">
+                <Typography> Health: {values.health}</Typography>
+                <Typography>Small Attack: {values.smallAttack}</Typography>
+                <Typography>Big Attack: {values.bigAttack}</Typography>
+                <Typography> Special Attack: {values.specialAttack}</Typography>
+              </Grid>
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </>
   );
 }
