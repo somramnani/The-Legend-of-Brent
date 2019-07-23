@@ -1,53 +1,55 @@
-[
-  {
+[{
     "id": "1",
-    "name": "Demon Lord",
+    "name": "Jolros",
     "health": "250",
     "smallAttack": "10",
     "bigAttack": "25",
     "specialAttack": "80",
-    "img": "images/Demon_Lord.jpg"
+    "img": "images/DemonLord.jpg"
   },
   {
     "id": "2",
-    "name": "Demon Soldier",
+    "name": "Kogthas",
     "health": "250",
     "smallAttack": "9",
     "bigAttack": "19",
     "specialAttack": "80",
-    "img": "images/Demon_Soldier.jpg"
+    "img": "images/DemonSoldier.jpg"
   },
   {
     "id": "3",
-    "name": "Oni Lord",
+    "name": "Tengu",
     "health": "250",
     "smallAttack": "9",
     "bigAttack": "28",
     "specialAttack": "80",
-    "img": "images/Oni_Lord.png"
+    "img": "images/OniLord.png"
   },
   {
     "id": "4",
-    "name": "Oni Soldier",
+    "name": "Yamauba",
     "health": "250",
     "smallAttack": "12",
     "bigAttack": "30",
-    "img": "images/Oni_Soldier.jpg"
+    "specialAttack": "80",
+    "img": "images/OniSoldier.jpg"
   },
   {
     "id": "5",
-    "name": "Fiend Lord",
-    "health": "250",
-    "smallAttack": "9",
-    "bigAttack": "40",
-    "img": "images/Fiend_Lord.jpg"
+    "name": "Brent, The Fiend Lord",
+    "health": "2500",
+    "smallAttack": "90",
+    "bigAttack": "400",
+    "specialAttack": "800",
+    "img": "images/FiendLord.jpg"
   },
   {
     "id": "6",
-    "name": "Fiend Soldier",
+    "name": "Kuma",
     "health": "250",
     "smallAttack": "18",
     "bigAttack": "19",
-    "img": "images/Fiend_Soldier.jpg"
+    "specialAttack": "80",
+    "img": "images/FiendSoldier.jpg"
   }
 ]

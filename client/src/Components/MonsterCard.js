@@ -44,15 +44,48 @@ export default function MonsterCard(props) {
             name={values.name}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h5">
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="h5"
+              style={{
+                fontFamily: "Merienda, cursive"
+              }}
+            >
               {values.name}
             </Typography>
             <Typography variant="body2" component="p" color="textSecondary">
               <Grid direction="column">
-                <Typography> Health: {values.health}</Typography>
-                <Typography>Small Attack: {values.smallAttack}</Typography>
-                <Typography>Big Attack: {values.bigAttack}</Typography>
-                <Typography> Special Attack: {values.specialAttack}</Typography>
+                <Typography
+                  style={{
+                    fontFamily: "Merienda, cursive"
+                  }}
+                >
+                  {" "}
+                  Health: {values.health}
+                </Typography>
+                <Typography
+                  style={{
+                    fontFamily: "Merienda, cursive"
+                  }}
+                >
+                  Small Attack: {values.smallAttack}
+                </Typography>
+                <Typography
+                  style={{
+                    fontFamily: "Merienda, cursive"
+                  }}
+                >
+                  Big Attack: {values.bigAttack}
+                </Typography>
+                <Typography
+                  style={{
+                    fontFamily: "Merienda, cursive"
+                  }}
+                >
+                  {" "}
+                  Special Attack: {values.specialAttack}
+                </Typography>
               </Grid>
               <CardActions>
                 <Button size="small" color="primary" variant="contained">

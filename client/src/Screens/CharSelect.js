@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Container, Box } from "@material-ui/core/";
+import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from '@material-ui/core/Button'
 import players from "../data/Player.json";
@@ -58,7 +59,7 @@ class CharSelect extends Component {
         </>
       ))}
       </Grid>
-      </Container>
+     </Container>
     );
   }
 }
