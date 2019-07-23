@@ -14,5 +14,5 @@ An RPG game powered by React.
 
 - HTML5/CSS3
 - JavaScript
-- React.js
-- Express.js
+  - React.js
+  - Express.js
