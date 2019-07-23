@@ -98,14 +98,14 @@ export default function LoginPanel() {
         <Paper
           className={classes.panel}
           style={{
-            transform: "translateX(-29em) translateY(2em)",
-            backgroundColor: "#f5f5f5"
+            transform: "translateX(-22em) translateY(2em)",
+            backgroundColor: "#f5f5f5",
+            width: "50%"
           }}
         >
           <Box
             style={{
-              backgroundColor: "#f5f5f5",
-              padding: "0px"
+              backgroundColor: "#f5f5f5"
             }}
           >
             <Typography variant="h6" component="h6">
