@@ -21,7 +21,7 @@ class App extends React.Component {
     return (
       <>
         <TitleBar />
-        <LoginScreen />
+        <CharSelect />
       </>
     );
   }

@@ -83,14 +83,21 @@ export default function LoginPanel() {
 
   return (
     <>
-      <Container className={classes.loginpanel} maxWidth="sm">
+      <Container
+        className={classes.loginpanel}
+        maxWidth="sm"
+        styles={{
+          fontFamily: "Merienda, cursive"
+        }}
+      >
         <Typography
           variant="h4"
           component="h4"
           style={{
             transform: "translateX(-13em)",
             color: "white",
-            paddingTop: "20px"
+            paddingTop: "20px",
+            fontFamily: "Merienda, cursive"
           }}
         >
           Welcome To The Curse of Brent
@@ -100,15 +107,23 @@ export default function LoginPanel() {
           style={{
             transform: "translateX(-22em) translateY(2em)",
             backgroundColor: "#f5f5f5",
-            width: "50%"
+            width: "50%",
+            fontFamily: "Merienda, cursive"
           }}
         >
           <Box
             style={{
-              backgroundColor: "#f5f5f5"
+              backgroundColor: "#f5f5f5",
+              fontFamily: "Merienda, cursive"
             }}
           >
-            <Typography variant="h6" component="h6">
+            <Typography
+              variant="h6"
+              component="h6"
+              style={{
+                fontFamily: "Merienda, cursive"
+              }}
+            >
               Sign up or Log in
             </Typography>
             <TextField
@@ -147,10 +162,16 @@ export default function LoginPanel() {
               color="primary"
               id="loginButton"
               className={classes.button}
+              style={{
+                fontFamily: "Merienda, cursive"
+              }}
             >
               Login
             </Button>
             <Button
+              style={{
+                fontFamily: "Merienda, cursive"
+              }}
               variant="contained"
               color="secondary"
               className={classes.button}

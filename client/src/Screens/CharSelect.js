@@ -17,9 +17,7 @@ class CharSelect extends Component {
     document.body.style.backgroundColor = "#f5f5f5";
 
     return (
-      <Container 
-        maxWidth="lg"
-      >
+      <Container maxWidth="lg">
         <Grid
           style={style1}
           direction="row"
@@ -30,16 +28,15 @@ class CharSelect extends Component {
         >
           {this.state.players.map(Player => (
             <MonsterCard
+              
               key={Player.id}
               id={Player.id}
               name={Player.name}
               img={Player.img}
-
-              health = {Player.health}
+              health={Player.health}
               smallAttack={Player.smallAttack}
-              bigAttack = {Player.bigAttack}
+              bigAttack={Player.bigAttack}
               specialAttack={Player.specialAttack}
-
             />
           ))}
         </Grid>
