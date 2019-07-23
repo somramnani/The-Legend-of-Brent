@@ -145,7 +145,7 @@ export default function LoginPanel() {
               margin="normal"
               variant="outlined"
             />
-            <TextField
+            {/* <TextField
               id="outlined-email-input"
               label="E-mail"
               className={classes.textField}
@@ -154,7 +154,7 @@ export default function LoginPanel() {
               value={values.email}
               margin="normal"
               variant="outlined"
-            />
+            /> */}
           </Box>
           <Box component="span">
             <Button
