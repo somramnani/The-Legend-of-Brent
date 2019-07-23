@@ -6,8 +6,20 @@ import TitleBar from './Components/TitleBar';
 import CharSelect from './Screens/CharSelect';
 import AuthHelperMethods from './Components/_AuthHelper';
 import withAuth from './Components/withAuth';
+import GameStore from './context/context'
 
 class App extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      character: null
+    }
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.character)
+  }
 
   Auth = new AuthHelperMethods();
 
@@ -19,17 +31,34 @@ class App extends Component {
 
   render(props) {
     return (
-      <>
-      <TitleBar />
-        <CharSelect />
-        <Button
-        onClick={this._handleLogout} 
-        variant="contained"
-        color="primary"
-        > 
-          Log Out 
-        </Button>
-      </>
+      <GameStore.Provider value={ {
+        globalState: this.state, 
+        chooseCharacter: (value) => this.setState({character: value })
+      } }>
+        <GameStore.Consumer>
+          {
+              ({
+                globalState,
+                chooseCharacter
+              }) => (
+                <>
+                <TitleBar />
+                <CharSelect
+                  globalState={globalState}
+                  chooseCharacter={chooseCharacter}
+                />
+                <Button
+                  onClick={this._handleLogout} 
+                  variant="contained"
+                  color="primary"
+                > 
+                  Log Out 
+                </Button>
+                </>
+              )
+          }
+        </GameStore.Consumer>
+      </GameStore.Provider>
     );
   }
 }
