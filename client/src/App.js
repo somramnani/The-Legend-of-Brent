@@ -1,4 +1,5 @@
 
+
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button'
 import LogIn from './Components/LogIn';
@@ -10,6 +11,7 @@ import withAuth from './Components/withAuth';
 
 
 class App extends Component {
+
 
   Auth = new AuthHelperMethods();
 
@@ -34,7 +36,9 @@ class App extends Component {
         </Button>
 
         <TitleBar />
+
         <MonsterScreen />
+
 
       </>
     );
