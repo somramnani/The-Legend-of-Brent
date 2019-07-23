@@ -30,7 +30,13 @@ export default function TitleBar() {
           {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton> */}
-          <Typography variant="h6" className={classes.title}>
+          <Typography
+            variant="h6"
+            className={classes.title}
+            style={{
+              fontFamily: "Merienda, cursive"
+            }}
+          >
             THE CURSE OF BRENT
           </Typography>
         </Toolbar>
