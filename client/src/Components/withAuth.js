@@ -12,7 +12,7 @@ export default function withAuth(AuthComponent) {
 
     componentDidMount() {
       if (!Auth.loggedIn()) {
-        this.props.history.replace("/user/login");
+        //this.props.history.replace("/user/login");
       } else {
         /* Try to get confirmation message from the Auth helper. */
         try {
@@ -22,10 +22,10 @@ export default function withAuth(AuthComponent) {
             confirm: confirm,
             loaded: true
           });
-        } catch (err) {
-          console.log(err);
-          Auth.logout();
-          this.props.history.replace("/user/login");
+          } catch (err) {
+            console.log(err);
+            Auth.logout();
+            //this.props.history.replace("/user/login");
         }
       }
     }

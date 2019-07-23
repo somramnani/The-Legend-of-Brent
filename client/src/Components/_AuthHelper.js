@@ -15,6 +15,11 @@ class AuthHelperMethods extends React.Component {
         return Promise.resolve(res);
       })
     }
+
+    logout = () => {
+      // Clear user token and profile data from localStorage
+      localStorage.removeItem("id_token");
+    };
   
   loggedIn = () => {
     const token = this.getToken(); 

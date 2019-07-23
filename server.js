@@ -44,7 +44,7 @@ app.post('/user/signup', (req, res) => {
   })
 
   const saltRounds = 10;
-  bcrypt.hash(newUser.password, saltRounds, function (err, hash) {
+  bcrypt.hash(newUser.password, saltRounds, (err, hash) => {
     newUser.save({
       username: newUser.username,
       password: hash,
@@ -66,7 +66,7 @@ app.post('/user/login', (req, res) => {
       if (user === null) {
         res.json(false);
       }
-      bcrypt.compare(password, user.password, function (err, result) {
+      bcrypt.compare(password, user.password, (err, result) => {
         if (result === true) {
           console.log("Authenticated!");
           let token = jwt.sign({ username: user.username }, 'som may be a vampire', { expiresIn: 129600 });

@@ -7,13 +7,14 @@ import AuthHelperMethods from './Components/_AuthHelper';
 import withAuth from './Components/withAuth';
 
 class App extends React.Component {
-
   state = {
     signedIn: false
   }
 
-Auth = new AuthHelperMethods();
+  Auth = new AuthHelperMethods();
+
   _handleLogout = () => {
+    this.Auth.logout()
     this.props.history.replace('/user/login');
   }
 
