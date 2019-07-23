@@ -76,7 +76,7 @@ export default function LoginPanel() {
   };
 
   document.body.style.backgroundColor = "#f5f5f5";
-  document.body.style.backgroundImage = "url(images/brent.jpg)";
+  document.body.style.backgroundImage = "url(images/rain.jpg)";
   document.body.style.backgroundRepeat = "no-repeat";
   document.body.style.backgroundSize = "cover";
   document.body.style.height = "100%";
@@ -103,10 +103,10 @@ export default function LoginPanel() {
           }}
         >
           <Box
-          style = {{
-            backgroundColor: "#f5f5f5",
-            padding: "0px"
-          }}
+            style={{
+              backgroundColor: "#f5f5f5",
+              padding: "0px"
+            }}
           >
             <Typography variant="h6" component="h6">
               Sign up or Log in
