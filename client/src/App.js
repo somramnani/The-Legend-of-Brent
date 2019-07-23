@@ -4,6 +4,7 @@ import SignUp from "./Components/SignUp";
 import TitleBar from "./Components/TitleBar";
 import CharSelect from "./Screens/CharSelect";
 import LoginScreen from "./Screens/LogIn";
+import MonsterScreen from "./Screens/MonsterSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
 import withAuth from "./Components/withAuth";
 
@@ -21,7 +22,7 @@ class App extends React.Component {
     return (
       <>
         <TitleBar />
-        <LoginScreen />
+        <MonsterScreen />
       </>
     );
   }

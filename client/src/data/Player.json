@@ -37,7 +37,7 @@
   },
   {
     "id": "5",
-    "name": "Barbarian Berserker",
+    "name": "Barbarian",
     "health": "500",
     "smallAttack": "14",
     "bigAttack": "46",

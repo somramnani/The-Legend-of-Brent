@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Grid, Container, Box, Typography } from "@material-ui/core/";
 import MonsterCard from "../Components/MonsterCard";
-import players from "../data/Player.json";
+import players from "../data/Monster.json";
 import { bindCallback } from "rxjs";
 
-class CharSelect extends Component {
+class MonsterScreen extends Component {
   state = {
     players
   };
@@ -31,7 +31,7 @@ class CharSelect extends Component {
             padding: "20px"
           }}
         >
-          Pick Your Character
+          Pick Your Opponent
         </Typography>
         <Grid
           style={style1}
@@ -41,16 +41,16 @@ class CharSelect extends Component {
           container
           spacing={5}
         >
-          {this.state.players.map(Player => (
+          {this.state.players.map(Monster => (
             <MonsterCard
-              key={Player.id}
-              id={Player.id}
-              name={Player.name}
-              img={Player.img}
-              health={Player.health}
-              smallAttack={Player.smallAttack}
-              bigAttack={Player.bigAttack}
-              specialAttack={Player.specialAttack}
+              key={Monster.id}
+              id={Monster.id}
+              name={Monster.name}
+              img={Monster.img}
+              health={Monster.health}
+              smallAttack={Monster.smallAttack}
+              bigAttack={Monster.bigAttack}
+              specialAttack={Monster.specialAttack}
             />
           ))}
         </Grid>
@@ -59,4 +59,4 @@ class CharSelect extends Component {
   }
 }
 
-export default CharSelect;
+export default MonsterScreen;
