@@ -3,6 +3,7 @@ import { Grid, Container, Box, Typography } from "@material-ui/core/";
 import MonsterCard from "../Components/MonsterCard";
 import players from "../data/Monster.json";
 import { bindCallback } from "rxjs";
+import Button from "@material-ui/core/Button";
 
 class MonsterScreen extends Component {
   state = {
@@ -14,7 +15,7 @@ class MonsterScreen extends Component {
       paddingTop: "15px"
     };
 
-    document.body.style.backgroundImage = "url(images/bluesky.jpg)";
+    document.body.style.backgroundImage = "url(images/tinder.jpg)";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     document.body.style.height = "120%";
