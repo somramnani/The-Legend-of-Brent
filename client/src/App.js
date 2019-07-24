@@ -8,7 +8,10 @@ import CharSelect from "./Screens/CharSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
 import withAuth from "./Components/withAuth";
 import GameStore from "./context/context";
+
+
 import BattleScreen from './Screens/Battle';
+
 
 class App extends Component {
   constructor(props) {
