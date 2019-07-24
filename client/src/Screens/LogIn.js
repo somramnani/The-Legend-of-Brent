@@ -7,7 +7,6 @@ class LogInScreen extends React.Component {
   render() {
     return(
       <>
-        <TitleBar />
         <LogIn />
       </>
     )

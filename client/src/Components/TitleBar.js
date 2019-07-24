@@ -33,7 +33,7 @@ export default function TitleBar(props) {
           <Typography variant="h6" className={classes.title}>
             THE CURSE OF SOM
           </Typography>
-          <Button color="inherit">{props.status}</Button>
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>

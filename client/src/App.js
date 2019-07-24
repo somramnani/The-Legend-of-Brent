@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button'
 import LogInScreen from './Screens/LogIn'
-import SignUp from './Components/SignUp';
 import TitleBar from './Components/TitleBar';
 import CharSelect from './Screens/CharSelect';
 import AuthHelperMethods from './Components/_AuthHelper';
-import withAuth from './Components/withAuth';
 import GameStore from './context/context'
 
 class App extends Component {
@@ -43,10 +41,11 @@ class App extends Component {
               }) => (
                 <>
                 <TitleBar />
-                <CharSelect
+                {/* <CharSelect
                   globalState={globalState}
                   chooseCharacter={chooseCharacter}
-                />
+                /> */}
+                <LogInScreen />
                 <Button
                   onClick={this._handleLogout} 
                   variant="contained"

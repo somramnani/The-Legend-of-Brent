@@ -8,6 +8,9 @@ import TextField from '@material-ui/core/TextField';
 import AuthHelperMethods from '../Components/_AuthHelper'
 
 class LogIn extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   Auth = new AuthHelperMethods();
 
