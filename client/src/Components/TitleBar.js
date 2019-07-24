@@ -40,7 +40,7 @@ export default function TitleBar(props) {
           >
             THE CURSE OF BRENT
           </Typography>
-          <Button color="inherit">{props.status}</Button>
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
