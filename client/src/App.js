@@ -40,8 +40,7 @@ class App extends Component {
         <GameStore.Consumer>
           {({ globalState, chooseCharacter }) => (
             <>
-              <TitleBar />
-              <BattleScreen
+              <LogInScreen
                 globalState={globalState}
                 chooseCharacter={chooseCharacter}
               />
