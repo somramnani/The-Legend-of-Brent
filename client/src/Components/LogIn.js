@@ -36,10 +36,9 @@ class LogIn extends Component {
     event.preventDefault();
     this.Auth.login(this.state.username, this.state.password)
       .then(response => {
-        if (response === false) {
+        if(response.status === 400) {
           return alert("Sorry those credentials don't exist!");
         }
-        alert('log in worked')
         this.setState({loginSuccess: true});
       })
       .catch(err => {
@@ -49,12 +48,12 @@ class LogIn extends Component {
 
 render() {
   if (this.state.loginSuccess) {
-    return <Redirect to="/signup" />
+    return <Redirect to="/CharSelect" />
   }
   return(
   <>
     <Container maxWidth="sm">
-    <Typography>Welcome To The Curse Of Som</Typography>
+    <Typography>Sign up to play now!</Typography>
       <Paper>
         <Box >
           <Typography variant="h6" component="h6">
@@ -87,12 +86,10 @@ render() {
             >
             Login
           </Button>
-          {/* <Router> */}
             Don't have an account? 
             <a href="/signup">
               Sign up here
             </a>
-          {/* </Router> */}
         </Box>
       </Paper>
     </Container>

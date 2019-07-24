@@ -51,12 +51,12 @@ render() {
     <>
     <Container maxWidth="sm">
     <Typography variant="h3" component="h3" align="center" style={{ margin: 20 }}>
-    Welcome To The Curse of Som
+    Sign Up To Play Now!
     </Typography>
       <Paper style={{ padding: 3}}>
         <Box>
           <Typography variant="h6" component="h6">
-            Sign up or Log in
+          Fill Out The Fields Below
           </Typography>
           <TextField
             id="outlined-name"
