@@ -39,7 +39,7 @@ class App extends Component {
       // 2. Then Below the <> Type in what pages you want rendered.
       <>
         <TitleBar />
-        <LogInScreen />
+        <SignUp />
       </>
       // <GameStore.Provider
       //   value={{
