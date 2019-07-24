@@ -9,9 +9,7 @@ import AuthHelperMethods from "./Components/_AuthHelper";
 import withAuth from "./Components/withAuth";
 import GameStore from "./context/context";
 
-
-import BattleScreen from './Screens/Battle';
-
+import BattleScreen from "./Screens/Battle";
 
 class App extends Component {
   constructor(props) {
@@ -44,17 +42,10 @@ class App extends Component {
           {({ globalState, chooseCharacter }) => (
             <>
               <TitleBar />
-              <MonsterScreen
+              <LogInScreen
                 globalState={globalState}
                 chooseCharacter={chooseCharacter}
               />
-              <Button
-                onClick={this._handleLogout}
-                variant="contained"
-                color="primary"
-              >
-                Log Out
-              </Button>
             </>
           )}
         </GameStore.Consumer>
