@@ -25,8 +25,8 @@ class LogIn extends Component {
     this.setState({
       [event.target.name]: event.target.value,
       [event.target.password]: event.target.value
-      });
-  }
+    });
+  };
 
   signUp = () => {
     return <Typography>Need an account? Sign up here</Typography>

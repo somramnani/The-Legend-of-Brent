@@ -5,12 +5,15 @@ import TitleBar from '../Components/TitleBar'
 
 class LogInScreen extends Component {
   render() {
-    return(
+    document.body.style.backgroundImage = "url(images/rain.jpg";
+    document.body.style.backgroundRepeat = "repeat-y";
+    document.body.style.height = "100%";
+
+    return (
       <>
-        <TitleBar />
         <LogIn />
       </>
-    )
+    );
   }
 }
 
