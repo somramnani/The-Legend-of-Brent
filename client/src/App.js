@@ -35,26 +35,26 @@ class App extends Component {
       } }>
         <GameStore.Consumer>
           {
-              ({
-                globalState,
-                chooseCharacter
-              }) => (
-                <>
-                <TitleBar />
-                {/* <CharSelect
-                  globalState={globalState}
-                  chooseCharacter={chooseCharacter}
-                /> */}
-                <LogInScreen />
-                <Button
-                  onClick={this._handleLogout} 
-                  variant="contained"
-                  color="primary"
-                > 
-                  Log Out 
-                </Button>
-                </>
-              )
+            ({
+              globalState,
+              chooseCharacter
+            }) => (
+              <>
+              <TitleBar />
+              {/* <CharSelect
+                globalState={globalState}
+                chooseCharacter={chooseCharacter}
+              /> */}
+            
+              <Button
+                onClick={this._handleLogout} 
+                variant="contained"
+                color="primary"
+              > 
+                Log Out 
+              </Button>
+              </>
+            )
           }
         </GameStore.Consumer>
       </GameStore.Provider>
