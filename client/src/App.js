@@ -22,19 +22,16 @@ class App extends Component {
   componentDidUpdate() {
     console.log(this.state.character)
   }
-
-
   Auth = new AuthHelperMethods();
 
   _handleLogout = () => {
-    this.Auth.logout()
-    alert('you have successfully logged out')
+    this.Auth.logout();
+    alert("you have successfully logged out");
     // this.props.history.replace('/user/login');
-  }
+  };
 
   render(props) {
     return (
-
       <GameStore.Provider value={ {
         globalState: this.state, 
         chooseCharacter: (value) => this.setState({character: value })
@@ -65,15 +62,6 @@ class App extends Component {
       </GameStore.Provider>
       <>
       <TitleBar />
-        <LogIn />
-        <Button
-        onClick={this._handleLogout} 
-        variant="contained"
-        color="primary"
-        > 
-          Log Out 
-        </Button>
-        <TitleBar />
         <MonsterScreen />
       </>
     );
