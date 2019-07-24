@@ -30,8 +30,15 @@ export default function TitleBar(props) {
         <Toolbar>
           {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
           </IconButton> */}
-          <Typography variant="h6" className={classes.title}>
-            THE CURSE OF SOM
+
+          <Typography
+            variant="h6"
+            className={classes.title}
+            style={{
+              fontFamily: "Merienda, cursive"
+            }}
+          >
+            THE CURSE OF BRENT
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

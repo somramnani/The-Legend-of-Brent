@@ -7,32 +7,32 @@ import AuthHelperMethods from './Components/_AuthHelper';
 import GameStore from './context/context'
 
 class App extends Component {
-
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       character: null
-    }
+    };
   }
 
   componentDidUpdate() {
-    console.log(this.state.character)
+    console.log(this.state.character);
   }
-
   Auth = new AuthHelperMethods();
 
   _handleLogout = () => {
-    this.Auth.logout()
-    alert('you have successfully logged out')
+    this.Auth.logout();
+    alert("you have successfully logged out");
     // this.props.history.replace('/user/login');
-  }
+  };
 
   render(props) {
     return (
-      <GameStore.Provider value={ {
-        globalState: this.state, 
-        chooseCharacter: (value) => this.setState({character: value })
-      } }>
+      <GameStore.Provider
+        value={{
+          globalState: this.state,
+          chooseCharacter: value => this.setState({ character: value })
+        }}
+      >
         <GameStore.Consumer>
           {
             ({
