@@ -1,14 +1,27 @@
 import MonsterScreen from "../src/Screens/MonsterSelect";
-import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
-import LogIn from "./Components/LogIn";
-import SignUp from "./Components/SignUp";
-import TitleBar from "./Components/TitleBar";
-import CharSelect from "./Screens/CharSelect";
-import AuthHelperMethods from "./Components/_AuthHelper";
-import withAuth from "./Components/withAuth";
+import React, { Component } from 'react';
+import Button from '@material-ui/core/Button'
+import LogInScreen from './Screens/LogIn'
+import SignUp from './Components/SignUp';
+import TitleBar from './Components/TitleBar';
+import CharSelect from './Screens/CharSelect';
+import AuthHelperMethods from './Components/_AuthHelper';
+import withAuth from './Components/withAuth';
+import GameStore from './context/context'
+
 
 class App extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      character: null
+    }
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.character)
+  }
   Auth = new AuthHelperMethods();
 
   _handleLogout = () => {
@@ -19,9 +32,36 @@ class App extends Component {
 
   render(props) {
     return (
+      <GameStore.Provider value={ {
+        globalState: this.state, 
+        chooseCharacter: (value) => this.setState({character: value })
+      } }>
+        <GameStore.Consumer>
+          {
+              ({
+                globalState,
+                chooseCharacter
+              }) => (
+                <>
+                <TitleBar />
+                <CharSelect
+                  globalState={globalState}
+                  chooseCharacter={chooseCharacter}
+                />
+                <Button
+                  onClick={this._handleLogout} 
+                  variant="contained"
+                  color="primary"
+                > 
+                  Log Out 
+                </Button>
+                </>
+              )
+          }
+        </GameStore.Consumer>
+      </GameStore.Provider>
       <>
-        <TitleBar />
-
+      <TitleBar />
         <MonsterScreen />
       </>
     );
