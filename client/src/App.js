@@ -44,7 +44,7 @@ class App extends Component {
           {({ globalState, chooseCharacter }) => (
             <>
               <TitleBar />
-              <BattleScreen
+              <MonsterScreen
                 globalState={globalState}
                 chooseCharacter={chooseCharacter}
               />

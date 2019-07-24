@@ -14,12 +14,13 @@ class MonsterScreen extends Component {
       paddingTop: "15px"
     };
 
-    document.body.style.backgroundImage = "url(images/bluesky.jpg)";
+    document.body.style.backgroundImage = "url(images/tinder.jpg)";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
     document.body.style.height = "120%";
 
     return (
+ 
       <Container maxWidth="lg">
         <Typography
           variant="h2"
