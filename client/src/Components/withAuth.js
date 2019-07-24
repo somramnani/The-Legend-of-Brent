@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthHelperMethods from "./_AuthHelper";
+import { Redirect } from 'react-router-dom'
 
 export default function withAuth(AuthComponent) {
   const Auth = new AuthHelperMethods();
@@ -12,7 +13,7 @@ export default function withAuth(AuthComponent) {
 
     componentDidMount() {
       if (!Auth.loggedIn()) {
-        // this.props.history.replace("/user/login");
+        return <Redirect to="/login" />
       } else {
         /* Try to get confirmation message from the Auth helper. */
         try {

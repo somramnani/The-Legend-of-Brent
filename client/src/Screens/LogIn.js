@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import LogIn from '../Components/LogIn'
 import SignUp from '../Components/SignUp'
 import TitleBar from '../Components/TitleBar'
 
-class LogInScreen extends React.Component {
+class LogInScreen extends Component {
   render() {
     return(
       <>
+        <TitleBar />
         <LogIn />
       </>
     )

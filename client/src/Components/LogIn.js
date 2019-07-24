@@ -6,6 +6,7 @@ import { Typography } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import AuthHelperMethods from '../Components/_AuthHelper'
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 
 class LogIn extends Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class LogIn extends Component {
 
   state = {
     username: '',
-    password: ''
+    password: '',
+    loginSuccess: false,
   }
 
   changeHandler = event => {
@@ -24,6 +26,10 @@ class LogIn extends Component {
       [event.target.name]: event.target.value,
       [event.target.password]: event.target.value
       });
+  }
+
+  signUp = () => {
+    return <Typography>Need an account? Sign up here</Typography>
   }
 
   handleFormSubmit = event => {
@@ -34,6 +40,7 @@ class LogIn extends Component {
           return alert("Sorry those credentials don't exist!");
         }
         alert('log in worked')
+        this.setState({loginSuccess: true});
       })
       .catch(err => {
         alert(err);
@@ -41,6 +48,9 @@ class LogIn extends Component {
   };
 
 render() {
+  if (this.state.loginSuccess) {
+    return <Redirect to="/signup" />
+  }
   return(
   <>
     <Container maxWidth="sm">
@@ -77,6 +87,12 @@ render() {
             >
             Login
           </Button>
+          {/* <Router> */}
+            Don't have an account? 
+            <a href="/signup">
+              Sign up here
+            </a>
+          {/* </Router> */}
         </Box>
       </Paper>
     </Container>
