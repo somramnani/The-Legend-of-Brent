@@ -1,4 +1,4 @@
-# RPG
+# The Curse of Brent
 
 An RPG game powered by React.
 

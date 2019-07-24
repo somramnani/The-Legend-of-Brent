@@ -7,4 +7,6 @@ class BattleScreen extends Component {
   }
 }
 
+
 export default BattleScreen;
+
