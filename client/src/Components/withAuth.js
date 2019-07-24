@@ -26,14 +26,13 @@ export default function withAuth(AuthComponent) {
           } catch (err) {
             console.log(err);
             Auth.logout();
-            // this.props.history.replace("/user/login");
+            return <Redirect to="/login" />
         }
       }
     }
     render() {  
       if (this.state.loaded === true) {
         if (this.state.confirm) {
-          alert("confirmed!");
           return (
             <AuthComponent
               history={this.props.history}
