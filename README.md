@@ -17,3 +17,6 @@ An RPG game powered by React where players can chose characters and fight monste
   - React.js
   - Express.js
 - Material-ui
+- Mongoose
+- Passport
+- Bcrypt
