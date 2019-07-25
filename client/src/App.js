@@ -24,12 +24,12 @@ class App extends Component {
   componentDidUpdate() {
     console.log(this.state.character);
   }
+
   Auth = new AuthHelperMethods();
 
   _handleLogout = () => {
     this.Auth.logout();
     alert("you have successfully logged out");
-    // this.props.history.replace('/user/login');
   };
 
   render(props) {
@@ -40,12 +40,12 @@ class App extends Component {
           chooseCharacter: value => this.setState({ character: value })
         }}
       >
-        <GameStore.Consumer>
-          {
-            ({
-              globalState,
-              chooseCharacter
-            }) => (
+      <GameStore.Consumer>
+        {
+          ({
+            globalState,
+            chooseCharacter
+          }) => (
               <Router>
               <div>
                 <Switch>
@@ -57,7 +57,6 @@ class App extends Component {
             </Router>
             )
           }
-
         </GameStore.Consumer>
       </GameStore.Provider>
     );
