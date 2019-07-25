@@ -61,20 +61,19 @@ class SignUp extends Component {
     document.body.style.height = "100%";
     return (
       <>
-      <TitleBar/>
+        <TitleBar />
+        {/* <Container
+          maxWidth="sm"
+          style={{
+            fontFamily: "Merienda, cursive"
+          }} */}
+        >
         <Grid
           container
           direction="column"
           justify="space-evenly"
           alignItems="flex-start"
         >
-          {/* <Container
-            maxWidth="sm"
-            style={{
-              fontFamily: "Merienda, cursive"
-            }}
-            > */}
-
           <Typography
             variant="h3"
             component="h3"
@@ -147,8 +146,8 @@ class SignUp extends Component {
               </Button>
             </Box>
           </Paper>
-          {/* </Container> */}
         </Grid>
+        {/* </Container> */}
       </>
     );
   }
