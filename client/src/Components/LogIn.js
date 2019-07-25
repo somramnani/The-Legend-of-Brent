@@ -60,8 +60,7 @@ class LogIn extends Component {
         <Container
           maxWidth="sm"
           style={{
-            fontFamily: "Merienda, cursive",
-            transform: "translate(-28em,8em)"
+            fontFamily: "Merienda, cursive"
           }}
         >
           <Typography
@@ -70,8 +69,7 @@ class LogIn extends Component {
             style={{
               color: "white",
               fontFamily: "Merienda, cursive",
-              paddingBottom: "20px",
-              transform: "translateX(2em)"
+              paddingBottom: "20px"
             }}
           >
             Log In To Play Now!
