@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import { __values } from "tslib";
@@ -60,13 +60,19 @@ class SignUp extends Component {
     document.body.style.height = "100%";
     return (
       <>
-        <Container
-          maxWidth="sm"
-          style={{
-            fontFamily: "Merienda, cursive",
-            transform: "translate(-28em,8em)"
-          }}
+        <Grid
+          container
+          direction="column"
+          justify="space-evenly"
+          alignItems="flex-start"
         >
+          {/* <Container
+            maxWidth="sm"
+            style={{
+              fontFamily: "Merienda, cursive"
+            }}
+            > */}
+
           <Typography
             variant="h3"
             component="h3"
@@ -95,32 +101,39 @@ class SignUp extends Component {
               >
                 Please Fill Out The Fields Below
               </Typography>
-              <TextField
-                id="outlined-name"
-                name="name"
-                label="Name"
-                onChange={this.changeHandler}
-                margin="normal"
-                variant="outlined"
-              />
-              <TextField
-                id="outlined-password-input"
-                label="Password"
-                name="password"
-                onChange={this.changeHandler}
-                type="password"
-                margin="normal"
-                variant="outlined"
-              />
-              <TextField
-                id="outlined-email-input"
-                label="E-mail"
-                name="email"
-                onChange={this.changeHandler}
-                type="email"
-                margin="normal"
-                variant="outlined"
-              />
+              <Grid item xs={10}>
+                <TextField
+                  id="outlined-name"
+                  name="name"
+                  label="Name"
+                  onChange={this.changeHandler}
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Grid>
+
+              <Grid item xs={10}>
+                <TextField
+                  id="outlined-password-input"
+                  label="Password"
+                  name="password"
+                  onChange={this.changeHandler}
+                  type="password"
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={10}>
+                <TextField
+                  id="outlined-email-input"
+                  label="E-mail"
+                  name="email"
+                  onChange={this.changeHandler}
+                  type="email"
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Grid>
             </Box>
             <Box>
               <Button
@@ -132,7 +145,8 @@ class SignUp extends Component {
               </Button>
             </Box>
           </Paper>
-        </Container>
+          {/* </Container> */}
+        </Grid>
       </>
     );
   }
