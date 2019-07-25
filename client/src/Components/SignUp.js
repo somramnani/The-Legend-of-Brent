@@ -14,6 +14,7 @@ import {
   Redirect,
   withRouter
 } from "react-router-dom";
+import TitleBar from "./TitleBar";
 
 class SignUp extends Component {
   state = {
@@ -60,6 +61,7 @@ class SignUp extends Component {
     document.body.style.height = "100%";
     return (
       <>
+      <TitleBar/>
         <Grid
           container
           direction="column"
