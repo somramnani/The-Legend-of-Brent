@@ -6,12 +6,14 @@ import { Typography } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import AuthHelperMethods from "../Components/_AuthHelper";
+
 import {
   BrowserRouter as Router,
   Route,
   Link,
   Redirect
 } from "react-router-dom";
+import TitleBar from "./TitleBar";
 
 class LogIn extends Component {
   constructor(props) {
@@ -57,6 +59,7 @@ class LogIn extends Component {
     }
     return (
       <>
+        <TitleBar />
         <Container
           maxWidth="sm"
           style={{
