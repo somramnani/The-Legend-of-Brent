@@ -34,26 +34,39 @@ class App extends Component {
 
   render(props) {
     return (
-      <GameStore.Provider
-        value={{
-          globalState: this.state,
-          chooseCharacter: value => this.setState({ character: value })
-        }}
-      >
-        <GameStore.Consumer>
-          {({ globalState, chooseCharacter }) => (
-            <Router>
-              <div>
-                <Switch>
-                  <Route exact path="/" component={LogIn} />
-                  <Route exact path="/login" component={LogIn} />
-                  <Route exact path="/signup" component={SignUp} />
-                </Switch>
-              </div>
-            </Router>
-          )}
-        </GameStore.Consumer>
-      </GameStore.Provider>
+      //To render pages:
+      // 1. Make sure Brents bullshit (Gamestore.Provider) is commented out.
+      // 2. Then Below the <> Type in what pages you want rendered.
+      <>
+        <TitleBar />
+        <SignUp />
+      </>
+      // <GameStore.Provider
+      //   value={{
+      //     globalState: this.state,
+      //     chooseCharacter: value => this.setState({ character: value })
+      //   }}
+      // >
+      //   <GameStore.Consumer>
+      //     {
+      //       ({
+      //         globalState,
+      //         chooseCharacter
+      //       }) => (
+      //         <Router>
+      //         <div>
+      //           <Switch>
+      //             <Route exact path="/" component={LogIn} />
+      //             <Route exact path="/login" component={LogIn} />
+      //             <Route exact path="/signup" component={SignUp} />
+      //           </Switch>
+      //         </div>
+      //       </Router>
+      //       )
+      //     }
+
+      //   </GameStore.Consumer>
+      // </GameStore.Provider>
     );
   }
 }
