@@ -61,7 +61,7 @@ class LogIn extends Component {
           maxWidth="sm"
           style={{
             fontFamily: "Merienda, cursive",
-            transform: "translate(-25em,5em)"
+            transform: "translate(-28em,8em)"
           }}
         >
           <Typography
@@ -70,13 +70,22 @@ class LogIn extends Component {
             style={{
               color: "white",
               fontFamily: "Merienda, cursive",
-              paddingBottom: "20px"
+              paddingBottom: "20px",
+              transform: "translateX(2em)"
             }}
           >
             Log In To Play Now!
           </Typography>
-          <Paper>
-            <Box style={{ padding: "20px" }}>
+          <Paper
+            style={{
+              backgroundColor: "#f5f5f5"
+            }}
+          >
+            <Box
+              style={{
+                padding: "20px"
+              }}
+            >
               <Typography
                 variant="h6"
                 component="h6"
