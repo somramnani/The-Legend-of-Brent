@@ -38,7 +38,11 @@ class App extends Component {
       // 1. Make sure Brents bullshit (Gamestore.Provider) is commented out.
       // 2. Then Below the <> Type in what pages you want rendered.
       <>
-        <SignUp />
+        <CharSelect />
+        {/* <SignUp /> */}
+
+       
+
       </>
       // <GameStore.Provider
       //   value={{
