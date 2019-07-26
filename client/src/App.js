@@ -40,6 +40,9 @@ class App extends Component {
       <>
         <CharSelect />
         {/* <SignUp /> */}
+
+       
+
       </>
       // <GameStore.Provider
       //   value={{
