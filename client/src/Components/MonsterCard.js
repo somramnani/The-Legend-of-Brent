@@ -13,6 +13,7 @@ const useStyles = makeStyles(
   createStyles({
     card: {
       width: 250,
+
       margin: 30
     },
     media: {
@@ -86,14 +87,7 @@ export default function MonsterCard(props) {
                   Special Attack: {values.specialAttack}
                 </Typography>
               </Grid>
-              <CardActions>
-                <Button size="small" color="primary" variant="contained">
-                  Select
-                </Button>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-              </CardActions>
+              <CardActions />
             </Typography>
           </CardContent>
         </CardActionArea>
