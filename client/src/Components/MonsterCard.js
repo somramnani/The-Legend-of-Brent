@@ -97,7 +97,14 @@ export default function MonsterCard(props) {
                   Special Attack: {values.specialAttack}
                 </Typography>
               </Grid>
-              <CardActions />
+              <CardActions>
+                {/* <Button size="small" color="primary" variant="contained">
+                  Select
+                </Button>
+                <Button size="small" color="primary">
+                  Share
+                </Button> */}
+              </CardActions>
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -6,6 +6,9 @@ import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
 import BattleScreen from "./Battle";
 
+import TitleBar from "../Components/TitleBar";
+
+
 class CharSelect extends Component {
   constructor(props) {
     super(props);
@@ -33,49 +36,53 @@ class CharSelect extends Component {
 
     if (selectedId === -1) {
       return (
-        <Container maxWidth="lg">
-          <Grid
-            style={style1}
-            direction="row"
-            alignItems="center"
-            justify="flex-end"
-            container
-            spacing={5}
-          >
-            {players.map(Player => (
-              <>
-                <Box>
-                  
-                  <MonsterCard
-                    key={Player.id}
-                    id={Player.id}
-                    class={Player.name}
-                    name={Player.name}
-                    img={Player.img}
-                    health={Player.health}
-                    smallAttack={Player.smallAttack}
-                    bigAttack={Player.bigAttack}
-                    specialAttack={Player.specialAttack}
-                  />
-                  <Button
-                    size="small"
-                    color="primary"
-                    variant="contained"
-                    onClick={() => {
-                      // this.props.chooseCharacter(Player);
-                      this.chooseCharacter(Player.id);
-                    }}
-                  >
-                    {`Choose ${Player.name}`}
-                  </Button>
-                </Box>
-              </>
-            ))}
-          </Grid>
-        </Container>
+        <>
+          <TitleBar />
+
+          <Container maxWidth="lg">
+            <Grid
+              style={style1}
+              direction="row"
+              alignItems="center"
+              justify="flex-end"
+              container
+              spacing={5}
+            >
+              {players.map(Player => (
+                <>
+                  <Box>
+                    <MonsterCard
+                      key={Player.id}
+                      id={Player.id}
+                      class={Player.name}
+                      name={Player.name}
+                      img={Player.img}
+                      health={Player.health}
+                      smallAttack={Player.smallAttack}
+                      bigAttack={Player.bigAttack}
+                      specialAttack={Player.specialAttack}
+                    />
+                    <Button
+                      size="small"
+                      color="primary"
+                      variant="contained"
+                      onClick={() => {
+                        // this.props.chooseCharacter(Player);
+                        this.chooseCharacter(Player.id);
+                      }}
+                    >
+                      {`Choose ${Player.name}`}
+                    </Button>
+                  </Box>
+                </>
+              ))}
+            </Grid>
+          </Container>
+        </>
       );
     } else {
       return (
+
         <BattleScreen 
           selectedPlayer={selectedPlayer}
           selectedId={selectedId}
@@ -88,6 +95,10 @@ class CharSelect extends Component {
 export default CharSelect;
 
 /*
+
+        <>
+          <TitleBar />
+
           <MonsterCard
             key={selectedPlayer.id}
             id={selectedPlayer.id}

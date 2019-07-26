@@ -15,14 +15,12 @@ import {
   withRouter
 } from "react-router-dom";
 import TitleBar from "./TitleBar";
-
 class SignUp extends Component {
   state = {
     name: "",
     password: "",
     email: ""
   };
-
   changeHandler = event => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -30,7 +28,6 @@ class SignUp extends Component {
       [event.target.email]: event.target.value
     });
   };
-
   signUp = event => {
     event.preventDefault();
     axios
@@ -54,7 +51,6 @@ class SignUp extends Component {
         console.error(error);
       });
   };
-
   render() {
     document.body.style.backgroundImage = "url(images/monster.jpg";
     document.body.style.backgroundRepeat = "repeat-y";
@@ -62,7 +58,6 @@ class SignUp extends Component {
     return (
       <>
         <TitleBar />
-
         <Grid
           container
           direction="column"
@@ -107,18 +102,6 @@ class SignUp extends Component {
                   variant="outlined"
                 />
               </Grid>
-
-              <Grid item xs={10}>
-                <TextField
-                  id="outlined-password-input"
-                  label="Password"
-                  name="password"
-                  onChange={this.changeHandler}
-                  type="password"
-                  margin="normal"
-                  variant="outlined"
-                />
-              </Grid>
               <Grid item xs={10}>
                 <TextField
                   id="outlined-email-input"
@@ -126,6 +109,17 @@ class SignUp extends Component {
                   name="email"
                   onChange={this.changeHandler}
                   type="email"
+                  margin="normal"
+                  variant="outlined"
+                />
+              </Grid>
+              <Grid item xs={10}>
+                <TextField
+                  id="outlined-password-input"
+                  label="Password"
+                  name="password"
+                  onChange={this.changeHandler}
+                  type="password"
                   margin="normal"
                   variant="outlined"
                 />
@@ -142,10 +136,8 @@ class SignUp extends Component {
             </Box>
           </Paper>
         </Grid>
-        {/* </Container> */}
       </>
     );
   }
 }
-
 export default SignUp;
