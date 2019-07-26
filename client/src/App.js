@@ -7,6 +7,8 @@ import LoginScreen from "./Screens/LogIn";
 import MonsterScreen from "./Screens/MonsterSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
 import withAuth from "./Components/withAuth";
+import PrebattleScreen from "./Screens/CharVsMon";
+import BattleScreen from "./Screens/Battle";
 
 class App extends React.Component {
   state = {
@@ -22,7 +24,7 @@ class App extends React.Component {
     return (
       <>
         <TitleBar />
-        <MonsterScreen />
+        <PrebattleScreen />
       </>
     );
   }
