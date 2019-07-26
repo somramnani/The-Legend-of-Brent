@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
+import TitleBar from '../Components/TitleBar'
 
 class CharSelect extends Component {
   constructor(props) {

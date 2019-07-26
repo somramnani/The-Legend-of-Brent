@@ -15,7 +15,6 @@ export default function withAuth(AuthComponent) {
       if (!Auth.loggedIn()) {
         return <Redirect to="/login" />
       } else {
-        /* Try to get confirmation message from the Auth helper. */
         try {
           const confirm = Auth.getConfirm();
           console.log("confirmation is:", confirm);
