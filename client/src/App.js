@@ -7,6 +7,8 @@ import CharSelect from "./Screens/CharSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
 import GameStore from "./context/context";
 import withAuth from "./Components/withAuth";
+import PrebattleScreen from "./Screens/CharVsMon";
+import BattleScreen from "./Screens/Battle";
 import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
 
@@ -41,8 +43,7 @@ class App extends Component {
         <CharSelect />
         {/* <SignUp /> */}
 
-       
-
+  
       </>
       // <GameStore.Provider
       //   value={{
