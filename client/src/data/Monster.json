@@ -51,5 +51,23 @@
     "bigAttack": "19",
     "specialAttack": "80",
     "img": "images/FiendSoldier.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Aqualon",
+    "health": "250",
+    "smallAttack": "18",
+    "bigAttack": "19",
+    "specialAttack": "80",
+    "img": "images/Elemental.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Tinder",
+    "health": "250",
+    "smallAttack": "18",
+    "bigAttack": "19",
+    "specialAttack": "80",
+    "img": "images/FireElemental.jpg"
   }
 ]

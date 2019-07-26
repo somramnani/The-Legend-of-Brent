@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AuthHelperMethods from "./_AuthHelper";
+import { Redirect } from 'react-router-dom'
 
 export default function withAuth(AuthComponent) {
   const Auth = new AuthHelperMethods();
@@ -12,7 +13,7 @@ export default function withAuth(AuthComponent) {
 
     componentDidMount() {
       if (!Auth.loggedIn()) {
-        this.props.history.replace("/user/login");
+        return <Redirect to="/login" />
       } else {
         /* Try to get confirmation message from the Auth helper. */
         try {
@@ -22,18 +23,16 @@ export default function withAuth(AuthComponent) {
             confirm: confirm,
             loaded: true
           });
-        } catch (err) {
-          console.log(err);
-          Auth.logout();
-          this.props.history.replace("/user/login");
+          } catch (err) {
+            console.log(err);
+            Auth.logout();
+            return <Redirect to="/login" />
         }
       }
     }
-
-    render() {
+    render() {  
       if (this.state.loaded === true) {
         if (this.state.confirm) {
-          console.log("confirmed!");
           return (
             <AuthComponent
               history={this.props.history}
@@ -41,7 +40,7 @@ export default function withAuth(AuthComponent) {
             />
           );
         } else {
-          console.log("not confirmed!");
+          alert("not confirmed!");
           return null;
         }
       } else {

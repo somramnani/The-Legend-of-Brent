@@ -1,14 +1,13 @@
 import React from "react";
-import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
-
 import CardMedia from "@material-ui/core/CardMedia";
+import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { getThemeProps } from "@material-ui/styles";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(
   createStyles({
@@ -27,7 +26,6 @@ export default function MonsterCard(props) {
   const [values, setValues] = React.useState({
     name: props.name,
     img: props.img,
-
     title: "",
     health: props.health,
     smallAttack: props.smallAttack,
@@ -88,6 +86,14 @@ export default function MonsterCard(props) {
                   Special Attack: {values.specialAttack}
                 </Typography>
               </Grid>
+              <CardActions>
+                <Button size="small" color="primary" variant="contained">
+                  Select
+                </Button>
+                <Button size="small" color="primary">
+                  Share
+                </Button>
+              </CardActions>
             </Typography>
           </CardContent>
         </CardActionArea>

@@ -1,20 +1,22 @@
-import React from 'react';
+import React from 'react'
 import decode from 'jwt-decode';
 
 class AuthHelperMethods extends React.Component {
-
-  login = (username, password) => {
-    return this.fetch('/user/login', {
+  login = (username, password) => 
+    this.fetch('/user/login', {
       method: 'POST',
       body: JSON.stringify({
         username,
         password
       })
     }).then(res => {
-        this.setToken(res.token)
-        return Promise.resolve(res);
-      })
-    }
+      this.setToken(res.token);
+      return Promise.resolve(res);
+    })
+
+    logout = () => {
+      localStorage.removeItem("id_token");
+    };
   
   loggedIn = () => {
     const token = this.getToken(); 
@@ -35,9 +37,11 @@ class AuthHelperMethods extends React.Component {
 
   setToken = idToken => {
     localStorage.setItem("id_token", idToken);
+    console.log('id token has been set')
   };
 
   getToken = () => {
+    console.log('getting id token')
     return localStorage.getItem("id_token");
   };
 
@@ -55,7 +59,6 @@ fetch = (url, options) => {
     if (this.loggedIn()) {
         headers['Authorization'] = 'Bearer ' + this.getToken()
     }
-
     return fetch(url, {
         headers,
         ...options
@@ -72,7 +75,7 @@ _checkStatus = (response) => {
         error.response = response
         throw error
     }
-}
+  }
 
 }
 
