@@ -88,12 +88,12 @@ export default function MonsterCard(props) {
                 </Typography>
               </Grid>
               <CardActions>
-                <Button size="small" color="primary" variant="contained">
+                {/* <Button size="small" color="primary" variant="contained">
                   Select
                 </Button>
                 <Button size="small" color="primary">
                   Share
-                </Button>
+                </Button> */}
               </CardActions>
             </Typography>
           </CardContent>

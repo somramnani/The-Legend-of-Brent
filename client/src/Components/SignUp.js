@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { __values } from 'tslib';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class SignUp extends Component {
 
@@ -36,7 +36,7 @@ class SignUp extends Component {
       if(res.data) {
         alert(`Your account was created!`)
         console.log(res.data)
-        //send to login
+          return <Redirect to='/login'/>
       } else {
         console.error('signup error')
       }

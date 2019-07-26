@@ -9,7 +9,6 @@ import GameStore from './context/context'
 import withAuth from './Components/withAuth'
 import LogIn from './Screens/LogIn'
 import SignUp from './Components/SignUp'
-
 import BattleScreen from "./Screens/Battle";
 
 class App extends Component {
@@ -32,35 +31,32 @@ class App extends Component {
     alert("you have successfully logged out");
   };
 
-  render(props) {
+  chooseCharacter = (value) => {
+    this.setState({
+      character: value
+    })
+  }
+  
+  render() {
     return (
-      <GameStore.Provider
-        value={{
-          globalState: this.state,
-          chooseCharacter: value => this.setState({ character: value })
-        }}
-      >
-      <GameStore.Consumer>
-        {
-          ({
-            globalState,
-            chooseCharacter
-          }) => (
-              <Router>
-              <div>
-                <Switch>
-                  <Route exact path="/" component={LogIn} />
-                  <Route exact path="/login" component={LogIn} />
-                  <Route exact path="/signup" component={SignUp} />
-                </Switch>
-              </div>
-            </Router>
-            )
-          }
-        </GameStore.Consumer>
-      </GameStore.Provider>
-    );
+      <>
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path="/" component={LogIn} />
+            <Route exact path="/login" component={LogIn} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route path='/CharSelect' render={() => 
+              <CharSelect chooseCharacter={this.chooseCharacter} 
+                globalState={this.state} />} />
+            <Route path='/BattleScreen' render={() => <BattleScreen globalState={this.state} />}/>
+          </Switch>
+        </div>
+      </Router>
+      </>
+    )
   }
 }
 
-export default withAuth(App);
+
+export default App;
