@@ -62,12 +62,7 @@ class SignUp extends Component {
     return (
       <>
         <TitleBar />
-        {/* <Container
-          maxWidth="sm"
-          style={{
-            fontFamily: "Merienda, cursive"
-          }} */}
-        >
+
         <Grid
           container
           direction="column"

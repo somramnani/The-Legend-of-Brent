@@ -59,13 +59,7 @@ class LogIn extends Component {
     }
     return (
       <>
-        <TitleBar />
-        {/* <Container
-          maxWidth="sm"
-          style={{
-            fontFamily: "Merienda, cursive"
-          }} */}
-        >
+        <TitleBar />>
         <Grid
           container
           direction="column"
@@ -153,7 +147,6 @@ class LogIn extends Component {
             </Box>
           </Paper>
         </Grid>
-        {/* </Container> */}
       </>
     );
   }
