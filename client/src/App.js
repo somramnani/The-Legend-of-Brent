@@ -8,11 +8,8 @@ import AuthHelperMethods from "./Components/_AuthHelper";
 import GameStore from "./context/context";
 import withAuth from "./Components/withAuth";
 import PrebattleScreen from "./Screens/CharVsMon";
-import BattleScreen from "./Screens/Battle";
 import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
-
-import BattleScreen from "./Screens/Battle";
 
 class App extends Component {
   constructor(props) {
@@ -34,32 +31,40 @@ class App extends Component {
     alert("you have successfully logged out");
   };
 
-  chooseCharacter = (value) => {
+  chooseCharacter = value => {
     this.setState({
       character: value
-    })
-  }
-  
+    });
+  };
+
   render() {
     return (
       <>
-      <Router>
-        <div>
-          <Switch>
-            <Route exact path="/" component={LogIn} />
-            <Route exact path="/login" component={LogIn} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route path='/CharSelect' render={() => 
-              <CharSelect chooseCharacter={this.chooseCharacter} 
-                globalState={this.state} />} />
-            <Route path='/BattleScreen' render={() => <BattleScreen globalState={this.state} />}/>
-          </Switch>
-        </div>
-      </Router>
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/" component={LogIn} />
+              <Route exact path="/login" component={LogIn} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route
+                path="/CharSelect"
+                render={() => (
+                  <CharSelect
+                    chooseCharacter={this.chooseCharacter}
+                    globalState={this.state}
+                  />
+                )}
+              />
+              <Route
+                path="/BattleScreen"
+                render={() => <BattleScreen globalState={this.state} />}
+              />
+            </Switch>
+          </div>
+        </Router>
       </>
-    )
+    );
   }
 }
 
 export default App;
-
