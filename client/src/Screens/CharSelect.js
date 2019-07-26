@@ -44,9 +44,11 @@ class CharSelect extends Component {
             {players.map(Player => (
               <>
                 <Box>
+                  
                   <MonsterCard
                     key={Player.id}
                     id={Player.id}
+                    class={Player.name}
                     name={Player.name}
                     img={Player.img}
                     health={Player.health}
@@ -54,7 +56,10 @@ class CharSelect extends Component {
                     bigAttack={Player.bigAttack}
                     specialAttack={Player.specialAttack}
                   />
-                  <Button size="small" color="primary" variant="contained"
+                  <Button
+                    size="small"
+                    color="primary"
+                    variant="contained"
                     onClick={() => {
                       // this.props.chooseCharacter(Player);
                       this.chooseCharacter(Player.id);
@@ -75,6 +80,7 @@ class CharSelect extends Component {
             key={selectedPlayer.id}
             id={selectedPlayer.id}
             name={selectedPlayer.name}
+            class={selectedPlayer.class}
             img={selectedPlayer.img}
             health={selectedPlayer.health}
             smallAttack={selectedPlayer.smallAttack}
