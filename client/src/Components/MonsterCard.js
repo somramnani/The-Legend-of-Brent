@@ -13,6 +13,7 @@ const useStyles = makeStyles(
   createStyles({
     card: {
       width: 250,
+
       margin: 30
     },
     media: {
@@ -27,6 +28,7 @@ export default function MonsterCard(props) {
     name: props.name,
     img: props.img,
     title: "",
+    class: props.class,
     health: props.health,
     smallAttack: props.smallAttack,
     bigAttack: props.bigAttack,
@@ -53,8 +55,17 @@ export default function MonsterCard(props) {
             >
               {values.name}
             </Typography>
+
             <Typography variant="body2" component="p" color="textSecondary">
               <Grid direction="column">
+                <Typography
+                  style={{
+                    fontFamily: "Merienda, cursive"
+                  }}
+                >
+                  {" "}
+                  Class: {values.class}
+                </Typography>
                 <Typography
                   style={{
                     fontFamily: "Merienda, cursive"
@@ -86,11 +97,7 @@ export default function MonsterCard(props) {
                   Special Attack: {values.specialAttack}
                 </Typography>
               </Grid>
-              <CardActions>
-                <Button id="select" size="small" color="primary" variant="contained">
-                  SELECT YOUR HERO!
-                </Button>
-              </CardActions>
+              <CardActions />
             </Typography>
           </CardContent>
         </CardActionArea>

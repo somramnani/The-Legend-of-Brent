@@ -7,10 +7,10 @@ import CharSelect from "./Screens/CharSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
 import GameStore from "./context/context";
 import withAuth from "./Components/withAuth";
+import PrebattleScreen from "./Screens/CharVsMon";
+import BattleScreen from "./Screens/Battle";
 import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
-
-import BattleScreen from "./Screens/Battle";
 
 class App extends Component {
   constructor(props) {
@@ -38,11 +38,10 @@ class App extends Component {
       // 1. Make sure Brents bullshit (Gamestore.Provider) is commented out.
       // 2. Then Below the <> Type in what pages you want rendered.
       <>
-        <BattleScreen />
+        <CharSelect />
         {/* <SignUp /> */}
 
-       
-
+  
       </>
       // <GameStore.Provider
       //   value={{

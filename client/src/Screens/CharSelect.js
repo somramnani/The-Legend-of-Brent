@@ -4,20 +4,21 @@ import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
+import BattleScreen from "./Battle";
 
 class CharSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedId: -1,
-      selectedPlayer: {},
-    }
+      selectedPlayer: {}
+    };
   }
 
   chooseCharacter(pId) {
     this.setState({
-      selectedId: pId -1,
-      selectedPlayer: players[pId -1]
+      selectedId: pId - 1,
+      selectedPlayer: players[pId - 1]
     });
   }
 
@@ -31,61 +32,72 @@ class CharSelect extends Component {
     document.body.style.backgroundRepeat = "repeat-y";
 
     if (selectedId === -1) {
-    return (
-      <Container maxWidth="lg">
-        <Grid
-          style={style1}
-          direction="row"
-          alignItems="center"
-          justify="flex-end"
-          container
-          spacing={5}
-        >
-          {players.map(Player => (
-            <>
-              <Box>
-                <MonsterCard
-                  key={Player.id}
-                  id={Player.id}
-                  name={Player.name}
-                  img={Player.img}
-                  health={Player.health}
-                  smallAttack={Player.smallAttack}
-                  bigAttack={Player.bigAttack}
-                  specialAttack={Player.specialAttack}
-                />
-                <Button
-                  onClick={() => {
-                    // this.props.chooseCharacter(Player);
-                    this.chooseCharacter(Player.id)
-
-                  }}
-                >
-                  {`Choose ${Player.name}`}
-                </Button>
-              </Box>
-            </>
-          ))}
-        </Grid>
-      </Container>
-    );
+      return (
+        <Container maxWidth="lg">
+          <Grid
+            style={style1}
+            direction="row"
+            alignItems="center"
+            justify="flex-end"
+            container
+            spacing={5}
+          >
+            {players.map(Player => (
+              <>
+                <Box>
+                  
+                  <MonsterCard
+                    key={Player.id}
+                    id={Player.id}
+                    class={Player.name}
+                    name={Player.name}
+                    img={Player.img}
+                    health={Player.health}
+                    smallAttack={Player.smallAttack}
+                    bigAttack={Player.bigAttack}
+                    specialAttack={Player.specialAttack}
+                  />
+                  <Button
+                    size="small"
+                    color="primary"
+                    variant="contained"
+                    onClick={() => {
+                      // this.props.chooseCharacter(Player);
+                      this.chooseCharacter(Player.id);
+                    }}
+                  >
+                    {`Choose ${Player.name}`}
+                  </Button>
+                </Box>
+              </>
+            ))}
+          </Grid>
+        </Container>
+      );
     } else {
       return (
-        <>
-            <MonsterCard
-                  key={selectedPlayer.id}
-                  id={selectedPlayer.id}
-                  name={selectedPlayer.name}
-                  img={selectedPlayer.img}
-                  health={selectedPlayer.health}
-                  smallAttack={selectedPlayer.smallAttack}
-                  bigAttack={selectedPlayer.bigAttack}
-                  specialAttack={selectedPlayer.specialAttack}
-            />
-        </>
-      )
+        <BattleScreen 
+          selectedPlayer={selectedPlayer}
+          selectedId={selectedId}
+        />
+      );
     }
   }
 }
 
 export default CharSelect;
+
+/*
+          <MonsterCard
+            key={selectedPlayer.id}
+            id={selectedPlayer.id}
+            name={selectedPlayer.name}
+            class={selectedPlayer.class}
+            img={selectedPlayer.img}
+            health={selectedPlayer.health}
+            smallAttack={selectedPlayer.smallAttack}
+            bigAttack={selectedPlayer.bigAttack}
+            specialAttack={selectedPlayer.specialAttack}
+          />
+        </>
+*/
