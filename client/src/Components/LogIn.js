@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import { Typography } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import AuthHelperMethods from "../Components/_AuthHelper";
@@ -60,11 +60,17 @@ class LogIn extends Component {
     return (
       <>
         <TitleBar />
-        <Container
+        {/* <Container
           maxWidth="sm"
           style={{
             fontFamily: "Merienda, cursive"
-          }}
+          }} */}
+        >
+        <Grid
+          container
+          direction="column"
+          justify="space-evenly"
+          alignItems="flex-start"
         >
           <Typography
             variant="h4"
@@ -146,7 +152,8 @@ class LogIn extends Component {
               </Typography>
             </Box>
           </Paper>
-        </Container>
+        </Grid>
+        {/* </Container> */}
       </>
     );
   }
