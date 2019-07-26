@@ -49,6 +49,7 @@ class BattleScreen extends Component {
                 <Button
                   onClick={() => {
                     this.props.chooseCharacter(Player);
+
                   }}
                 >
                 </Button>

@@ -16,8 +16,8 @@ class CharSelect extends Component {
 
   chooseCharacter(pId) {
     this.setState({
-      selectedId: pId,
-      selectedPlayer: players[pId]
+      selectedId: pId -1,
+      selectedPlayer: players[pId -1]
     });
   }
 

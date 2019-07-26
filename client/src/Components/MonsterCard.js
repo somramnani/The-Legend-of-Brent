@@ -87,11 +87,8 @@ export default function MonsterCard(props) {
                 </Typography>
               </Grid>
               <CardActions>
-                <Button size="small" color="primary" variant="contained">
-                  Select
-                </Button>
-                <Button size="small" color="primary">
-                  Share
+                <Button id="select" size="small" color="primary" variant="contained">
+                  SELECT YOUR HERO!
                 </Button>
               </CardActions>
             </Typography>
