@@ -8,16 +8,29 @@ import players from "../data/Player.json";
 class CharSelect extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      selectedId: -1,
+      selectedPlayer: {},
+    }
+  }
+
+  chooseCharacter(pId) {
+    this.setState({
+      selectedId: pId,
+      selectedPlayer: players[pId]
+    });
   }
 
   render() {
     const style1 = {
       paddingTop: "15px"
     };
+    const { selectedId, selectedPlayer } = this.state;
 
     document.body.style.backgroundImage = "url('images/bluesky.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
 
+    if (selectedId === -1) {
     return (
       <Container maxWidth="lg">
         <Grid
@@ -43,7 +56,9 @@ class CharSelect extends Component {
                 />
                 <Button
                   onClick={() => {
-                    this.props.chooseCharacter(Player);
+                    // this.props.chooseCharacter(Player);
+                    this.chooseCharacter(Player.id)
+
                   }}
                 >
                   {`Choose ${Player.name}`}
@@ -54,6 +69,22 @@ class CharSelect extends Component {
         </Grid>
       </Container>
     );
+    } else {
+      return (
+        <>
+            <MonsterCard
+                  key={selectedPlayer.id}
+                  id={selectedPlayer.id}
+                  name={selectedPlayer.name}
+                  img={selectedPlayer.img}
+                  health={selectedPlayer.health}
+                  smallAttack={selectedPlayer.smallAttack}
+                  bigAttack={selectedPlayer.bigAttack}
+                  specialAttack={selectedPlayer.specialAttack}
+            />
+        </>
+      )
+    }
   }
 }
 
