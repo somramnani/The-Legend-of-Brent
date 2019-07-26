@@ -9,57 +9,88 @@ import TitleBar from '../Components/TitleBar'
 class CharSelect extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      selectedId: -1,
+      selectedPlayer: {}
+    };
+  }
+
+  chooseCharacter(pId) {
+    this.setState({
+      selectedId: pId - 1,
+      selectedPlayer: players[pId - 1]
+    });
   }
 
   render() {
     const style1 = {
       paddingTop: "15px"
     };
+    const { selectedId, selectedPlayer } = this.state;
 
     document.body.style.backgroundImage = "url('images/bluesky.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
 
-    return (
-      <>
-      <TitleBar />
-      <Container maxWidth="lg">
-        <Grid
-          style={style1}
-          direction="row"
-          alignItems="center"
-          justify="flex-end"
-          container
-          spacing={5}
-        >
-          {players.map(Player => (
-            <>
-              <Box>
-                <MonsterCard
-                  key={Player.id}
-                  id={Player.id}
-                  name={Player.name}
-                  img={Player.img}
-                  health={Player.health}
-                  smallAttack={Player.smallAttack}
-                  bigAttack={Player.bigAttack}
-                  specialAttack={Player.specialAttack}
-                />
-                <Button
-                  color="primary"
-                  variant="contained"
-                  onClick={() => {
-                    this.props.chooseCharacter(Player);
-                  }}
-                >
-                  {`Choose ${Player.name}`}
-                </Button>
-              </Box>
-            </>
-          ))}
-        </Grid>
-      </Container>
-      </>
-    );
+    if (selectedId === -1) {
+      return (
+        <Container maxWidth="lg">
+          <Grid
+            style={style1}
+            direction="row"
+            alignItems="center"
+            justify="flex-end"
+            container
+            spacing={5}
+          >
+            {players.map(Player => (
+              <>
+                <Box>
+                  
+                  <MonsterCard
+                    key={Player.id}
+                    id={Player.id}
+                    class={Player.name}
+                    name={Player.name}
+                    img={Player.img}
+                    health={Player.health}
+                    smallAttack={Player.smallAttack}
+                    bigAttack={Player.bigAttack}
+                    specialAttack={Player.specialAttack}
+                  />
+                  <Button
+                    size="small"
+                    color="primary"
+                    variant="contained"
+                    onClick={() => {
+                      // this.props.chooseCharacter(Player);
+                      this.chooseCharacter(Player.id);
+                    }}
+                  >
+                    {`Choose ${Player.name}`}
+                  </Button>
+                </Box>
+              </>
+            ))}
+          </Grid>
+        </Container>
+      );
+    } else {
+      return (
+        <>
+          <MonsterCard
+            key={selectedPlayer.id}
+            id={selectedPlayer.id}
+            name={selectedPlayer.name}
+            class={selectedPlayer.class}
+            img={selectedPlayer.img}
+            health={selectedPlayer.health}
+            smallAttack={selectedPlayer.smallAttack}
+            bigAttack={selectedPlayer.bigAttack}
+            specialAttack={selectedPlayer.specialAttack}
+          />
+        </>
+      );
+    }
   }
 }
 

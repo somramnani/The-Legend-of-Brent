@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Button from '@material-ui/core/Button'
-import LogInScreen from './Screens/LogIn'
-import TitleBar from './Components/TitleBar';
-import CharSelect from './Screens/CharSelect';
-import AuthHelperMethods from './Components/_AuthHelper';
-import GameStore from './context/context'
-import withAuth from './Components/withAuth'
-import LogIn from './Screens/LogIn'
-import SignUp from './Components/SignUp'
+import Button from "@material-ui/core/Button";
+import LogInScreen from "./Screens/LogIn";
+import TitleBar from "./Components/TitleBar";
+import CharSelect from "./Screens/CharSelect";
+import AuthHelperMethods from "./Components/_AuthHelper";
+import GameStore from "./context/context";
+import withAuth from "./Components/withAuth";
+import PrebattleScreen from "./Screens/CharVsMon";
+import BattleScreen from "./Screens/Battle";
+import LogIn from "./Screens/LogIn";
+import SignUp from "./Components/SignUp";
+
 import BattleScreen from "./Screens/Battle";
 
 class App extends Component {
@@ -58,5 +61,5 @@ class App extends Component {
   }
 }
 
-
 export default App;
+

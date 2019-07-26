@@ -1,6 +1,6 @@
 # The Curse of Brent
 
-An RPG game powered by React.
+An RPG game powered by React where players can chose characters and fight monsters.
 
 ## Installation Instructions
 
@@ -17,3 +17,6 @@ An RPG game powered by React.
   - React.js
   - Express.js
 - Material-ui
+- Mongoose
+- Passport
+- Bcrypt
