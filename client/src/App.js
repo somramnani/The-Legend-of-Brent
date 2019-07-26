@@ -11,8 +11,6 @@ import PrebattleScreen from "./Screens/CharVsMon";
 import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
 
-import BattleScreen from "./Screens/Battle";
-
 class App extends Component {
   constructor(props) {
     super(props);

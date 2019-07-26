@@ -4,7 +4,10 @@ import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
+import BattleScreen from "./Battle";
+
 import TitleBar from "../Components/TitleBar";
+
 
 class CharSelect extends Component {
   constructor(props) {
@@ -79,8 +82,23 @@ class CharSelect extends Component {
       );
     } else {
       return (
+
+        <BattleScreen 
+          selectedPlayer={selectedPlayer}
+          selectedId={selectedId}
+        />
+      );
+    }
+  }
+}
+
+export default CharSelect;
+
+/*
+
         <>
           <TitleBar />
+
           <MonsterCard
             key={selectedPlayer.id}
             id={selectedPlayer.id}
@@ -93,9 +111,4 @@ class CharSelect extends Component {
             specialAttack={selectedPlayer.specialAttack}
           />
         </>
-      );
-    }
-  }
-}
-
-export default CharSelect;
+*/
