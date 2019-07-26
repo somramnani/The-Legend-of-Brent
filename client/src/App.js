@@ -40,6 +40,9 @@ class App extends Component {
       <>
         <BattleScreen />
         {/* <SignUp /> */}
+
+       
+
       </>
       // <GameStore.Provider
       //   value={{
