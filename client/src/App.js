@@ -42,6 +42,7 @@ class App extends Component {
     return (
       <>
         <CharSelect />
+
         {/* <Router>
           <div>
             <Switch>
