@@ -124,6 +124,7 @@ class SignUp extends Component {
                   variant="outlined"
                 />
               </Grid>
+           
             </Box>
             <Box>
               <Button

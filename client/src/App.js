@@ -41,7 +41,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <Router>
+        <CharSelect />
+
+        {/* <Router>
           <div>
             <Switch>
               <Route exact path="/" component={LogIn} />
@@ -62,7 +64,7 @@ class App extends Component {
               />
             </Switch>
           </div>
-        </Router>
+        </Router> */}
       </>
     );
   }

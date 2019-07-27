@@ -51,7 +51,7 @@ class CharSelect extends Component {
                     <MonsterCard
                       key={Player.id}
                       id={Player.id}
-                      class={Player.name}
+                      class={Player.class}
                       name={Player.name}
                       img={Player.img}
                       health={Player.health}
@@ -78,14 +78,30 @@ class CharSelect extends Component {
       );
     } else {
       return (
-
-        <BattleScreen 
-          selectedPlayer={selectedPlayer}
-          selectedId={selectedId}
-        />
+        <BattleScreen selectedPlayer={selectedPlayer} selectedId={selectedId} />
       );
     }
   }
 }
 
+
+
+
 export default CharSelect;
+
+/*
+        <>
+          <TitleBar />
+          <MonsterCard
+            key={selectedPlayer.id}
+            id={selectedPlayer.id}
+            name={selectedPlayer.name}
+            class={selectedPlayer.class}
+            img={selectedPlayer.img}
+            health={selectedPlayer.health}
+            smallAttack={selectedPlayer.smallAttack}
+            bigAttack={selectedPlayer.bigAttack}
+            specialAttack={selectedPlayer.specialAttack}
+          />
+        </>
+
