@@ -10,6 +10,7 @@ import withAuth from "./Components/withAuth";
 import PrebattleScreen from "./Screens/CharVsMon";
 import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
+import BattleScreen from "./Screens/Battle";
 
 class App extends Component {
   constructor(props) {
@@ -40,7 +41,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <Router>
+        <CharSelect />
+        {/* <Router>
           <div>
             <Switch>
               <Route exact path="/" component={LogIn} />
@@ -61,7 +63,7 @@ class App extends Component {
               />
             </Switch>
           </div>
-        </Router>
+        </Router> */}
       </>
     );
   }

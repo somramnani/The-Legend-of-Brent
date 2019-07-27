@@ -1,5 +1,7 @@
-[{
+[
+  {
     "id": "1",
+    "class": "Demon Lord",
     "name": "Jolros",
     "health": "250",
     "smallAttack": "10",
@@ -10,6 +12,7 @@
   {
     "id": "2",
     "name": "Kogthas",
+    "class": "Demon Soldier",
     "health": "250",
     "smallAttack": "9",
     "bigAttack": "19",
@@ -19,6 +22,7 @@
   {
     "id": "3",
     "name": "Tengu",
+    "class": "Oni Lord",
     "health": "250",
     "smallAttack": "9",
     "bigAttack": "28",
@@ -28,6 +32,7 @@
   {
     "id": "4",
     "name": "Yamauba",
+    "class": "Oni Soldier",
     "health": "250",
     "smallAttack": "12",
     "bigAttack": "30",
@@ -36,7 +41,8 @@
   },
   {
     "id": "5",
-    "name": "Brent, The Fiend Lord",
+    "name": "Brent Abruzese",
+    "class": " Fiend Lord",
     "health": "2500",
     "smallAttack": "90",
     "bigAttack": "400",
@@ -46,6 +52,7 @@
   {
     "id": "6",
     "name": "Kuma",
+    "class": "Fiend Soldier",
     "health": "250",
     "smallAttack": "18",
     "bigAttack": "19",
@@ -55,6 +62,7 @@
   {
     "id": "7",
     "name": "Aqualon",
+    "class": "Elemental",
     "health": "250",
     "smallAttack": "18",
     "bigAttack": "19",
@@ -64,6 +72,7 @@
   {
     "id": "8",
     "name": "Tinder",
+    "class": "Fire Elemental",
     "health": "250",
     "smallAttack": "18",
     "bigAttack": "19",

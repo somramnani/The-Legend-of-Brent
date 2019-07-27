@@ -5,36 +5,29 @@ import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
 import monsters from "../data/Monster.json";
-
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(
-  createStyles({
-    card: {
-      width: 500,
-
-      margin: 60
-    },
-    media: {
-      height: 700
-    }
-  })
-);
-const classes = useStyles();
-
-
+// const useStyles = makeStyles(
+//   createStyles({
+//     card: {
+//       width: 500,
+//       margin: 60
+//     },
+//     media: {
+//       height: 700
+//     }
+//   })
+// );
+// const classes = useStyles();
 class BattleScreen extends Component {
   
   constructor(props) {
     super(props);
     this.activePlayers = [];
-
     // this.state = {
     //   players
     // }
   }
-
-
   render() {
     const style1 = {
       paddingTop: "15px"
@@ -45,10 +38,8 @@ class BattleScreen extends Component {
       monsters[Math.floor(Math.random()* monsters.length)]
     ];
     console.log(activePlayers);
-
     document.body.style.backgroundImage = "url('images/bluesky.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
-
     return (
       <Container maxWidth="lg">
         <Grid
@@ -62,11 +53,12 @@ class BattleScreen extends Component {
           {activePlayers.map(Player => 
           (
             <>
-                <Box className={`${classes.media} ${classes.card}`}>
+                <Box >
         
                 <MonsterCard
                   key={Player.id}
                   id={Player.id}
+                  class={Player.class}
                   name={Player.name}
                   img={Player.img}
                   health={Player.health}
@@ -77,7 +69,6 @@ class BattleScreen extends Component {
                 <Button
                   onClick={() => {
                     this.props.chooseCharacter(Player);
-
                   }}
                 >
                 </Button>
