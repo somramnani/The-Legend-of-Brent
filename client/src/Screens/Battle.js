@@ -20,7 +20,6 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 // );
 // const classes = useStyles();
 class BattleScreen extends Component {
-  
   constructor(props) {
     super(props);
     this.activePlayers = [];
@@ -34,27 +33,27 @@ class BattleScreen extends Component {
     };
     // const { selectedPlayer } = this.props;
     const activePlayers = [
-      players[this.props.selectedId], 
-      monsters[Math.floor(Math.random()* monsters.length)]
+      players[this.props.selectedId],
+      monsters[Math.floor(Math.random() * monsters.length)]
     ];
     console.log(activePlayers);
-    document.body.style.backgroundImage = "url('images/bluesky.jpg')";
+    document.body.style.backgroundImage = "url('images/battle.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
+    document.body.style.backgroundPosition = "center ";
+
     return (
       <Container maxWidth="lg">
         <Grid
           style={style1}
           direction="row"
-          alignItems="center"
-          justify=""
+          alignItems="space-evenly"
+          justify="center"
           container
           spacing={5}
         >
-          {activePlayers.map(Player => 
-          (
+          {activePlayers.map(Player => (
             <>
-                <Box >
-        
+              <Box>
                 <MonsterCard
                   key={Player.id}
                   id={Player.id}
@@ -70,13 +69,10 @@ class BattleScreen extends Component {
                   onClick={() => {
                     this.props.chooseCharacter(Player);
                   }}
-                >
-                </Button>
+                />
               </Box>
             </>
-          )
-          )
-          }
+          ))}
         </Grid>
       </Container>
     );
