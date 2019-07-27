@@ -66,14 +66,7 @@ export default function MonsterCard(props) {
                   {" "}
                   Class: {values.class}
                 </Typography>
-                <Typography
-                  style={{
-                    fontFamily: "Merienda, cursive"
-                  }}
-                >
-                  {" "}
-                  Health: {values.health}
-                </Typography>
+
                 <Typography
                   style={{
                     fontFamily: "Merienda, cursive"
@@ -95,6 +88,14 @@ export default function MonsterCard(props) {
                 >
                   {" "}
                   Special Attack: {values.specialAttack}
+                </Typography>
+                <Typography
+                  style={{
+                    fontFamily: "Merienda, cursive"
+                  }}
+                >
+                  {" "}
+                  Health: {values.health}
                 </Typography>
               </Grid>
               <CardActions>
