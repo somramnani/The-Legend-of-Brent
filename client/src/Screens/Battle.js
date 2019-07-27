@@ -8,19 +8,19 @@ import monsters from "../data/Monster.json";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(
-  createStyles({
-    card: {
-      width: 500,
+// const useStyles = makeStyles(
+//   createStyles({
+//     card: {
+//       width: 500,
 
-      margin: 60
-    },
-    media: {
-      height: 700
-    }
-  })
-);
-const classes = useStyles();
+//       margin: 60
+//     },
+//     media: {
+//       height: 700
+//     }
+//   })
+// );
+// const classes = useStyles();
 
 
 class BattleScreen extends Component {
@@ -62,7 +62,8 @@ class BattleScreen extends Component {
           {activePlayers.map(Player => 
           (
             <>
-                <Box className={`${classes.media} ${classes.card}`}>
+            <Box>
+                {/* <Box className={`${classes.media} ${classes.card}`}> */}
         
                 <MonsterCard
                   key={Player.id}
