@@ -5,35 +5,40 @@ import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
 import BattleScreen from "./Battle";
+import { Redirect } from 'react-router-dom'
 
 import TitleBar from "../Components/TitleBar";
 
 class CharSelect extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedId: -1,
-      selectedPlayer: {}
-    };
+    // this.state = {
+    //   selectedId: -1,
+    //   selectedPlayer: {}
+    // };
   }
 
-  chooseCharacter(pId) {
-    this.setState({
-      selectedId: pId - 1,
-      selectedPlayer: players[pId - 1]
-    });
-  }
+  // chooseCharacter(pId) {
+  //   this.setState({
+  //     selectedId: pId - 1,
+  //     selectedPlayer: players[pId - 1]
+  //   });
+  // }
 
   render() {
     const style1 = {
       paddingTop: "15px"
     };
-    const { selectedId, selectedPlayer } = this.state;
+    // const { selectedId, selectedPlayer } = this.state;
 
     document.body.style.backgroundImage = "url('images/bluesky.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
 
-    if (selectedId === -1) {
+      if (this.props.globalState.character) {
+        return <Redirect to='/BattleScreen' />
+      }
+
+    // if (selectedId === -1) {
       return (
         <>
           <TitleBar />
@@ -67,7 +72,7 @@ class CharSelect extends Component {
                       variant="contained"
                       onClick={() => {
                         // this.props.chooseCharacter(Player);
-                        this.chooseCharacter(Player.id);
+                        this.props.chooseCharacter(Player);
                       }}
                     >
                       {`Choose ${Player.name}`}
@@ -79,11 +84,6 @@ class CharSelect extends Component {
           </Container>
         </>
       );
-    } else {
-      return (
-        <BattleScreen selectedPlayer={selectedPlayer} selectedId={selectedId} />
-      );
-    }
   }
 }
 
