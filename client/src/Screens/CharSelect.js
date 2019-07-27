@@ -8,7 +8,6 @@ import BattleScreen from "./Battle";
 
 import TitleBar from "../Components/TitleBar";
 
-
 class CharSelect extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +53,7 @@ class CharSelect extends Component {
                     <MonsterCard
                       key={Player.id}
                       id={Player.id}
-                      class={Player.name}
+                      class={Player.class}
                       name={Player.name}
                       img={Player.img}
                       health={Player.health}
@@ -82,11 +81,7 @@ class CharSelect extends Component {
       );
     } else {
       return (
-
-        <BattleScreen 
-          selectedPlayer={selectedPlayer}
-          selectedId={selectedId}
-        />
+        <BattleScreen selectedPlayer={selectedPlayer} selectedId={selectedId} />
       );
     }
   }
@@ -95,10 +90,8 @@ class CharSelect extends Component {
 export default CharSelect;
 
 /*
-
         <>
           <TitleBar />
-
           <MonsterCard
             key={selectedPlayer.id}
             id={selectedPlayer.id}

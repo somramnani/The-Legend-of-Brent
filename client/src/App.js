@@ -41,7 +41,8 @@ class App extends Component {
   render() {
     return (
       <>
-      <CharSelect/>
+        <CharSelect />
+
         {/* <Router>
           <div>
             <Switch>
