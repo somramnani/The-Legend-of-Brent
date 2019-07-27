@@ -19,6 +19,7 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 //   })
 // );
 // const classes = useStyles();
+
 class BattleScreen extends Component {
   
   constructor(props) {
@@ -53,7 +54,9 @@ class BattleScreen extends Component {
           {activePlayers.map(Player => 
           (
             <>
-                <Box >
+            <Box>
+                {/* <Box className={`${classes.media} ${classes.card}`}> */}
+
         
                 <MonsterCard
                   key={Player.id}
