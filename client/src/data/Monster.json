@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": "1",
     "class": "Demon Lord",
     "name": "Jolros",
@@ -45,8 +44,8 @@
     "class": " Fiend Lord",
     "health": "2500",
     "smallAttack": "90",
-    "bigAttack": "400",
-    "specialAttack": "800",
+    "bigAttack": "800",
+    "specialAttack": "9999",
     "img": "images/FiendLord.jpg"
   },
   {
@@ -62,7 +61,7 @@
   {
     "id": "7",
     "name": "Aqualon",
-    "class": "Elemental",
+    "class": "Water Elemental",
     "health": "250",
     "smallAttack": "18",
     "bigAttack": "19",

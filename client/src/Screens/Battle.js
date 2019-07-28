@@ -5,30 +5,20 @@ import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
 import monsters from "../data/Monster.json";
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-
-// const useStyles = makeStyles(
-//   createStyles({
-//     card: {
-//       width: 500,
-//       margin: 60
-//     },
-//     media: {
-//       height: 700
-//     }
-//   })
-// );
-// const classes = useStyles();
+import { shake, rubberBand, wobble } from "animate.css";
+// import styled, { keyframes } from "styled-components";
 
 class BattleScreen extends Component {
   constructor(props) {
     super(props);
     this.activePlayers = [];
-    // this.state = {
-    //   players
-    // }
+    this.state = { shake: false, rubberBand: false, wobble: false, }
   }
   render() {
+    // const shakeAnimation = shake
+    // const rubberBandAnimation = rubberBand
+    // const wobbleAnimation = wobble
+        
     const style1 = {
       paddingTop: "15px"
     };
@@ -67,12 +57,37 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
-                      <Button size="medium" color="primary" variant="contained">
+
+                      <Button
+                        size="medium"
+                        color="primary"
+                        variant="contained"
+                        onClick={() => this.setState({ wobble: true })}
+                        onAnimationEnd={() => this.setState({ wobble: false })}
+                        className={wobble ? 'wobble' : null}>
+                      >
+                        Small Attack
+                      </Button>
+                    </Typography>
+                    <Typography>
+                      <Button
+                        size="medium"
+                        color="primary"
+                        variant="contained"
+                        onClick={() => this.setState({ shake: true })}
+                        onAnimationEnd={() => this.setState({ shake: false })}
+                        className={shake ? 'shake' : null}>
                         Big Attack
                       </Button>
                     </Typography>
                     <Typography>
-                      <Button size="medium" color="primary" variant="contained">
+                      <Button
+                        size="medium"
+                        color="primary"
+                        variant="contained"
+                        onClick={() => this.setState({ rubberBand: true })}
+                        onAnimationEnd={() => this.setState({ rubberBand: false })}
+                        className={rubberBand ? 'rubberBand' : null}>
                         Special Attack
                       </Button>
                     </Typography>
