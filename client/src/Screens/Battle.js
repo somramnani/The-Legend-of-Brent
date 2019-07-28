@@ -4,6 +4,10 @@ import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
+import monsters from "../data/Monster.json";
+import { shake, rubberBand, wobble } from "animate.css";
+// import styled, { keyframes } from "styled-components";
+
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 
 // const useStyles = makeStyles(
@@ -19,12 +23,21 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 // );
 // const classes = useStyles();
 
+
 class BattleScreen extends Component {
   constructor(props) {
     super(props);
+
+    this.activePlayers = [];
+    this.state = { shake: false, rubberBand: false, wobble: false, }
+
   }
   
   render() {
+    // const shakeAnimation = shake
+    // const rubberBandAnimation = rubberBand
+    // const wobbleAnimation = wobble
+        
     const style1 = {
       paddingTop: "15px"
     };
@@ -62,28 +75,47 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
+
                       <Button
                         size="medium"
                         color="primary"
                         variant="contained"
+
                         onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack) }}
+
+                        onClick={() => this.setState({ wobble: true })}
+                        onAnimationEnd={() => this.setState({ wobble: false })}
+                        className={wobble ? 'wobble' : null}>
+
                       >
                         Small Attack
                       </Button>
                     </Typography>
                     <Typography>
-                      <Button size="medium" color="primary" variant="contained">
+                      <Button
+                        size="medium"
+                        color="primary"
+                        variant="contained"
+                        onClick={() => this.setState({ shake: true })}
+                        onAnimationEnd={() => this.setState({ shake: false })}
+                        className={shake ? 'shake' : null}>
                         Big Attack
                       </Button>
                     </Typography>
                     <Typography>
-                      <Button size="medium" color="primary" variant="contained">
+                      <Button
+                        size="medium"
+                        color="primary"
+                        variant="contained"
+                        onClick={() => this.setState({ rubberBand: true })}
+                        onAnimationEnd={() => this.setState({ rubberBand: false })}
+                        className={rubberBand ? 'rubberBand' : null}>
                         Special Attack
                       </Button>
                     </Typography>
                   </Box>
                 </Grid>
-                
+
               </Box>
             </>
           ))}
@@ -106,6 +138,37 @@ class BattleScreen extends Component {
           </Box>)
           }
           
+
+          {monster.map(Monster => (
+            <>
+              <Box>
+                <MonsterCard
+                  key={Monster.id}
+                  id={Monster.id}
+                  class={Monster.class}
+                  name={Monster.name}
+                  img={Monster.img}
+                  health={Monster.health}
+                  smallAttack={Monster.smallAttack}
+                  bigAttack={Monster.bigAttack}
+                  specialAttack={Monster.specialAttack}
+                />
+              </Box>
+              <Typography>
+                <Button
+                  size="medium"
+                  color="primary"
+                  variant="contained"
+                  onClick={() => {
+                    let newHealth = this.health - 20;
+                    console.log(newHealth);
+                  }}
+                >
+                  Small Attack
+                </Button>
+              </Typography>
+            </>
+          ))}
         </Grid>
       </Container>
     );

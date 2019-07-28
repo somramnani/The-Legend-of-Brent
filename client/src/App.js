@@ -48,6 +48,7 @@ class App extends Component {
         health: this.state.monster.health - value
       }
     })
+
   };
 
   render() {
@@ -57,29 +58,27 @@ class App extends Component {
 
         <Router>
           <div>
-            <Switch>
+            {/* <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
-              <Route exact path="/signup" component={SignUp} />
-              <Route
-                path="/CharSelect"
-                render={() => (
-                  <CharSelect
-                    chooseCharacter={this.chooseCharacter}
-                    globalState={this.state}
-                  />
-                )}
-              />
-              <Route
-                path="/BattleScreen"
-                render={() => 
-                <BattleScreen
-                  handleAttackMonster={this.handleAttackMonster}
-                  globalState={this.state} 
-                  />
-                }
-              />
-            </Switch>
+
+              <Route exact path="/signup" component={SignUp} /> */}
+            <Route
+              path="/CharSelect"
+              render={() => (
+                <CharSelect
+                  chooseCharacter={this.chooseCharacter}
+                  globalState={this.state}
+                  
+                />
+              )}
+            />
+            <Route
+              path="/BattleScreen"
+              render={() => <BattleScreen globalState={this.state} />}
+            />
+            {/* </Switch> */}
+
           </div>
         </Router>
       </>
