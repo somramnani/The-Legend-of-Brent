@@ -38,33 +38,40 @@ class App extends Component {
     });
   };
 
+  chooseEnemy = value => {
+    this.setState({
+      enemy: value
+    });
+  };
+
   render() {
     return (
       <>
-        <CharSelect />
+        {/* <CharSelect /> */}
 
-        {/* <Router>
+        <Router>
           <div>
-            <Switch>
+            {/* <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
-              <Route exact path="/signup" component={SignUp} />
-              <Route
-                path="/CharSelect"
-                render={() => (
-                  <CharSelect
-                    chooseCharacter={this.chooseCharacter}
-                    globalState={this.state}
-                  />
-                )}
-              />
-              <Route
-                path="/BattleScreen"
-                render={() => <BattleScreen globalState={this.state} />}
-              />
-            </Switch>
+              <Route exact path="/signup" component={SignUp} /> */}
+            <Route
+              path="/CharSelect"
+              render={() => (
+                <CharSelect
+                  chooseCharacter={this.chooseCharacter}
+                  globalState={this.state}
+                  
+                />
+              )}
+            />
+            <Route
+              path="/BattleScreen"
+              render={() => <BattleScreen globalState={this.state} />}
+            />
+            {/* </Switch> */}
           </div>
-        </Router> */}
+        </Router>
       </>
     );
   }

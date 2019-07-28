@@ -57,6 +57,7 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
+
                       <Button
                         size="medium"
                         color="primary"
@@ -92,7 +93,6 @@ class BattleScreen extends Component {
                     </Typography>
                   </Box>
                 </Grid>
-                />
               </Box>
             </>
           ))}
@@ -111,8 +111,20 @@ class BattleScreen extends Component {
                   bigAttack={Monster.bigAttack}
                   specialAttack={Monster.specialAttack}
                 />
-                />
               </Box>
+              <Typography>
+                <Button
+                  size="medium"
+                  color="primary"
+                  variant="contained"
+                  onClick={() => {
+                    let newHealth = this.health - 20;
+                    console.log(newHealth);
+                  }}
+                >
+                  Small Attack
+                </Button>
+              </Typography>
             </>
           ))}
         </Grid>
