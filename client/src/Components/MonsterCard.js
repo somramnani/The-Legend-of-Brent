@@ -95,7 +95,7 @@ export default function MonsterCard(props) {
                   }}
                 >
                   {" "}
-                  Health: {values.health}
+                  Health: {values.health }
                 </Typography>
               </Grid>
               <CardActions>
