@@ -49,7 +49,7 @@ export default function TitleBar(props) {
               fontFamily: "Merienda, cursive"
             }}
           >
-            THE CURSE OF BRENT
+            THE LEGEND OF BRENT
           </Typography>
           <Button
             color="inherit"
