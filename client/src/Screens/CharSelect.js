@@ -89,19 +89,3 @@ class CharSelect extends Component {
 
 export default CharSelect;
 
-/*
-        <>
-          <TitleBar />
-          <MonsterCard
-            key={selectedPlayer.id}
-            id={selectedPlayer.id}
-            name={selectedPlayer.name}
-            class={selectedPlayer.class}
-            img={selectedPlayer.img}
-            health={selectedPlayer.health}
-            smallAttack={selectedPlayer.smallAttack}
-            bigAttack={selectedPlayer.bigAttack}
-            specialAttack={selectedPlayer.specialAttack}
-          />
-        </>
-
