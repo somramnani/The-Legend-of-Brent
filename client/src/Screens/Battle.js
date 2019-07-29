@@ -87,7 +87,6 @@ class BattleScreen extends Component {
                         onAnimationEnd={() => this.setState({ wobble: false })}
                         className={wobble ? 'wobble' : null}>
 
-                      >
                         Small Attack
                       </Button>
                     </Typography>
@@ -153,6 +152,7 @@ class BattleScreen extends Component {
                   bigAttack={Monster.bigAttack}
                   specialAttack={Monster.specialAttack}
                 />
+
               </Box>
               <Typography>
                 <Button
