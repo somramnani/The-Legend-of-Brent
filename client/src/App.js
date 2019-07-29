@@ -11,18 +11,21 @@ import PrebattleScreen from "./Screens/CharVsMon";
 import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
 import BattleScreen from "./Screens/Battle";
+import monsters from "./data/Monster.json";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      character: null
+      character: null,
+      monster: monsters[Math.floor(Math.random() * monsters.length)]
     };
   }
 
   componentDidUpdate() {
     console.log(this.state.character);
+    console.log(this.state.monster)
   }
 
   Auth = new AuthHelperMethods();
@@ -38,10 +41,14 @@ class App extends Component {
     });
   };
 
-  chooseEnemy = value => {
+  handleAttackMonster = value => {
     this.setState({
-      enemy: value
-    });
+      monster : {
+        ...this.state.monster,
+        health: this.state.monster.health - value
+      }
+    })
+
   };
 
   render() {
@@ -54,6 +61,7 @@ class App extends Component {
             {/* <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
+
               <Route exact path="/signup" component={SignUp} /> */}
             <Route
               path="/CharSelect"
@@ -70,6 +78,7 @@ class App extends Component {
               render={() => <BattleScreen globalState={this.state} />}
             />
             {/* </Switch> */}
+
           </div>
         </Router>
       </>
