@@ -5,7 +5,7 @@ import LogInScreen from "./Screens/LogIn";
 import TitleBar from "./Components/TitleBar";
 import CharSelect from "./Screens/CharSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
-import GameStore from "./context/context";
+// import GameStore from "./context/context";
 import withAuth from "./Components/withAuth";
 import PrebattleScreen from "./Screens/CharVsMon";
 import LogIn from "./Screens/LogIn";
@@ -51,20 +51,20 @@ class App extends Component {
 
   };
 
-  handleBigAttackMonster = value1 => {
+  handleBigAttackMonster = value => {
     this.setState({
       monster : {
         ...this.state.monster,
-        health: this.state.monster.health -value1
+        health: this.state.monster.health -value
       }
     })
   };
 
-  handleSpecialAttackMonster = value2 => {
+  handleSpecialAttackMonster = value => {
     this.setState({
       monster : {
         ...this.state.monster,
-        health : this.state.monster.health -value2
+        health : this.state.monster.health -value
       }
     })
   };
@@ -72,11 +72,12 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <CharSelect /> */}
+        <CharSelect />
 
         <Router>
           <div>
-             <Switch>
+// battle_animations
+            <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
               <Route exact path="/signup" component={SignUp} />
@@ -100,6 +101,24 @@ class App extends Component {
                   />
                 }
               />
+            </Switch>
+
+//battle_animations
+              <Route exact path="/signup" component={SignUp} />
+            <Route
+              path="/CharSelect"
+              render={() => (
+                <CharSelect
+                  chooseCharacter={this.chooseCharacter}
+                  globalState={this.state}
+                  
+                />
+              )}
+            />
+            <Route
+              path="/BattleScreen"
+              render={() => <BattleScreen globalState={this.state} />}
+            />
             </Switch>
 
 
