@@ -50,20 +50,20 @@ class App extends Component {
     })
   };
 
-  handleBigAttackMonster = value1 => {
+  handleBigAttackMonster = value => {
     this.setState({
       monster : {
         ...this.state.monster,
-        health: this.state.monster.health -value1
+        health: this.state.monster.health -value
       }
     })
   };
 
-  handleSpecialAttackMonster = value2 => {
+  handleSpecialAttackMonster = value => {
     this.setState({
       monster : {
         ...this.state.monster,
-        health : this.state.monster.health -value2
+        health : this.state.monster.health -value
       }
     })
   };
