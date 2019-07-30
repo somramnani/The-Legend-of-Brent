@@ -5,7 +5,9 @@ import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
 import BattleScreen from "./Battle";
+
 import { Redirect } from 'react-router-dom'
+
 
 import TitleBar from "../Components/TitleBar";
 
@@ -42,7 +44,6 @@ class CharSelect extends Component {
       return (
         <>
           <TitleBar />
-
           <Container maxWidth="lg">
             <Grid
               style={style1}
@@ -73,6 +74,7 @@ class CharSelect extends Component {
                       onClick={() => {
                         // this.props.chooseCharacter(Player);
                         this.props.chooseCharacter(Player);
+
                       }}
                     >
                       {`Choose ${Player.name}`}
@@ -87,21 +89,8 @@ class CharSelect extends Component {
   }
 }
 
+
+
+
 export default CharSelect;
 
-/*
-        <>
-          <TitleBar />
-          <MonsterCard
-            key={selectedPlayer.id}
-            id={selectedPlayer.id}
-            name={selectedPlayer.name}
-            class={selectedPlayer.class}
-            img={selectedPlayer.img}
-            health={selectedPlayer.health}
-            smallAttack={selectedPlayer.smallAttack}
-            bigAttack={selectedPlayer.bigAttack}
-            specialAttack={selectedPlayer.specialAttack}
-          />
-        </>
-*/
