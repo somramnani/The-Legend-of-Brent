@@ -4,25 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
-import monsters from "../data/Monster.json";
-import { shake, rubberBand, wobble } from "animate.css";
-// import styled, { keyframes } from "styled-components";
-
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-
-// const useStyles = makeStyles(
-//   createStyles({
-//     card: {
-//       width: 500,
-//       margin: 60
-//     },
-//     media: {
-//       height: 700
-//     }
-//   })
-// );
-// const classes = useStyles();
-
+import monster from "../data/Monster.json";
 
 class BattleScreen extends Component {
   constructor(props) {
@@ -34,14 +16,10 @@ class BattleScreen extends Component {
   }
   
   render() {
-    // const shakeAnimation = shake
-    // const rubberBandAnimation = rubberBand
-    // const wobbleAnimation = wobble
-        
+
     const style1 = {
       paddingTop: "15px"
     };
-    // const { selectedPlayer } = this.props;
     const activePlayers = [players[this.props.selectedId]];
     console.log(activePlayers);
     document.body.style.backgroundImage = "url('images/battle.jpg')";
@@ -83,7 +61,6 @@ class BattleScreen extends Component {
 
                         onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack) }}
 
-                        onClick={() => this.setState({ wobble: true })}
                         onAnimationEnd={() => this.setState({ wobble: false })}
                         className={wobble ? 'wobble' : null}>
 

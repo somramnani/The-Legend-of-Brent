@@ -5,7 +5,7 @@ import LogInScreen from "./Screens/LogIn";
 import TitleBar from "./Components/TitleBar";
 import CharSelect from "./Screens/CharSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
-import GameStore from "./context/context";
+// import GameStore from "./context/context";
 import withAuth from "./Components/withAuth";
 import PrebattleScreen from "./Screens/CharVsMon";
 import LogIn from "./Screens/LogIn";
@@ -54,15 +54,15 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <CharSelect /> */}
+        <CharSelect />
 
         <Router>
           <div>
-            {/* <Switch>
+            <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
 
-              <Route exact path="/signup" component={SignUp} /> */}
+              <Route exact path="/signup" component={SignUp} />
             <Route
               path="/CharSelect"
               render={() => (
@@ -77,7 +77,7 @@ class App extends Component {
               path="/BattleScreen"
               render={() => <BattleScreen globalState={this.state} />}
             />
-            {/* </Switch> */}
+            </Switch>
 
           </div>
         </Router>
