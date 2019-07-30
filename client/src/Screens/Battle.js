@@ -23,21 +23,19 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 // );
 // const classes = useStyles();
 
-
 class BattleScreen extends Component {
   constructor(props) {
     super(props);
 
     this.activePlayers = [];
-    this.state = { shake: false, rubberBand: false, wobble: false, }
-
+    this.state = { shake: false, rubberBand: false, wobble: false };
   }
-  
+
   render() {
     // const shakeAnimation = shake
     // const rubberBandAnimation = rubberBand
     // const wobbleAnimation = wobble
-        
+
     const style1 = {
       paddingTop: "15px"
     };
@@ -75,91 +73,71 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
-
                       <Button
                         size="medium"
                         color="primary"
                         variant="contained"
 
-                        onClick={() => { this.props.handleSmallAttackMonster(this.props.globalState.character.smallAttack) }}
+                        // onClick={() => { this.props.handleSmallAttackMonster(this.props.globalState.character.smallAttack) }}
                       >
-
-
-                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack) }}
+                        {/* onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack) }}
 
                         onClick={() => this.setState({ wobble: true })}
                         onAnimationEnd={() => this.setState({ wobble: false })}
-                        className={wobble ? 'wobble' : null}>
-
-
+                        className={wobble ? 'wobble' : null}> */}
                         Small Attack
                       </Button>
                     </Typography>
-                    <Typography>
- 
-                      <Button size="medium"
-                              color="primary"
-                              variant="contained"
-                              onClick={() => { this.props.handleBigAttackMonster(this.props.globalState.character.bigAttack) }}
-                      >
 
+                    <Typography>
                       <Button
                         size="medium"
                         color="primary"
                         variant="contained"
                         onClick={() => this.setState({ shake: true })}
                         onAnimationEnd={() => this.setState({ shake: false })}
-                        className={shake ? 'shake' : null}>
-
+                        className={shake ? "shake" : null}
+                      >
                         Big Attack
                       </Button>
                     </Typography>
                     <Typography>
-
-                      <Button size="medium"
-                              color="primary" 
-                              variant="contained"
-                              onClick={() => { this.props.handleSpecialAttackMonster(this.props.globalState.character.specialAttack)}}
-                      >
-
                       <Button
                         size="medium"
                         color="primary"
                         variant="contained"
                         onClick={() => this.setState({ rubberBand: true })}
-                        onAnimationEnd={() => this.setState({ rubberBand: false })}
-                        className={rubberBand ? 'rubberBand' : null}>
-
+                        onAnimationEnd={() =>
+                          this.setState({ rubberBand: false })
+                        }
+                        className={rubberBand ? "rubberBand" : null}
+                      >
                         Special Attack
                       </Button>
                     </Typography>
                   </Box>
                 </Grid>
-
               </Box>
             </>
           ))}
 
-          {
-            this.props.globalState.monster  && (
+          {this.props.globalState.monster && (
             <Box>
-            <MonsterCard
-              key={this.props.globalState.monster.id}
-              id={this.props.globalState.monster.id}
-              class={this.props.globalState.monster.class}
-              name={this.props.globalState.monster.name}
-              img={this.props.globalState.monster.img}
-              health={this.props.globalState.monster.health}
-              smallAttack={this.props.globalState.monster.smallAttack}
-              bigAttack={this.props.globalState.monster.bigAttack}
-              specialAttack={this.props.globalState.monster.specialAttack}
-            />
-            
-          </Box>)
-          }
-          
+              <MonsterCard
+                key={this.props.globalState.monster.id}
+                id={this.props.globalState.monster.id}
+                class={this.props.globalState.monster.class}
+                name={this.props.globalState.monster.name}
+                img={this.props.globalState.monster.img}
+                health={this.props.globalState.monster.health}
+                smallAttack={this.props.globalState.monster.smallAttack}
+                bigAttack={this.props.globalState.monster.bigAttack}
+                specialAttack={this.props.globalState.monster.specialAttack}
+              />
+            </Box>
+          )}
 
-          {monster.map(Monster => (
+          {monsters.map(Monster => (
             <>
               <Box>
                 <MonsterCard
@@ -173,7 +151,6 @@ class BattleScreen extends Component {
                   bigAttack={Monster.bigAttack}
                   specialAttack={Monster.specialAttack}
                 />
-
               </Box>
               <Typography>
                 <Button
