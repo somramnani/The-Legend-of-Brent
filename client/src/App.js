@@ -41,11 +41,29 @@ class App extends Component {
     });
   };
 
-  handleAttackMonster = value => {
+  handleSmallAttackMonster = value => {
     this.setState({
       monster : {
         ...this.state.monster,
         health: this.state.monster.health - value
+      }
+    })
+  };
+
+  handleBigAttackMonster = value1 => {
+    this.setState({
+      monster : {
+        ...this.state.monster,
+        health: this.state.monster.health -value1
+      }
+    })
+  };
+
+  handleSpecialAttackMonster = value2 => {
+    this.setState({
+      monster : {
+        ...this.state.monster,
+        health : this.state.monster.health -value2
       }
     })
   };
@@ -74,7 +92,9 @@ class App extends Component {
                 path="/BattleScreen"
                 render={() => 
                 <BattleScreen
-                  handleAttackMonster={this.handleAttackMonster}
+                  handleSmallAttackMonster={this.handleSmallAttackMonster}
+                  handleBigAttackMonster={this.handleBigAttackMonster}
+                  handleSpecialAttackMonster={this.handleSpecialAttackMonster}
                   globalState={this.state} 
                   />
                 }
