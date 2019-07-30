@@ -5,18 +5,17 @@ import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
 import monster from "../data/Monster.json";
+import SpringButton from "../Components/SpringButton";
 
 class BattleScreen extends Component {
   constructor(props) {
     super(props);
-
     this.activePlayers = [];
     this.state = { shake: false, rubberBand: false, wobble: false, }
-
   }
-  
-  render() {
 
+  render() {
+    
     const style1 = {
       paddingTop: "15px"
     };
@@ -53,41 +52,33 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
-
-                      <Button
+                      <SpringButton
                         size="medium"
                         color="primary"
                         variant="contained"
-
-                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack) }}
-
-                        onAnimationEnd={() => this.setState({ wobble: false })}
-                        className={wobble ? 'wobble' : null}>
-
+                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack)}}>
                         Small Attack
-                      </Button>
+                      </SpringButton>
                     </Typography>
+
                     <Typography>
-                      <Button
+                      <SpringButton
                         size="medium"
                         color="primary"
                         variant="contained"
-                        onClick={() => this.setState({ shake: true })}
-                        onAnimationEnd={() => this.setState({ shake: false })}
-                        className={shake ? 'shake' : null}>
+                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.bigAttack)}}>
                         Big Attack
-                      </Button>
+                      </SpringButton>
                     </Typography>
+
                     <Typography>
-                      <Button
+                      <SpringButton
                         size="medium"
                         color="primary"
                         variant="contained"
-                        onClick={() => this.setState({ rubberBand: true })}
-                        onAnimationEnd={() => this.setState({ rubberBand: false })}
-                        className={rubberBand ? 'rubberBand' : null}>
+                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.specialAttack)}}>
                         Special Attack
-                      </Button>
+                      </SpringButton>
                     </Typography>
                   </Box>
                 </Grid>
