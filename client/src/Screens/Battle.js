@@ -4,18 +4,54 @@ import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
+<<<<<<< HEAD
+
+import monsters from "../data/Monster.json";
+import { shake, rubberBand, wobble } from "animate.css";
+// import styled, { keyframes } from "styled-components";
+
+import { createStyles, makeStyles } from "@material-ui/core/styles";
+
+// const useStyles = makeStyles(
+//   createStyles({
+//     card: {
+//       width: 500,
+//       margin: 60
+//     },
+//     media: {
+//       height: 700
+//     }
+//   })
+// );
+// const classes = useStyles();
+
+=======
 import monster from "../data/Monster.json";
 import SpringButton from "../Components/SpringButton";
+>>>>>>> 563f9ba069e8f00a93974e1c12f90e6beee7fa9c
 
 class BattleScreen extends Component {
   constructor(props) {
     super(props);
     this.activePlayers = [];
+<<<<<<< HEAD
+    this.state = { shake: false, rubberBand: false, wobble: false };
+  }
+
+  render() {
+
+    // const shakeAnimation = shake
+    // const rubberBandAnimation = rubberBand
+    // const wobbleAnimation = wobble
+
+
+=======
     this.state = { shake: false, rubberBand: false, wobble: false, }
   }
 
   render() {
     
+>>>>>>> 563f9ba069e8f00a93974e1c12f90e6beee7fa9c
     const style1 = {
       paddingTop: "15px"
     };
@@ -83,31 +119,27 @@ class BattleScreen extends Component {
                     </Typography>
                   </Box>
                 </Grid>
-
               </Box>
             </>
           ))}
 
-          {
-            this.props.globalState.monster  && (
+          {this.props.globalState.monster && (
             <Box>
-            <MonsterCard
-              key={this.props.globalState.monster.id}
-              id={this.props.globalState.monster.id}
-              class={this.props.globalState.monster.class}
-              name={this.props.globalState.monster.name}
-              img={this.props.globalState.monster.img}
-              health={this.props.globalState.monster.health}
-              smallAttack={this.props.globalState.monster.smallAttack}
-              bigAttack={this.props.globalState.monster.bigAttack}
-              specialAttack={this.props.globalState.monster.specialAttack}
-            />
-            
-          </Box>)
-          }
-          
+              <MonsterCard
+                key={this.props.globalState.monster.id}
+                id={this.props.globalState.monster.id}
+                class={this.props.globalState.monster.class}
+                name={this.props.globalState.monster.name}
+                img={this.props.globalState.monster.img}
+                health={this.props.globalState.monster.health}
+                smallAttack={this.props.globalState.monster.smallAttack}
+                bigAttack={this.props.globalState.monster.bigAttack}
+                specialAttack={this.props.globalState.monster.specialAttack}
+              />
+            </Box>
+          )}
 
-          {monster.map(Monster => (
+          {monsters.map(Monster => (
             <>
               {/* <Box>
                 <MonsterCard
