@@ -59,15 +59,27 @@ class BattleScreen extends Component {
                         color="primary"
                         variant="contained"
 
+                        onClick={() => { this.props.handleSmallAttackMonster(this.props.globalState.character.smallAttack) }}
+                      >
+
+
                         onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack) }}
 
                         onAnimationEnd={() => this.setState({ wobble: false })}
                         className={wobble ? 'wobble' : null}>
 
+
                         Small Attack
                       </Button>
                     </Typography>
                     <Typography>
+ 
+                      <Button size="medium"
+                              color="primary"
+                              variant="contained"
+                              onClick={() => { this.props.handleBigAttackMonster(this.props.globalState.character.bigAttack) }}
+                      >
+
                       <Button
                         size="medium"
                         color="primary"
@@ -75,10 +87,18 @@ class BattleScreen extends Component {
                         onClick={() => this.setState({ shake: true })}
                         onAnimationEnd={() => this.setState({ shake: false })}
                         className={shake ? 'shake' : null}>
+
                         Big Attack
                       </Button>
                     </Typography>
                     <Typography>
+
+                      <Button size="medium"
+                              color="primary" 
+                              variant="contained"
+                              onClick={() => { this.props.handleSpecialAttackMonster(this.props.globalState.character.specialAttack)}}
+                      >
+
                       <Button
                         size="medium"
                         color="primary"
@@ -86,6 +106,7 @@ class BattleScreen extends Component {
                         onClick={() => this.setState({ rubberBand: true })}
                         onAnimationEnd={() => this.setState({ rubberBand: false })}
                         className={rubberBand ? 'rubberBand' : null}>
+
                         Special Attack
                       </Button>
                     </Typography>

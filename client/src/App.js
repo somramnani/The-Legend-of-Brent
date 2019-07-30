@@ -41,7 +41,7 @@ class App extends Component {
     });
   };
 
-  handleAttackMonster = value => {
+  handleSmallAttackMonster = value => {
     this.setState({
       monster : {
         ...this.state.monster,
@@ -51,6 +51,24 @@ class App extends Component {
 
   };
 
+  handleBigAttackMonster = value1 => {
+    this.setState({
+      monster : {
+        ...this.state.monster,
+        health: this.state.monster.health -value1
+      }
+    })
+  };
+
+  handleSpecialAttackMonster = value2 => {
+    this.setState({
+      monster : {
+        ...this.state.monster,
+        health : this.state.monster.health -value2
+      }
+    })
+  };
+
   render() {
     return (
       <>
@@ -58,10 +76,34 @@ class App extends Component {
 
         <Router>
           <div>
+// battle_animations
             <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route
+                path="/CharSelect"
+                render={() => (
+                  <CharSelect
+                    chooseCharacter={this.chooseCharacter}
+                    globalState={this.state}
+                  />
+                )}
+              />
+              <Route
+                path="/BattleScreen"
+                render={() => 
+                <BattleScreen
+                  handleSmallAttackMonster={this.handleSmallAttackMonster}
+                  handleBigAttackMonster={this.handleBigAttackMonster}
+                  handleSpecialAttackMonster={this.handleSpecialAttackMonster}
+                  globalState={this.state} 
+                  />
+                }
+              />
+            </Switch>
 
+//battle_animations
               <Route exact path="/signup" component={SignUp} />
             <Route
               path="/CharSelect"
@@ -79,6 +121,8 @@ class App extends Component {
             />
             </Switch>
 
+
+          
           </div>
         </Router>
       </>
