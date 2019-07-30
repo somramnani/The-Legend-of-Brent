@@ -36,7 +36,7 @@ class CharSelect extends Component {
     document.body.style.backgroundImage = "url('images/bluesky.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
 
-      if (this.props.globalState.character) {
+      if (this.props.globalState && this.props.globalState.character) {
         return <Redirect to='/BattleScreen' />
       }
 

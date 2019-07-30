@@ -53,40 +53,33 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
-
                       <Button
                         size="medium"
                         color="primary"
                         variant="contained"
-
                         onClick={() => { this.props.handleSmallAttackMonster(this.props.globalState.character.smallAttack) }}
                       >
-
-
-                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack) }}
-
-                        onAnimationEnd={() => this.setState({ wobble: false })}
-                        className={wobble ? 'wobble' : null}>
-
+                        {/* onAnimationEnd={() => this.setState({ wobble: false })}
+                        className={wobble ? 'wobble' : null}> */}
 
                         Small Attack
                       </Button>
                     </Typography>
+
                     <Typography>
- 
                       <Button size="medium"
                               color="primary"
                               variant="contained"
                               onClick={() => { this.props.handleBigAttackMonster(this.props.globalState.character.bigAttack) }}
                       >
 
-                      <Button
+                      {/* <Button
                         size="medium"
                         color="primary"
                         variant="contained"
                         onClick={() => this.setState({ shake: true })}
                         onAnimationEnd={() => this.setState({ shake: false })}
-                        className={shake ? 'shake' : null}>
+                        className={shake ? 'shake' : null}> */}
 
                         Big Attack
                       </Button>
@@ -99,13 +92,13 @@ class BattleScreen extends Component {
                               onClick={() => { this.props.handleSpecialAttackMonster(this.props.globalState.character.specialAttack)}}
                       >
 
-                      <Button
+                      {/* <Button
                         size="medium"
                         color="primary"
                         variant="contained"
                         onClick={() => this.setState({ rubberBand: true })}
                         onAnimationEnd={() => this.setState({ rubberBand: false })}
-                        className={rubberBand ? 'rubberBand' : null}>
+                        className={rubberBand ? 'rubberBand' : null}> */}
 
                         Special Attack
                       </Button>
@@ -138,7 +131,7 @@ class BattleScreen extends Component {
 
           {monster.map(Monster => (
             <>
-              <Box>
+              {/* <Box>
                 <MonsterCard
                   key={Monster.id}
                   id={Monster.id}
@@ -151,9 +144,9 @@ class BattleScreen extends Component {
                   specialAttack={Monster.specialAttack}
                 />
 
-              </Box>
+              </Box> */}
               <Typography>
-                <Button
+                {/* <Button
                   size="medium"
                   color="primary"
                   variant="contained"
@@ -163,7 +156,7 @@ class BattleScreen extends Component {
                   }}
                 >
                   Small Attack
-                </Button>
+                </Button> */}
               </Typography>
             </>
           ))}
