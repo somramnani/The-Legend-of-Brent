@@ -1,7 +1,7 @@
 [{
     "id": "1",
     "name": "Alymere",
-    "class": "The Paladin",
+    "class": "Paladin",
     "health": "250",
     "smallAttack": "11",
     "bigAttack": "19",
@@ -10,7 +10,7 @@
   },
   {
     "id": "2",
-    "name": "Hugubert ",
+    "name": "Hugubert",
     "class": "Knight",
     "health": "250",
     "smallAttack": "17",
@@ -20,7 +20,7 @@
   },
   {
     "id": "3",
-    "name": "Yakumo Ryu ",
+    "name": "Yakumo Ryu",
     "class": "Samurai",
     "health": "180",
     "smallAttack": "22",
@@ -30,7 +30,7 @@
   },
   {
     "id": "4",
-    "name": "Lightningstroke ",
+    "name": "Lightningstroke",
     "class": "Ninja",
     "health": "170",
     "smallAttack": "19",
@@ -50,7 +50,7 @@
   },
   {
     "id": "6",
-    "name": "Wengo ",
+    "name": "Wengo",
     "class": "Viking",
     "health": "200",
     "smallAttack": "20",

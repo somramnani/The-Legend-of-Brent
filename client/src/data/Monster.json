@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": "1",
     "class": "Demon Lord",
     "name": "Jolros",
@@ -42,11 +41,16 @@
   {
     "id": "5",
     "name": "Brent Abruzese",
-    "class": " Fiend Lord",
+    "class": " The Cursed One",
     "health": "2500",
     "smallAttack": "90",
+<<<<<<< HEAD
     "bigAttack": "100",
     "specialAttack": "800",
+=======
+    "bigAttack": "199",
+    "specialAttack": "9999",
+>>>>>>> 280377087ba294ace72193fd00ae9ea7ac7be38e
     "img": "images/FiendLord.jpg"
   },
   {
@@ -62,8 +66,13 @@
   {
     "id": "7",
     "name": "Aqualon",
+<<<<<<< HEAD
     "class": "Elemental",
     "health": "750",
+=======
+    "class": "Water Elemental",
+    "health": "250",
+>>>>>>> 280377087ba294ace72193fd00ae9ea7ac7be38e
     "smallAttack": "18",
     "bigAttack": "19",
     "specialAttack": "80",

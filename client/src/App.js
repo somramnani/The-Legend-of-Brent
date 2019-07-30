@@ -48,6 +48,7 @@ class App extends Component {
         health: this.state.monster.health - value
       }
     })
+
   };
 
   handleBigAttackMonster = value => {
@@ -75,7 +76,7 @@ class App extends Component {
 
         <Router>
           <div>
-            <Switch>
+             <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
               <Route exact path="/signup" component={SignUp} />
@@ -100,6 +101,9 @@ class App extends Component {
                 }
               />
             </Switch>
+
+
+          
           </div>
         </Router>
       </>
