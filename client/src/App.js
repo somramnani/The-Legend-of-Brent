@@ -41,7 +41,7 @@ class App extends Component {
     });
   };
 
-  handleAttackMonster = value => {
+  handleSmallAttackMonster = value => {
     this.setState({
       monster : {
         ...this.state.monster,
@@ -51,34 +51,58 @@ class App extends Component {
 
   };
 
+  handleBigAttackMonster = value => {
+    this.setState({
+      monster : {
+        ...this.state.monster,
+        health: this.state.monster.health -value
+      }
+    })
+  };
+
+  handleSpecialAttackMonster = value => {
+    this.setState({
+      monster : {
+        ...this.state.monster,
+        health : this.state.monster.health -value
+      }
+    })
+  };
+
+
+
   render() {
     return (
       <>
-        <CharSelect />
+        {/* <CharSelect /> */}
 
         <Router>
           <div>
             <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
-
               <Route exact path="/signup" component={SignUp} />
-            <Route
-              path="/CharSelect"
-              render={() => (
-                <CharSelect
-                  chooseCharacter={this.chooseCharacter}
-                  globalState={this.state}
-                  
-                />
-              )}
-            />
-            <Route
-              path="/BattleScreen"
-              render={() => <BattleScreen globalState={this.state} />}
-            />
+              <Route
+                path="/CharSelect"
+                render={() => (
+                  <CharSelect
+                    chooseCharacter={this.chooseCharacter}
+                    globalState={this.state}
+                  />
+                )}
+              />
+              <Route
+                path="/BattleScreen"
+                render={() => 
+                <BattleScreen
+                  handleSmallAttackMonster={this.handleSmallAttackMonster}
+                  handleBigAttackMonster={this.handleBigAttackMonster}
+                  handleSpecialAttackMonster={this.handleSpecialAttackMonster}
+                  globalState={this.state} 
+                  />
+                }
+              />
             </Switch>
-
           </div>
         </Router>
       </>

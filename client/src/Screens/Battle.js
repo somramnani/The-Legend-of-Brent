@@ -57,6 +57,7 @@ class BattleScreen extends Component {
                         color="primary"
                         variant="contained"
                         onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack)}}>
+
                         Small Attack
                       </SpringButton>
                     </Typography>
@@ -108,7 +109,7 @@ class BattleScreen extends Component {
 
           {monster.map(Monster => (
             <>
-              <Box>
+              {/* <Box>
                 <MonsterCard
                   key={Monster.id}
                   id={Monster.id}
@@ -121,9 +122,9 @@ class BattleScreen extends Component {
                   specialAttack={Monster.specialAttack}
                 />
 
-              </Box>
+              </Box> */}
               <Typography>
-                <Button
+                {/* <Button
                   size="medium"
                   color="primary"
                   variant="contained"
@@ -133,7 +134,7 @@ class BattleScreen extends Component {
                   }}
                 >
                   Small Attack
-                </Button>
+                </Button> */}
               </Typography>
             </>
           ))}
