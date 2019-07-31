@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
+<<<<<<< HEAD
 
 import monsters from "../data/Monster.json";
 import { shake, rubberBand, wobble } from "animate.css";
@@ -24,12 +25,16 @@ import { createStyles, makeStyles } from "@material-ui/core/styles";
 // );
 // const classes = useStyles();
 
+=======
+import monster from "../data/Monster.json";
+import SpringButton from "../Components/SpringButton";
+>>>>>>> 563f9ba069e8f00a93974e1c12f90e6beee7fa9c
 
 class BattleScreen extends Component {
   constructor(props) {
     super(props);
-
     this.activePlayers = [];
+<<<<<<< HEAD
     this.state = { shake: false, rubberBand: false, wobble: false };
   }
 
@@ -40,6 +45,13 @@ class BattleScreen extends Component {
     // const wobbleAnimation = wobble
 
 
+=======
+    this.state = { shake: false, rubberBand: false, wobble: false, }
+  }
+
+  render() {
+    
+>>>>>>> 563f9ba069e8f00a93974e1c12f90e6beee7fa9c
     const style1 = {
       paddingTop: "15px"
     };
@@ -76,19 +88,14 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
-                      <Button
+                      <SpringButton
                         size="medium"
                         color="primary"
                         variant="contained"
+                        onClick={() => { this.props.handleSmallAttackMonster(this.props.globalState.character.smallAttack)}}>
 
-                        // onClick={() => { this.props.handleSmallAttackMonster(this.props.globalState.character.smallAttack) }}
-                      >
-                        {/* onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack) }}
-
-                        onAnimationEnd={() => this.setState({ wobble: false })}
-                        className={wobble ? 'wobble' : null}> */}
                         Small Attack
-                      </Button>
+                      </SpringButton>
                     </Typography>
 
                     <Typography>
@@ -96,24 +103,17 @@ class BattleScreen extends Component {
                         size="medium"
                         color="primary"
                         variant="contained"
-                        onClick={() => this.setState({ shake: true })}
-                        onAnimationEnd={() => this.setState({ shake: false })}
-                        className={shake ? "shake" : null}
-                      >
+                        onClick={() => { this.props.handleBigAttackMonster(this.props.globalState.character.bigAttack)}}>
                         Big Attack
                       </Button>
                     </Typography>
+
                     <Typography>
                       <Button
                         size="medium"
                         color="primary"
                         variant="contained"
-                        onClick={() => this.setState({ rubberBand: true })}
-                        onAnimationEnd={() =>
-                          this.setState({ rubberBand: false })
-                        }
-                        className={rubberBand ? "rubberBand" : null}
-                      >
+                        onClick={() => { this.props.handleSpecialAttackMonster(this.props.globalState.character.specialAttack)}}>
                         Special Attack
                       </Button>
                     </Typography>
@@ -141,7 +141,7 @@ class BattleScreen extends Component {
 
           {monsters.map(Monster => (
             <>
-              <Box>
+              {/* <Box>
                 <MonsterCard
                   key={Monster.id}
                   id={Monster.id}
@@ -153,9 +153,10 @@ class BattleScreen extends Component {
                   bigAttack={Monster.bigAttack}
                   specialAttack={Monster.specialAttack}
                 />
-              </Box>
+
+              </Box> */}
               <Typography>
-                <Button
+                {/* <Button
                   size="medium"
                   color="primary"
                   variant="contained"
@@ -165,7 +166,7 @@ class BattleScreen extends Component {
                   }}
                 >
                   Small Attack
-                </Button>
+                </Button> */}
               </Typography>
             </>
           ))}

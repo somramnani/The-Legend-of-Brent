@@ -69,14 +69,15 @@ class App extends Component {
     })
   };
 
+
+
   render() {
     return (
       <>
-        <CharSelect />
+        {/* <CharSelect /> */}
 
         <Router>
           <div>
-// battle_animations
             <Switch>
               <Route exact path="/" component={LogIn} />
               <Route exact path="/login" component={LogIn} />
@@ -102,27 +103,6 @@ class App extends Component {
                 }
               />
             </Switch>
-
-//battle_animations
-              <Route exact path="/signup" component={SignUp} />
-            <Route
-              path="/CharSelect"
-              render={() => (
-                <CharSelect
-                  chooseCharacter={this.chooseCharacter}
-                  globalState={this.state}
-                  
-                />
-              )}
-            />
-            <Route
-              path="/BattleScreen"
-              render={() => <BattleScreen globalState={this.state} />}
-            />
-            </Switch>
-
-
-          
           </div>
         </Router>
       </>
