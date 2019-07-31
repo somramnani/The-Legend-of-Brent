@@ -24,16 +24,6 @@ const useStyles = makeStyles(
 
 export default function MonsterCard(props) {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    name: props.name,
-    img: props.img,
-    title: "",
-    class: props.class,
-    health: props.health,
-    smallAttack: props.smallAttack,
-    bigAttack: props.bigAttack,
-    specialAttack: props.specialAttack
-  });
 
   return (
     <>
@@ -41,8 +31,8 @@ export default function MonsterCard(props) {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={values.img}
-            name={values.name}
+            image={props.img}
+            name={props.name}
           />
           <CardContent>
             <Typography
@@ -53,7 +43,7 @@ export default function MonsterCard(props) {
                 fontFamily: "Merienda, cursive"
               }}
             >
-              {values.name}
+              {props.name}
             </Typography>
 
             <Typography variant="body2" component="p" color="textSecondary">
@@ -64,7 +54,7 @@ export default function MonsterCard(props) {
                   }}
                 >
                   {" "}
-                  Class: {values.class}
+                  Class: {props.class}
                 </Typography>
 
                 <Typography
@@ -72,22 +62,14 @@ export default function MonsterCard(props) {
                     fontFamily: "Merienda, cursive"
                   }}
                 >
-                  Small Attack: {values.smallAttack}
+                  Small Attack: {props.smallAttack}
                 </Typography>
                 <Typography
                   style={{
                     fontFamily: "Merienda, cursive"
                   }}
                 >
-                  Big Attack: {values.bigAttack}
-                </Typography>
-                <Typography
-                  style={{
-                    fontFamily: "Merienda, cursive"
-                  }}
-                >
-                  {" "}
-                  Special Attack: {values.specialAttack}
+                  Big Attack: {props.bigAttack}
                 </Typography>
                 <Typography
                   style={{
@@ -95,7 +77,15 @@ export default function MonsterCard(props) {
                   }}
                 >
                   {" "}
-                  Health: {values.health }
+                  Special Attack: {props.specialAttack}
+                </Typography>
+                <Typography
+                  style={{
+                    fontFamily: "Merienda, cursive"
+                  }}
+                >
+                  {" "}
+                  Health: {props.health }
                 </Typography>
               </Grid>
               <CardActions>
