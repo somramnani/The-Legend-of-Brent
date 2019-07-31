@@ -88,14 +88,14 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
-                      <SpringButton
+                      <Button
                         size="medium"
                         color="primary"
                         variant="contained"
                         onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack)}}>
 
                         Small Attack
-                      </SpringButton>
+                      </Button>
                     </Typography>
 
                     <Typography>
