@@ -34,7 +34,6 @@ export default function withAuth(AuthComponent) {
         if (this.state.confirm) {
           return (
             <AuthComponent
-              history={this.props.history}
               confirm={this.state.confirm}
             />
           );

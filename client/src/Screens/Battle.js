@@ -4,54 +4,17 @@ import Typography from "@material-ui/core/Typography";
 import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
-<<<<<<< HEAD
-
-import monsters from "../data/Monster.json";
-import { shake, rubberBand, wobble } from "animate.css";
-// import styled, { keyframes } from "styled-components";
-
-import { createStyles, makeStyles } from "@material-ui/core/styles";
-
-// const useStyles = makeStyles(
-//   createStyles({
-//     card: {
-//       width: 500,
-//       margin: 60
-//     },
-//     media: {
-//       height: 700
-//     }
-//   })
-// );
-// const classes = useStyles();
-
-=======
 import monster from "../data/Monster.json";
-import SpringButton from "../Components/SpringButton";
->>>>>>> 563f9ba069e8f00a93974e1c12f90e6beee7fa9c
+// import SpringButton from "../Components/SpringButton";
 
 class BattleScreen extends Component {
   constructor(props) {
     super(props);
     this.activePlayers = [];
-<<<<<<< HEAD
-    this.state = { shake: false, rubberBand: false, wobble: false };
-  }
-
-  render() {
-
-    // const shakeAnimation = shake
-    // const rubberBandAnimation = rubberBand
-    // const wobbleAnimation = wobble
-
-
-=======
     this.state = { shake: false, rubberBand: false, wobble: false, }
   }
 
   render() {
-    
->>>>>>> 563f9ba069e8f00a93974e1c12f90e6beee7fa9c
     const style1 = {
       paddingTop: "15px"
     };
@@ -88,6 +51,7 @@ class BattleScreen extends Component {
                 <Grid container direction="column" justify="space-between">
                   <Box>
                     <Typography>
+
                       <Button
                         size="medium"
                         color="primary"
@@ -99,23 +63,23 @@ class BattleScreen extends Component {
                     </Typography>
 
                     <Typography>
-                      <SpringButton
+                      {/* <SpringButton
                         size="medium"
                         color="primary"
                         variant="contained"
                         onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.bigAttack)}}>
                         Big Attack
-                      </SpringButton>
+                      </SpringButton> */}
                     </Typography>
 
                     <Typography>
-                      <SpringButton
+                      {/* <SpringButton
                         size="medium"
                         color="primary"
                         variant="contained"
                         onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.specialAttack)}}>
                         Special Attack
-                      </SpringButton>
+                      </SpringButton> */}
                     </Typography>
                   </Box>
                 </Grid>
@@ -139,9 +103,9 @@ class BattleScreen extends Component {
             </Box>
           )}
 
-          {monsters.map(Monster => (
+          {monster.map(Monster => (
             <>
-              {/* <Box>
+              <Box>
                 <MonsterCard
                   key={Monster.id}
                   id={Monster.id}
@@ -153,10 +117,9 @@ class BattleScreen extends Component {
                   bigAttack={Monster.bigAttack}
                   specialAttack={Monster.specialAttack}
                 />
-
-              </Box> */}
+              </Box>
               <Typography>
-                {/* <Button
+                <Button
                   size="medium"
                   color="primary"
                   variant="contained"
@@ -166,7 +129,7 @@ class BattleScreen extends Component {
                   }}
                 >
                   Small Attack
-                </Button> */}
+                </Button>
               </Typography>
             </>
           ))}

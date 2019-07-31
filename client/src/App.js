@@ -5,7 +5,6 @@ import LogInScreen from "./Screens/LogIn";
 import TitleBar from "./Components/TitleBar";
 import CharSelect from "./Screens/CharSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
-// import GameStore from "./context/context";
 import withAuth from "./Components/withAuth";
 import PrebattleScreen from "./Screens/CharVsMon";
 import LogIn from "./Screens/LogIn";
@@ -90,41 +89,36 @@ class App extends Component {
     })
   };
 
-
-
   render() {
     return (
       <>
-        {/* <CharSelect /> */}
-
+        <LogInScreen />
         <Router>
-          <div>
-            <Switch>
-              <Route exact path="/" component={LogIn} />
-              <Route exact path="/login" component={LogIn} />
-              <Route exact path="/signup" component={SignUp} />
-              <Route
-                path="/CharSelect"
-                render={() => (
-                  <CharSelect
-                    chooseCharacter={this.chooseCharacter}
-                    globalState={this.state}
-                  />
-                )}
-              />
-              <Route
-                path="/BattleScreen"
-                render={() => 
-                <BattleScreen
-                  handleSmallAttackMonster={this.handleSmallAttackMonster}
-                  handleBigAttackMonster={this.handleBigAttackMonster}
-                  handleSpecialAttackMonster={this.handleSpecialAttackMonster}
-                  globalState={this.state} 
-                  />
-                }
-              />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/" component={LogInScreen} />
+            <Route exact path="/login" component={LogIn} />
+            <Route exact path="/signup" component={SignUp} />
+            {/* <Route
+              path="/CharSelect"
+              render={() => (
+                <CharSelect
+                  chooseCharacter={this.chooseCharacter}
+                  globalState={this.state}
+                />
+              )}
+            />
+            <Route
+              path="/BattleScreen"
+              render={() => 
+              <BattleScreen
+                handleSmallAttackMonster={this.handleSmallAttackMonster}
+                handleBigAttackMonster={this.handleBigAttackMonster}
+                handleSpecialAttackMonster={this.handleSpecialAttackMonster}
+                globalState={this.state} 
+                />
+              } */}
+            />
+          </Switch>
         </Router>
       </>
     );
