@@ -1,5 +1,6 @@
 import React from "react";
 import decode from "jwt-decode";
+import { Redirect } from "react-router-dom"
 
 class AuthHelperMethods extends React.Component {
   login = (username, password) =>
