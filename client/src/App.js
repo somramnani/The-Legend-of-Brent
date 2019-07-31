@@ -38,9 +38,9 @@ class App extends Component {
           health: parseInt(character.health) - valueEnemyAttack
         }
       });
-      // } else {
-      //   // alert(`${monster.name} wins, ${character.name} loses.`);
-      //   alert(monster.name + " wins");
+    }
+    else if (character.health <= 0) {
+      alert(`${monster.name} wins`);
     }
   };
 
