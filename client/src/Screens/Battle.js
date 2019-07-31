@@ -11,14 +11,16 @@ class BattleScreen extends Component {
   constructor(props) {
     super(props);
     this.activePlayers = [];
-    this.state = { shake: false, rubberBand: false, wobble: false, }
+    this.state = { shake: false, rubberBand: false, wobble: false}
   }
+
 
   render() {
     const style1 = {
       paddingTop: "15px"
     };
-    const activePlayers = [players[this.props.selectedId]];
+    // const activePlayers = [players[this.props.selectedId]];
+    const activePlayers = [this.props.globalState.character];
     console.log(activePlayers);
     document.body.style.backgroundImage = "url('images/battle.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
@@ -140,3 +142,27 @@ class BattleScreen extends Component {
 }
 
 export default BattleScreen;
+
+
+/*
+
+
+  componentDidMount() {
+    this.setState({
+      newCharHealth: this.props.globalState.character.health,
+      newEnemyHealth: this.props.globalState.monster.health,
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.globalState.health !== this.props.globalState.health) {
+      console.log("updated health")
+      this.setState({
+        newCharHealth: this.props.globalState.character.health - this.props.globalState.monster.smallAttack,
+        newEnemyHealth: this.props.globalState.monster.health - this.props.globalState.character.smallAttack,
+      })
+    }
+  }
+
+
+*/
