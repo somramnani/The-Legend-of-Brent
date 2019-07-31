@@ -13,7 +13,7 @@ import BattleScreen from "./Screens/Battle";
 import monsters from "./data/Monster.json";
 
 const ENEMY_TIMER = 3000;
-const ENEMY_TIMER_BIG= 9000;
+const ENEMY_TIMER_BIG = 9000;
 
 class App extends Component {
   constructor(props) {
@@ -22,32 +22,40 @@ class App extends Component {
     this.state = {
       character: null,
       monster: monsters[Math.floor(Math.random() * monsters.length)],
-      counter: 0,
+      counter: 0
     };
     this.enemyInterval = "";
   }
 
   enemyAttack = () => {
-     const valueEnemyAttack = parseInt(this.state.monster.smallAttack);
-     this.setState({
-       character : {
-         ...this.state.character,
-         health: this.state.character - valueEnemyAttack
-       }
-     })
+    const { character, monster } = this.state;
+    const valueEnemyAttack = parseInt(monster.smallAttack);
+
+    if (character && character.health >= 0) {
+      this.setState({
+        character: {
+          ...character,
+          health: parseInt(character.health) - valueEnemyAttack
+        }
+      });
+      // } else {
+      //   // alert(`${monster.name} wins, ${character.name} loses.`);
+      //   alert(monster.name + " wins");
+    }
   };
 
-  // componentDidMount() {
-  //   this.enemyInterval = setInterval(this.enemyAttack, ENEMY_TIMER, ENEMY_TIMER_BIG);
-  // }
+  componentDidMount() {
+    this.enemyInterval = setInterval(this.enemyAttack, ENEMY_TIMER_BIG);
+  }
 
-  // componentWillUnmount() {
-  //   clearInterval(this.enemyInterval);
-  // }
+  componentWillUnmount() {
+    clearInterval(this.enemyInterval);
+  }
 
   componentDidUpdate() {
+    // log character and monster
     console.log(this.state.character);
-    console.log(this.state.monster)
+    console.log(this.state.monster);
   }
 
   Auth = new AuthHelperMethods();
@@ -65,31 +73,38 @@ class App extends Component {
 
   handleSmallAttackMonster = value => {
     this.setState({
-      monster : {
+      monster: {
         ...this.state.monster,
-        // health: this.state.monster.health - value,
         health: this.state.monster.health - value
       }
-    })
+    });
+  };
 
+  handleAttackMonster = value => {
+    this.setState({
+      monster: {
+        ...this.state.monster,
+        health: this.state.monster.health - value
+      }
+    });
   };
 
   handleBigAttackMonster = value => {
     this.setState({
-      monster : {
+      monster: {
         ...this.state.monster,
-        health: this.state.monster.health -value
+        health: this.state.monster.health - value
       }
-    })
+    });
   };
 
   handleSpecialAttackMonster = value => {
     this.setState({
-      monster : {
+      monster: {
         ...this.state.monster,
-        health : this.state.monster.health - value
+        health: this.state.monster.health - value
       }
-    })
+    });
   };
 
   render() {
@@ -110,14 +125,14 @@ class App extends Component {
             />
             <Route
               path="/BattleScreen"
-              render={() => 
-              <BattleScreen
-                handleSmallAttackMonster={this.handleSmallAttackMonster}
-                handleBigAttackMonster={this.handleBigAttackMonster}
-                handleSpecialAttackMonster={this.handleSpecialAttackMonster}
-                globalState={this.state} 
+              render={() => (
+                <BattleScreen
+                  handleSmallAttackMonster={this.handleSmallAttackMonster}
+                  handleBigAttackMonster={this.handleBigAttackMonster}
+                  handleSpecialAttackMonster={this.handleSpecialAttackMonster}
+                  globalState={this.state}
                 />
-              }
+              )}
             />
           </Switch>
         </Router>
