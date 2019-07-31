@@ -14,6 +14,7 @@ import BattleScreen from "./Screens/Battle";
 import monsters from "./data/Monster.json";
 
 const ENEMY_TIMER = 3000;
+const ENEMY_TIMER_BIG= 9000;
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class App extends Component {
 
     this.state = {
       character: null,
-      monster: monsters[Math.floor(Math.random() * monsters.length)]
+      monster: monsters[Math.floor(Math.random() * monsters.length)],
+      counter: 0,
     };
     this.enemyInterval = "";
   }
@@ -31,18 +33,18 @@ class App extends Component {
      this.setState({
        character : {
          ...this.state.character,
-         health: this.state.character.health -valueEnemyAttack
+         health: this.state.character - valueEnemyAttack
        }
      })
   };
 
-  componentDidMount() {
-    this.enemyInterval = setInterval(this.enemyAttack, ENEMY_TIMER);
-  }
+  // componentDidMount() {
+  //   this.enemyInterval = setInterval(this.enemyAttack, ENEMY_TIMER, ENEMY_TIMER_BIG);
+  // }
 
-  componentWillUnmount() {
-    clearInterval(this.enemyInterval);
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.enemyInterval);
+  // }
 
   componentDidUpdate() {
     console.log(this.state.character);
@@ -66,6 +68,7 @@ class App extends Component {
     this.setState({
       monster : {
         ...this.state.monster,
+        // health: this.state.monster.health - value,
         health: this.state.monster.health - value
       }
     })
@@ -85,7 +88,7 @@ class App extends Component {
     this.setState({
       monster : {
         ...this.state.monster,
-        health : this.state.monster.health -value
+        health : this.state.monster.health - value
       }
     })
   };
