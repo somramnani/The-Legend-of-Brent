@@ -92,30 +92,30 @@ class BattleScreen extends Component {
                         size="medium"
                         color="primary"
                         variant="contained"
-                        onClick={() => { this.props.handleSmallAttackMonster(this.props.globalState.character.smallAttack)}}>
+                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.smallAttack)}}>
 
                         Small Attack
                       </SpringButton>
                     </Typography>
 
                     <Typography>
-                      <Button
+                      <SpringButton
                         size="medium"
                         color="primary"
                         variant="contained"
-                        onClick={() => { this.props.handleBigAttackMonster(this.props.globalState.character.bigAttack)}}>
+                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.bigAttack)}}>
                         Big Attack
-                      </Button>
+                      </SpringButton>
                     </Typography>
 
                     <Typography>
-                      <Button
+                      <SpringButton
                         size="medium"
                         color="primary"
                         variant="contained"
-                        onClick={() => { this.props.handleSpecialAttackMonster(this.props.globalState.character.specialAttack)}}>
+                        onClick={() => { this.props.handleAttackMonster(this.props.globalState.character.specialAttack)}}>
                         Special Attack
-                      </Button>
+                      </SpringButton>
                     </Typography>
                   </Box>
                 </Grid>
