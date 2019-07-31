@@ -12,6 +12,8 @@ import SignUp from "./Components/SignUp";
 import BattleScreen from "./Screens/Battle";
 import monsters from "./data/Monster.json";
 
+const ENEMY_TIMER = 3000;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +22,25 @@ class App extends Component {
       character: null,
       monster: monsters[Math.floor(Math.random() * monsters.length)]
     };
+    this.enemyInterval = "";
+  }
+
+  enemyAttack = () => {
+     const valueEnemyAttack = parseInt(this.state.monster.smallAttack);
+     this.setState({
+       character : {
+         ...this.state.character,
+         health: this.state.character.health -valueEnemyAttack
+       }
+     })
+  };
+
+  componentDidMount() {
+    this.enemyInterval = setInterval(this.enemyAttack, ENEMY_TIMER);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.enemyInterval);
   }
 
   componentDidUpdate() {
