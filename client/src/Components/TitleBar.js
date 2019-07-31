@@ -5,7 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import AuthHelperMethods from "./_AuthHelper";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,6 +30,7 @@ export default function TitleBar(props) {
       alert("You are not currently logged in.");
     } else {
       Auth.logout();
+      return (<Redirect to="/" />)
     }
   };
 
@@ -51,14 +52,16 @@ export default function TitleBar(props) {
           >
             THE LEGEND OF BRENT
           </Typography>
-          <Button
+          <Link
+            to="/"
             color="inherit"
             styles={{
               fontFamily: "Merienda, cursive"
             }}
+            onClick={()=> { handleLogout() }}
           >
             Logout
-          </Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

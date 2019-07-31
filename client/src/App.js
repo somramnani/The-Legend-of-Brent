@@ -92,13 +92,11 @@ class App extends Component {
   render() {
     return (
       <>
-        <LogInScreen />
         <Router>
           <Switch>
             <Route exact path="/" component={LogInScreen} />
-            <Route exact path="/login" component={LogIn} />
             <Route exact path="/signup" component={SignUp} />
-            {/* <Route
+            <Route
               path="/CharSelect"
               render={() => (
                 <CharSelect
@@ -116,7 +114,7 @@ class App extends Component {
                 handleSpecialAttackMonster={this.handleSpecialAttackMonster}
                 globalState={this.state} 
                 />
-              } */}
+              }
             />
           </Switch>
         </Router>

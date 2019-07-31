@@ -5,10 +5,7 @@ import MonsterCard from "../Components/MonsterCard";
 import Button from "@material-ui/core/Button";
 import players from "../data/Player.json";
 import BattleScreen from "./Battle";
-
 import { Redirect } from 'react-router-dom'
-
-
 import TitleBar from "../Components/TitleBar";
 
 class CharSelect extends Component {
@@ -26,7 +23,6 @@ class CharSelect extends Component {
   //     selectedPlayer: players[pId - 1]
   //   });
   // }
-
   render() {
     const style1 = {
       paddingTop: "15px"
