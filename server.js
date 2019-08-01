@@ -19,10 +19,10 @@ const jwtMW = exjwt({
   secret: 'som may be a vampire'
 });
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Headers', 'Content-type, Authorization');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-type, Authorization');
+//   next();
+// });
 
 mongoose.connect('mongodb://localhost:27017/rpg', {
   useNewUrlParser: true
