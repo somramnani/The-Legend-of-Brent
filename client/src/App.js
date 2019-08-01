@@ -6,14 +6,14 @@ import TitleBar from "./Components/TitleBar";
 import CharSelect from "./Screens/CharSelect";
 import AuthHelperMethods from "./Components/_AuthHelper";
 import withAuth from "./Components/withAuth";
-import PrebattleScreen from "./Screens/CharVsMon";
 import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
 import BattleScreen from "./Screens/Battle";
 import monsters from "./data/Monster.json";
+import { Redirect } from "react-router-dom";
 
 const ENEMY_TIMER = 3000;
-const ENEMY_TIMER_BIG = 9000;
+const ENEMY_TIMER_BIG = 1000;
 
 class App extends Component {
   constructor(props) {
@@ -27,20 +27,35 @@ class App extends Component {
     this.enemyInterval = "";
   }
 
-  enemyAttack = () => {
-    const { character, monster } = this.state;
-    const valueEnemyAttack = parseInt(monster.smallAttack);
+  // enemyAttack = () => {
+  //   const { character, monster } = this.state;
+  //   const valueEnemyAttack = parseInt(monster.smallAttack);
 
-    if (character && character.health >= 0) {
+  //   if (character && character.health >= 0) {
+  //     this.setState({
+  //       character: {
+  //         ...character,
+  //         health: parseInt(character.health) - valueEnemyAttack
+  //       }
+  //     });
+  //   }
+  // };
+
+  handleSmallAttackMonster = value => {
+    this.setState({
+      monster: {
+        ...this.state.monster,
+
+        health: this.state.monster.health - value
+      }
+    });
+    if (this.state.monster.health <= 0) {
+      alert(`You defeated ${this.state.monster.name}! You won!`);
+
       this.setState({
-        character: {
-          ...character,
-          health: parseInt(character.health) - valueEnemyAttack
-        }
+        monster: "",
+        character: ""
       });
-      // } else {
-      //   // alert(`${monster.name} wins, ${character.name} loses.`);
-      //   alert(monster.name + " wins");
     }
   };
 
@@ -56,13 +71,21 @@ class App extends Component {
     // log character and monster
     console.log(this.state.character);
     console.log(this.state.monster);
+    if (this.state.character.health <= 0) {
+      alert(`${this.state.monster.name} has defeated you!`);
+      this.setState({
+        monster: "",
+        character: ""
+      });
+      return <Redirect to="PATH" />;
+    }
   }
 
   Auth = new AuthHelperMethods();
 
   _handleLogout = () => {
     this.Auth.logout();
-    alert("you have successfully logged out");
+    alert("You have successfully logged out");
   };
 
   chooseCharacter = value => {
@@ -71,12 +94,9 @@ class App extends Component {
     });
   };
 
-  handleSmallAttackMonster = value => {
+  deleteCharacter = value => {
     this.setState({
-      monster: {
-        ...this.state.monster,
-        health: this.state.monster.health - value
-      }
+      character: null
     });
   };
 
@@ -108,6 +128,9 @@ class App extends Component {
   };
 
   render() {
+    // if (this.state.character.health <= 0) {
+    //   alert("it worked");
+    // }
     return (
       <>
         <Router>
