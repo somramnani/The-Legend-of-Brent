@@ -73,11 +73,11 @@ class App extends Component {
     console.log(this.state.monster);
     if (this.state.character.health <= 0) {
       alert(`${this.state.monster.name} has defeated you!`);
+     
       this.setState({
         monster: "",
         character: ""
       });
-      return <Redirect to="PATH" />;
     }
   }
 
@@ -91,12 +91,6 @@ class App extends Component {
   chooseCharacter = value => {
     this.setState({
       character: value
-    });
-  };
-
-  deleteCharacter = value => {
-    this.setState({
-      character: null
     });
   };
 

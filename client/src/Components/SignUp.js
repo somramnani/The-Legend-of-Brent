@@ -55,7 +55,7 @@ class SignUp extends Component {
   };
   render() {
     document.body.style.backgroundImage = "url(images/monster.jpg";
-    document.body.style.backgroundRepeat = "repeat-y";
+    document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.height = "100%";
     return (
       <>
@@ -81,7 +81,8 @@ class SignUp extends Component {
           <Paper
             style={{
               padding: 3,
-              backgroundColor: "#f5f5f5"
+              backgroundColor: "#f5f5f5",
+              marginLeft: "4rem"
             }}
           >
             <Box>
