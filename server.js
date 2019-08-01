@@ -74,10 +74,10 @@ try {
  }
 });
 
-app.get('/', jwtMW, (req, res) => {
-  console.log("Web Token Checked.")
-  alert('You are authenticated');
-});
+// app.get('/', jwtMW, (req, res) => {
+//   console.log("Web Token Checked.")
+//   alert('You are authenticated');
+// });
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
