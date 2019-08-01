@@ -12,6 +12,7 @@ import BattleScreen from "./Screens/Battle";
 import monsters from "./data/Monster.json";
 import { Redirect } from "react-router-dom";
 
+
 const ENEMY_TIMER = 3000;
 const ENEMY_TIMER_BIG = 1000;
 
