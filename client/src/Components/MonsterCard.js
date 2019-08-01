@@ -18,19 +18,25 @@ const useStyles = makeStyles(
     },
     media: {
       height: 350
+    },
+    cardB: {
+      width: 300,
+      margin: 30,
+      backgroundColor: 'red',
     }
   })
 );
 
 export default function MonsterCard(props) {
   const classes = useStyles();
+  console.log(`Monster card props.shake: ${props.shake}`);
 
   return (
     <>
-      <Card className={classes.card}>
+      <Card className={props.shake ? `${classes.cardB}` : `${classes.card}`}>
         <CardActionArea>
           <CardMedia
-            className={classes.media}
+            className={`${classes.media}`}
             image={props.img}
             name={props.name}
           />
