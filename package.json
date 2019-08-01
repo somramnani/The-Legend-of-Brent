@@ -4,8 +4,7 @@
     "scripts": {
         "client": "cd client && yarn start",
         "server": "nodemon server.js",
-        "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
-        "heroku-postbuild": "YARN_CONFIG_PRODUCTION=true yarn install --prefix client && yarn run build --prefix client"
+        "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\""
     },
     "dependencies": {
         "@material-ui/core": "^4.2.1",
