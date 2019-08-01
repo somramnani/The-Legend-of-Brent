@@ -26,7 +26,7 @@ app.use((req, res, next) => {
   next();
 });
 
-mongoose.connect('mongodb://localhost:27017/rpg', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/rpg', {
   useNewUrlParser: true
 });
 
@@ -76,7 +76,7 @@ try {
  }
 });
 
-app.get('/Login', jwtMW, (req, res) => {
+app.get('/CharSelect', jwtMW, (req, res) => {
   console.log("Web Token Checked.")
   alert('You are authenticated');
 });
