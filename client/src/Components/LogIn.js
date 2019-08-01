@@ -59,12 +59,15 @@ class LogIn extends Component {
     }
     return (
       <>
-        <TitleBar />>
+        <TitleBar />
         <Grid
           container
           direction="column"
           justify="space-evenly"
           alignItems="flex-start"
+          style={{
+            padding: "20px"
+          }}
         >
           <Typography
             variant="h4"

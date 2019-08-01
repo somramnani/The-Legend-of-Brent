@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function TitleBar(props) {
+export default function TitleBar() {
   const classes = useStyles();
 
   const handleLogout = () => {
@@ -30,7 +30,7 @@ export default function TitleBar(props) {
       alert("You are not currently logged in.");
     } else {
       Auth.logout();
-      return (<Redirect to="/" />)
+      return <Redirect to="/" />;
     }
   };
 
@@ -50,17 +50,46 @@ export default function TitleBar(props) {
               fontFamily: "Merienda, cursive"
             }}
           >
-            THE LEGEND OF BRENT
+            <Link
+              to="/"
+              color="inherit"
+              style={{
+                textDecoration: "none",
+                color: "white",
+                paddingLeft: "20px"
+              }}
+            >
+              THE LEGEND OF BRENT
+            </Link>
           </Typography>
+          <Link
+            to="/CharSelect"
+            color="inherit"
+            style={{
+              fontFamily: "Merienda, cursive",
+              textDecoration: "none",
+              color: "white"
+            }}
+            onClick={() => {
+              // this.props.deleteCharacter();
+            }}
+          >
+            CHARACTER SELECTION
+          </Link>
           <Link
             to="/"
             color="inherit"
-            styles={{
-              fontFamily: "Merienda, cursive"
+            style={{
+              fontFamily: "Merienda, cursive",
+              textDecoration: "none",
+              color: "white",
+              paddingLeft: "20px"
             }}
-            onClick={()=> { handleLogout() }}
+            onClick={() => {
+              handleLogout();
+            }}
           >
-            Logout
+            LOGOUT
           </Link>
         </Toolbar>
       </AppBar>

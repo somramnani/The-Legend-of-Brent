@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": "1",
     "class": "Demon Lord",
     "name": "Jolros",
@@ -43,8 +44,8 @@
     "name": "Brent Abruzese",
     "class": "The Cursed One",
     "health": "2500",
-    "smallAttack": "90",
-    "bigAttack": "100",
+    "smallAttack": "90000000",
+    "bigAttack": "90000000",
     "specialAttack": "800",
     "img": "images/FiendLord.jpg"
   },
