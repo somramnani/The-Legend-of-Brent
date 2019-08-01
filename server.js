@@ -13,16 +13,18 @@ const path = require('path')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static('client/build'));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 const jwtMW = exjwt({
   secret: 'som may be a vampire'
 });
 
-// app.use((req, res, next) => {
-//   res.setHeader('Access-Control-Allow-Headers', 'Content-type, Authorization');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Headers', 'Content-type, Authorization');
+  next();
+});
 
 mongoose.connect('mongodb://localhost:27017/rpg', {
   useNewUrlParser: true
@@ -74,14 +76,14 @@ try {
  }
 });
 
-// app.get('/', jwtMW, (req, res) => {
-//   console.log("Web Token Checked.")
-//   alert('You are authenticated');
-// });
+app.get('/Login', jwtMW, (req, res) => {
+  console.log("Web Token Checked.")
+  alert('You are authenticated');
+});
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-// })
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+})
 
 app.listen(port, () => {
   console.log(`The app is now listening on port ${port}`)
