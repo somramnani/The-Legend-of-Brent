@@ -27,19 +27,19 @@ class App extends Component {
     this.enemyInterval = "";
   }
 
-  // enemyAttack = () => {
-  //   const { character, monster } = this.state;
-  //   const valueEnemyAttack = parseInt(monster.smallAttack);
+  enemyAttack = () => {
+    const { character, monster } = this.state;
+    const valueEnemyAttack = parseInt(monster.smallAttack);
 
-  //   if (character && character.health >= 0) {
-  //     this.setState({
-  //       character: {
-  //         ...character,
-  //         health: parseInt(character.health) - valueEnemyAttack
-  //       }
-  //     });
-  //   }
-  // };
+    if (character && character.health >= 0) {
+      this.setState({
+        character: {
+          ...character,
+          health: parseInt(character.health) - valueEnemyAttack
+        }
+      });
+    }
+  };
 
   handleSmallAttackMonster = value => {
     this.setState({
