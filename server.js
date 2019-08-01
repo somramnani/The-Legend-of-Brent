@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
+const path = require('path')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
