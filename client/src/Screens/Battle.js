@@ -64,6 +64,8 @@ class BattleScreen extends Component {
     document.body.style.backgroundPosition = "center ";
 
     return (
+      <>
+        <TitleBar />
       <Container maxWidth="lg">
         <Grid
           style={style1}
@@ -139,7 +141,8 @@ class BattleScreen extends Component {
             </Box>
           )}
         </Grid>
-      </Container>
+        </Container>
+        </>
     );
   }
 }
