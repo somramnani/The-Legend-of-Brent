@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 // import players from "../data/Player.json";
 // import monster from "../data/Monster.json";
 // import SpringButton from "../Components/SpringButton";
-import { shake, rubberBand, wobble } from "animate.css";
+// import { shake, rubberBand, wobble } from "animate.css";
 
 const ATTACK_LENGTH = 150
 
