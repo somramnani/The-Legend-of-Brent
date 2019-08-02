@@ -154,6 +154,7 @@ class App extends Component {
             />
           </Switch>
         </Router>
+        <a href="/signup">Render Sign Up</a>
       </>
     );
   }
