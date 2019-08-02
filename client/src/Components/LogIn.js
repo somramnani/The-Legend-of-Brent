@@ -6,6 +6,7 @@ import { Typography, Grid } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import AuthHelperMethods from "../Components/_AuthHelper";
+import AttackBar from '../Components/AttackBar'
 
 import {
   BrowserRouter as Router,
@@ -33,10 +34,6 @@ class LogIn extends Component {
       [event.target.name]: event.target.value,
       [event.target.password]: event.target.value
     });
-  };
-
-  signUp = () => {
-    return <Typography>Need an account? Sign up here</Typography>;
   };
 
   handleFormSubmit = event => {
@@ -85,10 +82,7 @@ class LogIn extends Component {
               backgroundColor: "#f5f5f5"
             }}
           >
-            <Box
-              style={{
-                padding: "20px"
-              }}
+            <Box style={{ padding: "20px" }}
             >
               <Typography
                 variant="h6"
@@ -120,23 +114,17 @@ class LogIn extends Component {
                 }}
               />
             </Box>
-            <Box
-              component="span"
-              style={{
-                padding: "20px"
-              }}
-            >
+            <Box component="span" style={{ padding: "20px" }} >
               <Button
-                variant="contained"
-                color="primary"
-                id="loginButton"
-                onClick={this.handleFormSubmit}
-                style={{
-                  fontFamily: "Merienda, cursive"
-                }}
+              variant="contained"
+              color="primary"
+              id="loginButton"
+              onClick={this.handleFormSubmit}
+              style={{ fontFamily: "Merienda, cursive" }}
               >
-                Login
+              Login
               </Button>
+
               <Typography
                 style={{
                   paddingTop: "10px",
@@ -145,8 +133,9 @@ class LogIn extends Component {
                 }}
               >
                 Don't have an account?
-                <a href="/signup">Sign up here </a>
+                <a href="/signup"> Sign up here</a>
               </Typography>
+              <AttackBar />
             </Box>
           </Paper>
         </Grid>
