@@ -88,10 +88,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
-
 app.listen(port, () => {
   console.log(`The app is now listening on port ${port}`);
 });

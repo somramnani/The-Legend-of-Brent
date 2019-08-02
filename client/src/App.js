@@ -131,7 +131,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={LogInScreen} />
-            <Route exact path="/signup" render={() => <SignUp />} />
+            <Route exact path="/signup" component={SignUp} />
             <Route
               path="/CharSelect"
               render={() => (
