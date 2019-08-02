@@ -128,7 +128,8 @@ class App extends Component {
     // }
     return (
       <>
-        <Router>
+      <LogInScreen />
+        {/* <Router>
           <Switch>
             <Route exact path="/" component={LogInScreen} />
             <Route exact path="/signup" component={SignUp} />
@@ -153,7 +154,7 @@ class App extends Component {
               )}
             />
           </Switch>
-        </Router>
+        </Router> */}
       </>
     );
   }
