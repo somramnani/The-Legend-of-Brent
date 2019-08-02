@@ -77,10 +77,10 @@ app.post("/user/login", async (req, res) => {
   }
 });
 
-app.get("/CharSelect", jwtMW, (req, res) => {
-  console.log("Web Token Checked.");
-  alert("You are authenticated");
-});
+// app.get("/CharSelect", jwtMW, (req, res) => {
+//   console.log("Web Token Checked.");
+//   alert("You are authenticated");
+// });
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
