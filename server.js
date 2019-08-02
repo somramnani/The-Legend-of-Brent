@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/static', express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/rpg", {
   useNewUrlParser: true
