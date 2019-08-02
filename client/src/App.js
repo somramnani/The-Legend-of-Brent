@@ -10,7 +10,7 @@ import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
 import BattleScreen from "./Screens/Battle";
 import monsters from "./data/Monster.json";
-import { Redirect } from "react-router-dom";
+import { Redirect, IndexRoute } from "react-router-dom";
 
 
 const ENEMY_TIMER = 3000;
@@ -131,7 +131,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={LogInScreen} />
-            <Route exact path="/signup" component={SignUp} />
+            <IndexRoute exact path="/signup" component={SignUp} />
             <Route
               path="/CharSelect"
               render={() => (
