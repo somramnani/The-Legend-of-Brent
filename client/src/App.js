@@ -131,7 +131,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={LogInScreen} />
-            <Route exact path="/signup" component={SignUp} />
+            <Route path="/signup" render={()=> ( <SignUp /> )} />
             <Route
               path="/CharSelect"
               render={() => (
@@ -153,8 +153,7 @@ class App extends Component {
               )}
             />
           </Switch>
-        </Router>
-        <a href="/signup">Render Sign Up</a>
+        </Router>        
       </>
     );
   }
