@@ -133,7 +133,7 @@ class LogIn extends Component {
                 }}
               >
                 Don't have an account?
-                <Link to="/signup">Sign Up Here.</Link>
+                <Button onClick={()=> { return <Redirect to="/signup" /> }}>Sign Up</Button>
               </Typography>
               <AttackBar />
             </Box>
