@@ -141,7 +141,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={LogInScreen} />
-            <Route path="/signup" render={()=> <LogInScreen /> } />
+            <Route exact path="/signup" render={()=> <SignUp /> } />
             <FadingRoute path="/signup/show" component={SignUp}/>
             <Route
               path="/CharSelect"
