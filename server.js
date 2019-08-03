@@ -79,6 +79,10 @@ app.post("/user/login", async (req, res) => {
   }
 });
 
+app.get('/signup', (req, res) => {
+  res.send('hello signup')
+})
+
 app.get("/CharSelect", jwtMW, (req, res) => {
   console.log("Web Token Checked.");
   alert("You are authenticated");
