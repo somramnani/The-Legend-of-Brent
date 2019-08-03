@@ -12,14 +12,7 @@ class LogInScreen extends Component {
     return (
       <>
       <TitleBar />
-      <Switch>
-        <Route path='/signup' render={() => (
-          <SignUp />
-          )} />
-        <Route path='/login' render={() => (
-          <LogIn />
-        )} />
-      </Switch>
+      <LogIn />
       </>
     );
   }
