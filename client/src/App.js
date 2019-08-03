@@ -122,16 +122,6 @@ class App extends Component {
     });
   };
 
-
-  FadingRoute = ({ component: Component, ...rest }) => (
-    <Route {...rest} render={routeProps => (
-      <FadeIn>
-        <SignUp {...routeProps}/>
-      </FadeIn>
-    )}/>
-  )
-
-
   render() {
     // if (this.state.character.health <= 0) {
     //   alert("it worked");
@@ -140,29 +130,24 @@ class App extends Component {
       <>
         <Router>
           <Switch>
+          <Route exact path="/signup" component={SignUp} />
             <Route exact path="/" component={LogInScreen} />
-            <Route exact path="/signup" render={()=> <SignUp /> } />
-            <FadingRoute path="/signup/show" component={SignUp}/>
-            <Route
-              path="/CharSelect"
-              render={() => (
-                <CharSelect
-                  chooseCharacter={this.chooseCharacter}
-                  globalState={this.state}
+            <Route path="/CharSelect" render={() => (
+              <CharSelect
+                chooseCharacter={this.chooseCharacter}
+                globalState={this.state}
                 />
               )}
             />
-            <Route
-              path="/BattleScreen"
-              render={() => (
-                <BattleScreen
-                  handleSmallAttackMonster={this.handleSmallAttackMonster}
-                  handleBigAttackMonster={this.handleBigAttackMonster}
-                  handleSpecialAttackMonster={this.handleSpecialAttackMonster}
-                  globalState={this.state}
-                />
-              )}
+          <Route path="/BattleScreen" render={() => (
+            <BattleScreen
+              handleSmallAttackMonster={this.handleSmallAttackMonster}
+              handleBigAttackMonster={this.handleBigAttackMonster}
+              handleSpecialAttackMonster={this.handleSpecialAttackMonster}
+              globalState={this.state}
             />
+          )}
+          />
           </Switch>
         </Router>        
       </>
