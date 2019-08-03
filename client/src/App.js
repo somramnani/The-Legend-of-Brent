@@ -122,6 +122,16 @@ class App extends Component {
     });
   };
 
+
+  FadingRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={routeProps => (
+      <FadeIn>
+        <SignUp {...routeProps}/>
+      </FadeIn>
+    )}/>
+  )
+
+
   render() {
     // if (this.state.character.health <= 0) {
     //   alert("it worked");
@@ -131,7 +141,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={LogInScreen} />
-            <Route path="/signup" render={()=> ( <SignUp /> )} />
+            <Route path="/signup" render={()=> <LogInScreen /> } />
+            <FadingRoute path="/signup/show" component={SignUp}/>
             <Route
               path="/CharSelect"
               render={() => (
