@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": "1",
     "class": "Demon Lord",
     "name": "Jolros",
@@ -228,5 +227,15 @@
     "bigAttack": "29",
     "specialAttack": "80",
     "img": "images/Elvish Pyromancer.jpg"
+  },
+  {
+    "id": "24",
+    "name": "Crush",
+    "class": "Deep Seabeast",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Deep Seabeast.jpg"
   }
 ]
