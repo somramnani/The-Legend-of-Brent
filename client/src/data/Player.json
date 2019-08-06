@@ -77,5 +77,85 @@
     "bigAttack": "42",
     "specialAttack": "91",
     "img": "images/Mage.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Mars",
+    "class": "Ancient Hero",
+    "health": "150",
+    "smallAttack": "30",
+    "bigAttack": "42",
+    "specialAttack": "91",
+    "img": "images/Mars.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Arminius",
+    "class": "Calvary",
+    "health": "150",
+    "smallAttack": "30",
+    "bigAttack": "42",
+    "specialAttack": "91",
+    "img": "images/Arminius.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Clecomell",
+    "class": "Dragonmaster",
+    "health": "150",
+    "smallAttack": "30",
+    "bigAttack": "42",
+    "specialAttack": "91",
+    "img": "images/Clecomell.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Acantha",
+    "class": "Demon Hunter",
+    "health": "150",
+    "smallAttack": "30",
+    "bigAttack": "42",
+    "specialAttack": "91",
+    "img": "images/Demon Hunter.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Graldor",
+    "class": "Dwarf Viking",
+    "health": "150",
+    "smallAttack": "30",
+    "bigAttack": "42",
+    "specialAttack": "91",
+    "img": "images/Graldor.jpg"
+  },
+  {
+    "id": "14",
+    "name": "Kurdran",
+    "class": "Gryphon Rider",
+    "health": "150",
+    "smallAttack": "30",
+    "bigAttack": "42",
+    "specialAttack": "91",
+    "img": "images/Gryphon Rider.jpg"
+  },
+  {
+    "id": "15",
+    "name": "Jimmy the Guy",
+    "class": "Space Outlaw",
+    "health": "150",
+    "smallAttack": "30",
+    "bigAttack": "42",
+    "specialAttack": "91",
+    "img": "images/Jimmy the Guy.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Jehoel",
+    "class": "Angelic Knight",
+    "health": "150",
+    "smallAttack": "30",
+    "bigAttack": "42",
+    "specialAttack": "91",
+    "img": "images/The Cosmic Knight.jpg"
   }
 ]

@@ -78,5 +78,155 @@
     "bigAttack": "29",
     "specialAttack": "80",
     "img": "images/FireElemental.jpg"
+  },
+  {
+    "id": "9",
+    "name": "Charger",
+    "class": "Armored Mastodon",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Armored Charger.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Bloodfury",
+    "class": "Manticore",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Bloodfury.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Dark Pegasus",
+    "class": "Winged Horse",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Dark Pegasus.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Balduur",
+    "class": "Dark Viking",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Dark Viking.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Frostbite",
+    "class": "Ice Dragon",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Ice Dragon.jpg"
+  },
+  {
+    "id": "14",
+    "name": "Lorelei the Corrupted",
+    "class": "Necromancer",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Lorelei the Corrupted.jpg"
+  },
+  {
+    "id": "15",
+    "name": "Bluntus",
+    "class": "Raging Rhino",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Raging Rhino.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Cassandra",
+    "class": "Sea Dragoness",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Sea Dragoness.jpg"
+  },
+  {
+    "id": "17",
+    "name": "Skarpa",
+    "class": "Jagged Beast",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Skarpa Beast.jpg"
+  },
+  {
+    "id": "18",
+    "name": "Water Colossus",
+    "class": "Water Elemental",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Water Colossus.jpg"
+  },
+  {
+    "id": "19",
+    "name": "Wasteland Devourer",
+    "class": "Desert Beast",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Wasteland Devourer.jpg"
+  },
+  {
+    "id": "20",
+    "name": "Kyrolax",
+    "class": "Undead",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Undead Dragon.jpg"
+  },
+  {
+    "id": "21",
+    "name": "Dromdrug",
+    "class": "Undead",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/FireElemental.jpg"
+  },
+  {
+    "id": "22",
+    "name": "Crackle",
+    "class": "Thunderlizard",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Thunderlizard.jpg"
+  },
+  {
+    "id": "23",
+    "name": "Blitz",
+    "class": "Elvish Pyromancer",
+    "health": "850",
+    "smallAttack": "18",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Elvish Pyromancer.jpg"
   }
 ]
