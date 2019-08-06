@@ -77,7 +77,7 @@ class App extends Component {
         monster: "",
         character: ""
       });
-      return <Redirect to="PATH" />;
+      return <Redirect to="/CharSelect" />;
     }
   }
 
@@ -133,32 +133,28 @@ class App extends Component {
     // }
     return (
       <>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={LogInScreen} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route
-              path="/CharSelect"
-              render={() => (
-                <CharSelect
-                  chooseCharacter={this.chooseCharacter}
-                  globalState={this.state}
-                />
-              )}
+      <Router>
+        <Switch>
+          <Route exact path="/" component={LogInScreen} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route path="/CharSelect" render={() => (
+            <CharSelect
+              chooseCharacter={this.chooseCharacter}
+              globalState={this.state}
             />
-            <Route
-              path="/BattleScreen"
-              render={() => (
-                <BattleScreen
-                  handleSmallAttackMonster={this.handleSmallAttackMonster}
-                  handleBigAttackMonster={this.handleBigAttackMonster}
-                  handleSpecialAttackMonster={this.handleSpecialAttackMonster}
-                  globalState={this.state}
-                />
-              )}
+          )}
+          />
+          <Route path="/BattleScreen" render={() => (
+            <BattleScreen
+              handleSmallAttackMonster={this.handleSmallAttackMonster}
+              handleBigAttackMonster={this.handleBigAttackMonster}
+              handleSpecialAttackMonster={this.handleSpecialAttackMonster}
+              globalState={this.state}
             />
-          </Switch>
-        </Router>
+          )}
+        />
+        </Switch>
+      </Router>
       </>
     );
   }

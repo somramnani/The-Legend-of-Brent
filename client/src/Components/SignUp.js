@@ -1,27 +1,20 @@
 import React, { Component } from "react";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, Container, Icon } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import { __values } from "tslib";
 import axios from "axios";
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
-} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import TitleBar from "./TitleBar";
+
 class SignUp extends Component {
   state = {
     name: "",
     password: "",
     email: ""
   };
+
   changeHandler = event => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -29,6 +22,7 @@ class SignUp extends Component {
       [event.target.email]: event.target.value
     });
   };
+
   signUp = event => {
     event.preventDefault();
     axios
@@ -40,8 +34,7 @@ class SignUp extends Component {
       .then(res => {
         console.log(res);
         if (res.data) {
-          alert(`Your account was created!`);
-
+          alert(`Your account was successfully created!`);
           console.log(res.data);
           return <Redirect to="/" />;
         } else {
@@ -53,10 +46,12 @@ class SignUp extends Component {
         console.error(error);
       });
   };
+
   render() {
     document.body.style.backgroundImage = "url(images/monster.jpg";
     document.body.style.backgroundRepeat = "repeat-y";
     document.body.style.height = "100%";
+
     return (
       <>
         <TitleBar />
@@ -64,82 +59,84 @@ class SignUp extends Component {
           container
           direction="column"
           justify="space-evenly"
-          alignItems="flex-start"
-        >
+          alignItems="center" >
+        <Grid item>
           <Typography
             variant="h3"
             component="h3"
-            align="center"
             style={{
               margin: 15,
-              paddingBottom: "20px",
+              paddingBottom: "50px",
               fontFamily: "Merienda, cursive"
-            }}
-          >
+            }} >
             Sign Up To Play Now!
           </Typography>
-          <Paper
-            style={{
-              padding: 3,
-              backgroundColor: "#f5f5f5"
-            }}
-          >
-            <Box>
-              <Typography
-                variant="h6"
-                component="h6"
-                style={{
-                  fontFamily: "Merienda, cursive"
-                }}
-              >
-                Please Fill Out The Fields Below
-              </Typography>
-              <Grid item xs={10}>
-                <TextField
-                  id="outlined-name"
-                  name="name"
-                  label="Name"
-                  onChange={this.changeHandler}
-                  margin="normal"
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={10}>
-                <TextField
-                  id="outlined-email-input"
-                  label="E-mail"
-                  name="email"
-                  onChange={this.changeHandler}
-                  type="email"
-                  margin="normal"
-                  variant="outlined"
-                />
-              </Grid>
-              <Grid item xs={10}>
-                <TextField
-                  id="outlined-password-input"
-                  label="Password"
-                  name="password"
-                  onChange={this.changeHandler}
-                  type="password"
-                  margin="normal"
-                  variant="outlined"
-                />
-              </Grid>
-            </Box>
-            <Box>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={this.signUp}
-              >
-                Sign-Up
-              </Button>
-            </Box>
-          </Paper>
         </Grid>
-      </>
-    );
+        <Container maxWidth='xs'>
+        <Grid direction="row">
+        <Paper square="true" elevation="20"
+          style={{
+            padding: 30,
+            backgroundColor: "#f5f5f5"
+          }} >
+        <Grid container 
+          alignContent="flex-start" 
+          direction="column" 
+          justify="center" 
+          alignItems="center" >
+        <Typography
+          variant="h6"
+          component="h6"
+          style={{
+            fontFamily: "Merienda, cursive"
+          }} >
+          Please Fill Out The Fields Below
+        </Typography>
+          <Grid item xl={4}>
+            <TextField
+              id="outlined-name"
+              name="name"
+              label="Name"
+              onChange={this.changeHandler}
+              margin="normal"
+              variant="outlined" />
+          </Grid>
+          <Grid item xl={4}>
+            <TextField
+              id="outlined-email-input"
+              label="E-mail"
+              name="email"
+              onChange={this.changeHandler}
+              type="email"
+              margin="normal"
+              variant="outlined" />
+          </Grid>
+          <Grid item xl={4}>
+            <TextField
+              id="outlined-password-input"
+              label="Password"
+              name="password"
+              onChange={this.changeHandler}
+              type="password"
+              margin="normal"
+              variant="outlined" />
+          </Grid>
+          <Grid item style={{ marginTop: 10}}>
+            <Button
+              variant="outlined"
+              size="large"
+              color="inherit"
+              onClick={this.signUp} >
+              Sign-Up
+            </Button>
+          </Grid>
+          </Grid>
+        </Paper>
+        </Grid>
+        </Container>
+      </Grid>
+    </>
+  );
   }
 }
 export default SignUp;

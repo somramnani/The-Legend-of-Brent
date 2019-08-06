@@ -35,10 +35,6 @@ class LogIn extends Component {
     });
   };
 
-  signUp = () => {
-    return <Typography>Need an account? Sign up here</Typography>;
-  };
-
   handleFormSubmit = event => {
     event.preventDefault();
     this.Auth.login(this.state.username, this.state.password)
@@ -59,7 +55,7 @@ class LogIn extends Component {
     }
     return (
       <>
-        <TitleBar />
+      <TitleBar />
         <Grid
           container
           direction="column"
@@ -69,88 +65,88 @@ class LogIn extends Component {
             padding: "20px"
           }}
         >
-          <Typography
-            variant="h4"
-            component="h4"
-            style={{
-              color: "white",
-              fontFamily: "Merienda, cursive",
-              paddingBottom: "20px"
-            }}
-          >
-            Log In To Play Now!
-          </Typography>
-          <Paper
-            style={{
-              backgroundColor: "#f5f5f5"
-            }}
-          >
-            <Box
-              style={{
-                padding: "20px"
-              }}
-            >
-              <Typography
-                variant="h6"
-                component="h6"
-                style={{
-                  fontFamily: "Merienda, cursive"
-                }}
-              >
-                Log In Below
-              </Typography>
-              <TextField
-                id="outlined-name"
-                label="Name"
-                name="username"
-                onChange={this.changeHandler}
-                margin="normal"
-                variant="outlined"
-              />
-              <TextField
-                id="outlined-password-input"
-                name="password"
-                label="Password"
-                onChange={this.changeHandler}
-                type="password"
-                margin="normal"
-                variant="outlined"
-                style={{
-                  paddingLeft: "3px"
-                }}
-              />
-            </Box>
-            <Box
-              component="span"
-              style={{
-                padding: "20px"
-              }}
-            >
-              <Button
-                variant="contained"
-                color="primary"
-                id="loginButton"
-                onClick={this.handleFormSubmit}
-                style={{
-                  fontFamily: "Merienda, cursive"
-                }}
-              >
-                Login
-              </Button>
-              <Typography
-                style={{
-                  paddingTop: "10px",
-                  paddingLeft: "20px",
-                  fontFamily: "Merienda, cursive"
-                }}
-              >
-                Don't have an account?
-                <a href="/signup">Sign up here </a>
-              </Typography>
-            </Box>
-          </Paper>
-        </Grid>
-      </>
+        <Typography
+          variant="h4"
+          component="h4"
+          style={{
+            color: "white",
+            fontFamily: "Merienda, cursive",
+            paddingBottom: "20px"
+          }}
+        >
+          Log In To Play Now!
+        </Typography>
+        <Paper
+          style={{
+            backgroundColor: "#f5f5f5"
+          }}
+        >
+        <Box
+          style={{
+            padding: "20px"
+          }}
+        >
+        <Typography
+          variant="h6"
+          component="h6"
+          style={{
+            fontFamily: "Merienda, cursive"
+          }}
+        >
+          Log In Below
+        </Typography>
+        <TextField
+          id="outlined-name"
+          label="Name"
+          name="username"
+          onChange={this.changeHandler}
+          margin="normal"
+          variant="outlined"
+        />
+        <TextField
+          id="outlined-password-input"
+          name="password"
+          label="Password"
+          onChange={this.changeHandler}
+          type="password"
+          margin="normal"
+          variant="outlined"
+          style={{
+            paddingLeft: "3px"
+          }}
+        />
+      </Box>
+      <Box
+        component="span"
+          style={{
+            padding: "20px"
+          }}
+        >
+        <Button
+          variant="contained"
+          color="primary"
+          id="loginButton"
+          onClick={this.handleFormSubmit}
+          style={{
+            fontFamily: "Merienda, cursive"
+          }}
+        >
+          Login
+        </Button>
+        <Typography
+          style={{
+            paddingTop: "10px",
+            paddingLeft: "20px",
+            fontFamily: "Merienda, cursive"
+          }}
+        >
+          Don't have an account?
+          <a href="/signup">Sign up here </a>
+        </Typography>
+        </Box>
+        </Paper>
+      </Grid>
+    </>
     );
   }
 }
