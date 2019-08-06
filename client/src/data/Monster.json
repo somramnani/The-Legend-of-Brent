@@ -86,7 +86,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Armored Charger.jpg"
+    "img": "images/ArmoredCharger.jpg"
   },
   {
     "id": "10",
@@ -106,7 +106,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Dark Pegasus.jpg"
+    "img": "images/DarkPegasus.jpg"
   },
   {
     "id": "12",
@@ -116,7 +116,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Dark Viking.jpg"
+    "img": "images/DarkViking.jpg"
   },
   {
     "id": "13",
@@ -126,7 +126,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Ice Dragon.jpg"
+    "img": "images/IceDragon.jpeg"
   },
   {
     "id": "14",
@@ -136,7 +136,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Lorelei the Corrupted.jpg"
+    "img": "images/LoreleitheCorrupted.jpg"
   },
   {
     "id": "15",
@@ -146,7 +146,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Raging Rhino.jpg"
+    "img": "images/RagingRhino.jpg"
   },
   {
     "id": "16",
@@ -156,7 +156,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Sea Dragoness.jpg"
+    "img": "images/SeaDragoness.jpg"
   },
   {
     "id": "17",
@@ -166,7 +166,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Skarpa Beast.jpg"
+    "img": "images/SkarpaBeast.jpg"
   },
   {
     "id": "18",
@@ -176,7 +176,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Water Colossus.jpg"
+    "img": "images/WaterColossus.jpg"
   },
   {
     "id": "19",
@@ -186,7 +186,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Wasteland Devourer.jpg"
+    "img": "images/WastelandDevourer.jpg"
   },
   {
     "id": "20",
@@ -196,7 +196,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Undead Dragon.jpg"
+    "img": "images/UndeadDragon.jpg"
   },
   {
     "id": "21",
@@ -206,7 +206,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/FireElemental.jpg"
+    "img": "images/UndeadRaider.jpg"
   },
   {
     "id": "22",
@@ -226,7 +226,7 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Elvish Pyromancer.jpg"
+    "img": "images/ElvishPyromancer.jpg"
   },
   {
     "id": "24",
@@ -236,6 +236,6 @@
     "smallAttack": "18",
     "bigAttack": "29",
     "specialAttack": "80",
-    "img": "images/Deep Seabeast.jpg"
+    "img": "images/DeepSeabeast.jpg"
   }
 ]

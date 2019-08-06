@@ -86,7 +86,7 @@
     "smallAttack": "30",
     "bigAttack": "42",
     "specialAttack": "91",
-    "img": "images/Mars.jpg"
+    "img": "images/Mars.jpeg"
   },
   {
     "id": "10",
@@ -116,7 +116,7 @@
     "smallAttack": "30",
     "bigAttack": "42",
     "specialAttack": "91",
-    "img": "images/Demon Hunter.jpg"
+    "img": "images/DemonHunter.jpg"
   },
   {
     "id": "13",
@@ -136,7 +136,7 @@
     "smallAttack": "30",
     "bigAttack": "42",
     "specialAttack": "91",
-    "img": "images/Gryphon Rider.jpg"
+    "img": "images/GryphonRider.jpg"
   },
   {
     "id": "15",
@@ -146,7 +146,7 @@
     "smallAttack": "30",
     "bigAttack": "42",
     "specialAttack": "91",
-    "img": "images/Jimmy the Guy.jpg"
+    "img": "images/JimmytheGuy.jpg"
   },
   {
     "id": "16",
@@ -156,6 +156,6 @@
     "smallAttack": "30",
     "bigAttack": "42",
     "specialAttack": "91",
-    "img": "images/The Cosmic Knight.jpg"
+    "img": "images/TheCosmicKnight.jpg"
   }
 ]

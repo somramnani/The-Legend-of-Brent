@@ -49,6 +49,8 @@ class BattleScreen extends Component {
     this.setState({
       shake: false,
       monsterShake: false,
+      rubberBand: false,
+      wobble: false
     })
   }
 
@@ -57,7 +59,7 @@ class BattleScreen extends Component {
       paddingTop: "15px"
     };
     const { character, monster } = this.props.globalState;
-    const { shake, monsterShake } = this.state;
+    const { shake, monsterShake, wobble, rubberBand } = this.state;
 
     document.body.style.backgroundImage = "url('images/battle.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
