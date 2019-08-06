@@ -6,13 +6,7 @@ import { Typography, Grid } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import AuthHelperMethods from "../Components/_AuthHelper";
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import TitleBar from "./TitleBar";
 
 class LogIn extends Component {
@@ -63,8 +57,7 @@ class LogIn extends Component {
           alignItems="flex-start"
           style={{
             padding: "20px"
-          }}
-        >
+          }} >
         <Typography
           variant="h4"
           component="h4"
@@ -72,20 +65,17 @@ class LogIn extends Component {
             color: "white",
             fontFamily: "Merienda, cursive",
             paddingBottom: "20px"
-          }}
-        >
+          }} >
           Log In To Play Now!
         </Typography>
         <Paper
           style={{
             backgroundColor: "#f5f5f5"
-          }}
-        >
+          }} >
         <Box
           style={{
             padding: "20px"
-          }}
-        >
+          }} >
         <Typography
           variant="h6"
           component="h6"
@@ -120,8 +110,7 @@ class LogIn extends Component {
         component="span"
           style={{
             padding: "20px"
-          }}
-        >
+          }} >
         <Button
           variant="contained"
           color="primary"
@@ -129,8 +118,7 @@ class LogIn extends Component {
           onClick={this.handleFormSubmit}
           style={{
             fontFamily: "Merienda, cursive"
-          }}
-        >
+          }} >
           Login
         </Button>
         <Typography
@@ -138,8 +126,7 @@ class LogIn extends Component {
             paddingTop: "10px",
             paddingLeft: "20px",
             fontFamily: "Merienda, cursive"
-          }}
-        >
+          }} >
           Don't have an account?
           <a href="/signup">Sign up here </a>
         </Typography>

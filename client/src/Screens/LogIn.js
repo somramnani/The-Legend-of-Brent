@@ -11,7 +11,8 @@ class LogInScreen extends Component {
 
     return (
       <>
-        <LogIn />
+      <TitleBar />
+      <LogIn />
       </>
     );
   }

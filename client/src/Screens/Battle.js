@@ -8,11 +8,48 @@ import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 // import players from "../data/Player.json";
 // import monster from "../data/Monster.json";
 // import SpringButton from "../Components/SpringButton";
+// import { shake, rubberBand, wobble } from "animate.css";
+
+const ATTACK_LENGTH = 150
 
 class BattleScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = { shake: false, rubberBand: false, wobble: false };
+    this.state = {
+      shake: false,
+      monsterShake: false,
+      rubberBand: false,
+      wobble: false
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { monster, character } = this.props.globalState;
+    const prevMonster = prevProps.globalState.monster;
+    const prevCharacter = prevProps.globalState.character;
+    if (monster && character) { // means battle is going on
+      if (character.health !== prevCharacter.health) {
+        console.log('character health changed')
+        // shake true to trigger animation, after ATTACK_LENGTH,
+        // card goes back to normal state
+        this.setState({shake: true}, () => {
+          setTimeout(() => this.setState({ shake: false }), ATTACK_LENGTH);
+        });
+      }
+      if (monster.health !== prevMonster.health) {
+        console.log('monster health changed');
+        this.setState({monsterShake: true}, () => {
+          setTimeout(() => this.setState({ monsterShake: false }), ATTACK_LENGTH);
+        });
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    this.setState({
+      shake: false,
+      monsterShake: false,
+    })
   }
 
   render() {
@@ -20,6 +57,7 @@ class BattleScreen extends Component {
       paddingTop: "15px"
     };
     const { character, monster } = this.props.globalState;
+    const { shake, monsterShake } = this.state;
 
     document.body.style.backgroundImage = "url('images/battle.jpg')";
     document.body.style.backgroundRepeat = "repeat-y";
@@ -28,17 +66,18 @@ class BattleScreen extends Component {
     return (
       <>
         <TitleBar />
-
-        <Container maxWidth="lg">
-          <Grid
-            style={style1}
-            direction="row"
-            alignItems="space-evenly"
-            justify="center"
-            container
-            spacing={5}
-          >
-            {character && (
+      <Container maxWidth="lg">
+        <Grid
+          style={style1}
+          direction="row"
+          alignItems="space-evenly"
+          justify="center"
+          container
+          spacing={5}
+        >
+            <>
+            {
+              character && (
               <Box>
                 <MonsterCard
                   key={character.id}
@@ -50,6 +89,7 @@ class BattleScreen extends Component {
                   smallAttack={character.smallAttack}
                   bigAttack={character.bigAttack}
                   specialAttack={character.specialAttack}
+                  shake={shake}
                 />
                 <Grid container direction="column" justify="space-between">
                   <Box>
@@ -58,53 +98,51 @@ class BattleScreen extends Component {
                         size="medium"
                         color="primary"
                         variant="contained"
-                        style={{
-                          marginLeft: "5rem"
+                        onClick={() => {
+                          this.props.handleSmallAttackMonster(character.smallAttack);
+                          this.setState({shakeMonster: true});
                         }}
-                        onClick={() =>
-                          this.props.handleSmallAttackMonster(
-                            character.smallAttack
-                          )
-                        }
                       >
                         Small Attack
                       </Button>
-                    </Typography>
-                    <Typography>
-                      {/* <Button
+                      <Button
                         size="medium"
                         color="primary"
                         variant="contained"
-                        onClick={() =>
-                          this.props.handleBigAttackMonster(character.bigAttack)
-                        }
+                        onClick={() => {
+                          this.props.handleSmallAttackMonster(character.bigAttack);
+                          this.setState({shakeMonster: true});
+                        }}
                       >
                         Big Attack
-                      </Button> */}
+                      </Button>
                     </Typography>
                   </Box>
                 </Grid>
               </Box>
-            )}
-
-            {monster && (
-              <Box>
-                <MonsterCard
-                  key={monster.id}
-                  id={monster.id}
-                  class={monster.class}
-                  name={monster.name}
-                  img={monster.img}
-                  health={monster.health}
-                  smallAttack={monster.smallAttack}
-                  bigAttack={monster.bigAttack}
-                  specialAttack={monster.specialAttack}
-                />
-              </Box>
-            )}
-          </Grid>
+              )
+            }
+          </>
+          {
+            monster && (
+            <Box>
+              <MonsterCard
+                key={monster.id}
+                id={monster.id}
+                class={monster.class}
+                name={monster.name}
+                img={monster.img}
+                health={monster.health}
+                smallAttack={monster.smallAttack}
+                bigAttack={monster.bigAttack}
+                specialAttack={monster.specialAttack}
+                shake={monsterShake}
+              />
+            </Box>
+          )}
+        </Grid>
         </Container>
-      </>
+        </>
     );
   }
 }

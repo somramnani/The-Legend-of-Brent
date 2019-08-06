@@ -10,7 +10,8 @@ import LogIn from "./Screens/LogIn";
 import SignUp from "./Components/SignUp";
 import BattleScreen from "./Screens/Battle";
 import monsters from "./data/Monster.json";
-import { Redirect } from "react-router-dom";
+import { Redirect, IndexRoute } from "react-router-dom";
+
 
 const ENEMY_TIMER = 3000;
 const ENEMY_TIMER_BIG = 1000;
@@ -73,11 +74,15 @@ class App extends Component {
     console.log(this.state.monster);
     if (this.state.character.health <= 0) {
       alert(`${this.state.monster.name} has defeated you!`);
+     
       this.setState({
         monster: "",
         character: ""
       });
+<<<<<<< HEAD
       return <Redirect to="/CharSelect" />;
+=======
+>>>>>>> c861155a6a48fd4adc72aa28a996a4405cb412d8
     }
   }
 
@@ -91,12 +96,6 @@ class App extends Component {
   chooseCharacter = value => {
     this.setState({
       character: value
-    });
-  };
-
-  deleteCharacter = value => {
-    this.setState({
-      character: null
     });
   };
 
@@ -133,6 +132,7 @@ class App extends Component {
     // }
     return (
       <>
+<<<<<<< HEAD
       <Router>
         <Switch>
           <Route exact path="/" component={LogInScreen} />
@@ -144,6 +144,19 @@ class App extends Component {
             />
           )}
           />
+=======
+        <Router>
+          <Switch>
+          <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/" component={LogInScreen} />
+            <Route path="/CharSelect" render={() => (
+              <CharSelect
+                chooseCharacter={this.chooseCharacter}
+                globalState={this.state}
+                />
+              )}
+            />
+>>>>>>> c861155a6a48fd4adc72aa28a996a4405cb412d8
           <Route path="/BattleScreen" render={() => (
             <BattleScreen
               handleSmallAttackMonster={this.handleSmallAttackMonster}
@@ -152,9 +165,15 @@ class App extends Component {
               globalState={this.state}
             />
           )}
+<<<<<<< HEAD
         />
         </Switch>
       </Router>
+=======
+          />
+          </Switch>
+        </Router>        
+>>>>>>> c861155a6a48fd4adc72aa28a996a4405cb412d8
       </>
     );
   }
