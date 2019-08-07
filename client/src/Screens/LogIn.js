@@ -9,11 +9,11 @@ class LogInScreen extends Component {
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.height = "100%";
 
-    return (
-      <>
+  return (
+    <>
       <TitleBar />
       <LogIn />
-      </>
+    </>
     );
   }
 }
