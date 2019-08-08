@@ -4,7 +4,9 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { useAuth0 } from '../react-auth0-wrapper'
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Link } from 'react-router-dom'
+import Logout from './auth/Logout';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,14 +23,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function TitleBar() {
+function TitleBar() {
   const classes = useStyles();
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
     <div className={classes.root}>
       <AppBar className={classes.appbar} position="static">
       <Toolbar>
+        <Router>
         <Typography
           variant="h6"
           className={classes.title}
@@ -59,17 +61,19 @@ export default function TitleBar() {
           }} >
             CHARACTER SELECTION
         </Link>
-        {!isAuthenticated && (
-        <Button
-          onClick={() =>
-            loginWithRedirect({})
-          }>
-          Log in
-        </Button>
-        )}
-        {isAuthenticated && <Button onClick={() => logout()}>Log out</Button>}
+          <Logout />
+        </Router>
       </Toolbar>
       </AppBar>
     </div>
   );
 }
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(TitleBar);

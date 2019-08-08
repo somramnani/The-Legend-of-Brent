@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import LogIn from "../Components/LogIn";
-import SignUp from "../Components/SignUp";
+import SignUpModal from "../Components/auth/SignUpModal";
 import TitleBar from "../Components/TitleBar";
 
 class LogInScreen extends Component {
@@ -12,7 +11,7 @@ class LogInScreen extends Component {
   return (
     <>
       <TitleBar />
-      <LogIn />
+      <SignUpModal />
     </>
     );
   }

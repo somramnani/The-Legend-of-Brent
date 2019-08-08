@@ -1,16 +1,15 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import LogInScreen from "./Screens/LogIn";
-import TitleBar from "./Components/TitleBar";
 import CharSelect from "./Screens/CharSelect";
-import AuthHelperMethods from "./Components/_AuthHelper";
-import withAuth from "./Components/withAuth";
 import LogIn from "./Screens/LogIn";
-import SignUp from "./Components/SignUp";
+import SignUp from "./Components/auth/SignUpModal";
 import BattleScreen from "./Screens/Battle";
 import monsters from "./data/Monster.json";
-import { Redirect, IndexRoute } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { loadUser } from './actions/authActions';
+import store from './store'
 
 const ENEMY_TIMER = 3000;
 const ENEMY_TIMER_BIG = 1000;
@@ -18,7 +17,7 @@ const ENEMY_TIMER_BIG = 1000;
 class App extends Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       character: null,
       monster: monsters[Math.floor(Math.random() * monsters.length)],
@@ -60,6 +59,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    store.dispatch(loadUser());
     this.enemyInterval = setInterval(this.enemyAttack, ENEMY_TIMER_BIG);
   }
 
@@ -81,13 +81,6 @@ class App extends Component {
       return <Redirect to="/CharSelect" />;
     }
   }
-
-  Auth = new AuthHelperMethods();
-
-  _handleLogout = () => {
-    this.Auth.logout();
-    alert("You have successfully logged out");
-  };
 
   chooseCharacter = value => {
     this.setState({
@@ -123,11 +116,9 @@ class App extends Component {
   };
 
   render() {
-    // if (this.state.character.health <= 0) {
-    //   alert("it worked");
-    // }
     return (
       <>
+      <Provider store={store}>
       <Router>
         <Switch>
           <Route exact path="/" component={LogInScreen} />
@@ -135,21 +126,18 @@ class App extends Component {
           <Route path="/CharSelect" render={() => (
             <CharSelect
               chooseCharacter={this.chooseCharacter}
-              globalState={this.state}
-            />
-          )}
-          />
+              globalState={this.state} />
+          )} />
           <Route path="/BattleScreen" render={() => (
             <BattleScreen
               handleSmallAttackMonster={this.handleSmallAttackMonster}
               handleBigAttackMonster={this.handleBigAttackMonster}
               handleSpecialAttackMonster={this.handleSpecialAttackMonster}
-              globalState={this.state}
-            />
-          )}
-        />
+              globalState={this.state} />
+          )} />
         </Switch>
       </Router>
+      </Provider>
       </>
     );
   }

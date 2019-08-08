@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb://localhost:27017/rpg",
+  "jwtSecret": "som may be a vampire"
+}
