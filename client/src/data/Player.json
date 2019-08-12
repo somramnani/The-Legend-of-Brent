@@ -91,7 +91,7 @@
   {
     "id": "10",
     "name": "Arminius",
-    "class": "Calvary",
+    "class": "Heavy Calvary",
     "health": "150",
     "smallAttack": "30",
     "bigAttack": "42",
