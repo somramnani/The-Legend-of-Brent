@@ -42,11 +42,11 @@
   {
     "id": "5",
     "name": "Brent Abruzese",
-    "class": "The Cursed One",
-    "health": "2500",
-    "smallAttack": "90000000",
-    "bigAttack": "90000000",
-    "specialAttack": "800",
+    "class": "The Legend",
+    "health": "100000000",
+    "smallAttack": "9999999",
+    "bigAttack": "9999999",
+    "specialAttack": "9999999",
     "img": "images/FiendLord.jpg"
   },
   {
@@ -54,7 +54,7 @@
     "name": "Kuma",
     "class": "Fiend Soldier",
     "health": "1000",
-    "smallAttack": "18",
+    "smallAttack": "17",
     "bigAttack": "19",
     "specialAttack": "80",
     "img": "images/FiendSoldier.jpg"
@@ -74,9 +74,172 @@
     "name": "Tinder",
     "class": "Fire Elemental",
     "health": "850",
-    "smallAttack": "18",
+    "smallAttack": "20",
     "bigAttack": "29",
     "specialAttack": "80",
     "img": "images/FireElemental.jpg"
+<<<<<<< Updated upstream
+=======
+  },
+  {
+    "id": "9",
+    "name": "Charger",
+    "class": "Armored Mastodon",
+    "health": "950",
+    "smallAttack": "21",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/ArmoredCharger.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Bloodfury",
+    "class": "Manticore",
+    "health": "500",
+    "smallAttack": "50",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Bloodfury.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Dark Pegasus",
+    "class": "Winged Horse",
+    "health": "650",
+    "smallAttack": "17",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/DarkPegasus.jpg"
+  },
+  {
+    "id": "12",
+    "name": "Balduur",
+    "class": "Dark Viking",
+    "health": "900",
+    "smallAttack": "12",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/DarkViking.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Frostbite",
+    "class": "Ice Dragon",
+    "health": "1050",
+    "smallAttack": "11",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/IceDragon.jpeg"
+  },
+  {
+    "id": "14",
+    "name": "Lorelei the Corrupted",
+    "class": "Necromancer",
+    "health": "650",
+    "smallAttack": "38",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/LoreleitheCorrupted.jpg"
+  },
+  {
+    "id": "15",
+    "name": "Bluntus",
+    "class": "Raging Rhino",
+    "health": "850",
+    "smallAttack": "20",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/RagingRhino.jpg"
+  },
+  {
+    "id": "16",
+    "name": "Cassandra",
+    "class": "Sea Dragoness",
+    "health": "750",
+    "smallAttack": "23",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/SeaDragoness.jpg"
+  },
+  {
+    "id": "17",
+    "name": "Skarpa",
+    "class": "Jagged Beast",
+    "health": "1000",
+    "smallAttack": "19",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/SkarpaBeast.jpg"
+  },
+  {
+    "id": "18",
+    "name": "Water Colossus",
+    "class": "Water Elemental",
+    "health": "1050",
+    "smallAttack": "10",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/WaterColossus.jpg"
+  },
+  {
+    "id": "19",
+    "name": "Wasteland Devourer",
+    "class": "Desert Beast",
+    "health": "800",
+    "smallAttack": "25",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/WastelandDevourer.jpg"
+  },
+  {
+    "id": "20",
+    "name": "Kyrolax",
+    "class": "Undead",
+    "health": "650",
+    "smallAttack": "30",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/UndeadDragon.jpg"
+  },
+  {
+    "id": "21",
+    "name": "Dromdrug",
+    "class": "Undead",
+    "health": "650",
+    "smallAttack": "28",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/UndeadRaider.jpg"
+  },
+  {
+    "id": "22",
+    "name": "Crackle",
+    "class": "Thunderlizard",
+    "health": "975",
+    "smallAttack": "16",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/Thunderlizard.jpg"
+  },
+  {
+    "id": "23",
+    "name": "Blitz",
+    "class": "Elvish Pyromancer",
+    "health": "450",
+    "smallAttack": "50",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/ElvishPyromancer.jpg"
+  },
+  {
+    "id": "24",
+    "name": "Crush",
+    "class": "Deep Seabeast",
+    "health": "2000",
+    "smallAttack": "9",
+    "bigAttack": "29",
+    "specialAttack": "80",
+    "img": "images/DeepSeabeast.jpg"
+>>>>>>> Stashed changes
   }
 ]
