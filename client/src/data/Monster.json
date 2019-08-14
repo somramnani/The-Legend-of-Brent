@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": "1",
     "class": "Demon Lord",
     "name": "Jolros",
@@ -78,8 +77,6 @@
     "bigAttack": "29",
     "specialAttack": "80",
     "img": "images/FireElemental.jpg"
-<<<<<<< Updated upstream
-=======
   },
   {
     "id": "9",
@@ -240,6 +237,5 @@
     "bigAttack": "29",
     "specialAttack": "80",
     "img": "images/DeepSeabeast.jpg"
->>>>>>> Stashed changes
   }
 ]

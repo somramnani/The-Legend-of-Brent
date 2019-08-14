@@ -77,8 +77,6 @@
     "bigAttack": "42",
     "specialAttack": "91",
     "img": "images/Mage.jpg"
-<<<<<<< Updated upstream
-=======
   },
   {
     "id": "9",
@@ -159,6 +157,5 @@
     "bigAttack": "56",
     "specialAttack": "91",
     "img": "images/TheCosmicKnight.jpg"
->>>>>>> Stashed changes
   }
 ]
