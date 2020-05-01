@@ -1,6 +1,6 @@
 # The Legend of Brent
 
-An RPG game powered by React where players can chose characters and fight monsters.
+A RPG powered by React where players can chose characters and fight monsters.
 
 ## Installation Instructions
 
